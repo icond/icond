@@ -1,0 +1,2 @@
+# tratar da barra de menu (deixa-la responsive as well)
+# desenhar uma possivel estrutura do website
