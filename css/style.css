@@ -4,5 +4,25 @@
  * 04/05/2016
  */
 
+/*Getting fonts from google*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+a {text-decoration: none;}
 /*image logo container*/
-.logo-img {width: 40px; margin-top: -6px;}
+.logo-img {width: 45px; padding-top: 2px;}
+.img-away-left {margin-left: 10px;}
+
+.navbar-text {font-family: 'Montserrat', sans-serif; font-size: 13px;}
+.navbar-text-aux {color: white;}
+
+
+.navbar-text-data { margin-top: 15px; margin-bottom: 15px; color: white;}
+@media (min-width: 768px) {
+  .navbar-text-data {float: left; margin-right: 15px; margin-left: 5px;}
+}
+
+.myExitButton {color: #fff; }
+.myExitButton:hover {color:white; }
+
+/*navmenu*/
+.navmenu {background: #333333; margin-top: -22px; height:28px;}
