@@ -44,9 +44,7 @@
             </div>
         </nav>
         <div class="navmenu">
-            <ul class="nav nav-pills">
-                <li class="active"><a href="#">Regular link</a></li>
-            </ul>
+            1
         </div>
     </body>
 </html>
