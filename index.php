@@ -10,7 +10,7 @@
         <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
         <!--js-->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <!--adicionar aqui jquery-->        
+        <!--adicionar aqui jquery-->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     </head>
     <body>
@@ -21,7 +21,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                    
+                        <span class="icon-bar"></span>
                     </button>
                     <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
                     <a href="/index.php">
@@ -95,7 +95,8 @@
                     <li><a href="#">Novo Documento</a></li>
                   </ul>
                 </li>
-                </ul>
+                </ul>             
+            </ul>
         </div>
     </body>
 </html>
