@@ -54,7 +54,6 @@
                 </ul>
                 </li></p></li>
                 </ul>
-<<<<<<< HEAD
               </li></p></li>
                   </ul>
               </div>
@@ -136,8 +135,6 @@
                             email: cenas@cenas.pt
                         </div>
                     </div>
-=======
->>>>>>> origin/master
                 </div>
             </div>
         </nav>

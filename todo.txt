@@ -1,2 +1,6 @@
-# tratar da barra de menu (deixa-la responsive as well)
-# desenhar uma possivel estrutura do website
+# -> por fazer
+## -> concluido
+
+## tratar da barra de menu (deixa-la responsive as well)
+# acabar de estruturar o ficheiro admin.php e index.php
+# organizar o ficheiro admin.php (sim, o pedro rolo estava a indentar aquilo tudo)
