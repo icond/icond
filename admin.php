@@ -13,24 +13,6 @@
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     </head>
     <body>
-<<<<<<< HEAD
-          <!--header-->
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                    <a href="http://localhost/Projects/icond/index.php">
-                        <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
-                    </a>
-                </div>
-                <!--codigo para fazer login etc -->
-                <!--<div class="collapse navbar-collapse" id="myNavbar">
-=======
       <!--header-->
       <nav class="navbar navbar-default">
           <div class="container-fluid">
@@ -54,7 +36,6 @@
               </div>-->
               <!--codigo para utilizador com sessão-->
               <div class="collapse navbar-collapse" id="myNavbar">
->>>>>>> origin/master
                   <ul class="nav navbar-nav navbar-right">
                       <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador</span>: Admin</p></b></li>
                       <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span>: 00039</p></b></li>
@@ -74,7 +55,7 @@
                   </ul>
               </div>
           </div>
-</nav>
+        </nav>
           <div class="navmenu">
               <ul class="nav nav-pills">
                   <!--<li class="active"><a href="#">Regular link</a></li>-->
@@ -114,54 +95,43 @@
                     </ul>
                   </li>
                   </ul>
-<<<<<<< HEAD
                 </li>
                 </ul>             
             </ul>
         </div>
         <!--FIMHEADER-->
-=======
               </ul>
           </div>
-
->>>>>>> origin/master
         <main>
             <div class="container">
                 <div class="panel panel-default">
                     <div class="panelheading"><h3>Bem vindo</h3></div>
                     <div class="panel-body">
-<<<<<<< HEAD
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <p><b>Dados Condominio</b></p>
-                                nif: 269009540<br>
-                                nome: condominio rua X<br>
-                                morada: rua x 1100 Lx<br><br
-                            </div >
-                            <div class="col-lg-3">
-                                cenas cenas    
-                            </div>
-                            <div class="col-lg-9">
-                                <p><b>Dados Administrador</b></p>
-                                nome: Almerindo<br>
-                                tel: 129999999<br>
-                                tel: 219999999<br>
-                                email: cenas@cenas.pt
-                            </div>
+                        <div class="adminleft">
+                            <p><b>Dados Condominio</b></p>
+                            nif: 269009540<br>
+                            nome: condominio rua X<br>
+                            morada: rua x 1100 Lx<br><br>
                         </div>
-                    </div>   
-=======
-                        <p>Dados Condominio</p>
-                        nif: 269009540<br>
-                        nome: condominio rua X<br>
-                        morada: rua x 1100 Lx<br><br>
-                        <p>Dados Administrador</p>
-                        nome: Almerindo<br>
-                        tel: 129999999<br>
-                        tel: 219999999<br>
-                        email: cenas@cenas.pt
+                        <div class="adminright">
+                            cenas cenas 
+                            asdasdda
+                            asdasdasdadas
+                            asdasdasdasdasd
+                            asdasdasdadasd
+                            asdasdasdasd
+                            asdasdasdasdasds
+                            asdasdasdasdas
+                            asdasdasdasd
+                        </div>
+                        <div class="adminleft">
+                            <p><b>Dados Administrador</b></p>
+                            nome: Almerindo<br>
+                            tel: 129999999<br>
+                            tel: 219999999<br>
+                            email: cenas@cenas.pt
+                        </div>
                     </div>
->>>>>>> origin/master
                 </div>
             </div>
         </main>
