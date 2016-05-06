@@ -43,6 +43,47 @@
                 </div>-->
             </div>
         </nav>
-       
+        <!--carrousel (banners)-->
+        <div id="theCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Define how many slides to put in the carousel -->
+            <ol class="carousel-indicators">
+              <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+              <li data-target="#theCarousel" data-slide-to="1"> </li>
+              <li data-target ="#theCarousel" data-slide-to="2"> </li>
+            </ol >
+            <!-- Define the text to place over the image -->
+            <div class="carousel-inner">
+                  <div class="item active" >
+                      <div class ="slide1"></div>
+                      <div class="carousel-caption">
+                            <h1>Chama-se carrousel ueh</h1>
+                            <p>À distância de um click...</p>
+                            <p><a href="#" class="btn btn-primary btn-md">Regista-te já!</a></p>
+                      </div>
+                </div>
+                <div class="item">
+                    <div class="slide2"></div>
+                    <div class="carousel-caption">
+                      <h1>Isto é uma treta</h1>
+                      <p>O céu é o limite!</p>
+                      <p><a href="#" class="btn btn-primary btn-md">Neeeeepia</a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="slide3"></div>
+                    <div class="carousel-caption">
+                        <h1>Bootstrap does it all!</h1>
+                        <p>Querias um site de gestão?! AH Ah ah</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Quando clicamos numa das setas, determinar a sua acção -->
+            <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"> </span>
+            </a>
+            <a class="right carousel-control" href="#theCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
     </body>
 </html>

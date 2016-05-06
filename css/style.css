@@ -84,7 +84,7 @@ a {text-decoration: none;}
 .dropdown-menu i{font-size: 12px; }
 
 /*END MENU*/
-<<<<<<< HEAD
+
 /* MAIN */
 =======
 
@@ -94,14 +94,13 @@ a {text-decoration: none;}
   margin-top: 1%;
 }
 
->>>>>>> origin/master
 .panelheading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background-color: #4D4D4D;
-<<<<<<< HEAD
+
   color: floralwhite;
 }
 .panel-body p
@@ -110,6 +109,39 @@ a {text-decoration: none;}
     
 }
  /* END MAIN*/
-=======
-}
->>>>>>> origin/master
+/*banner*/
+.slide1{
+    background-image: url('../img/banner1.png');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .slide2{
+    background-image: url('../img/banner2.jpg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .slide3{
+    background-image: url('../img/banner3.jpg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+@media only screen and (min-width: 350px) {
+    .col-sm-4 {text-align: center; margin-top: 20px;}
+    .logo {font-size: 170px;}
+    .image-responsive {height: auto;display:block; margin: auto;}
+  }
+    @media only screen and (min-width: 768px) {
+    .col-sm-4 {text-align: center; margin-top: 130px;}
+    .logo {font-size: 230px;}
+  }
+    @media only screen and (min-width: 998px) {
+    .col-sm-4 {text-align: center; margin-top: 50px;}
+    .logo {font-size: 300px;}
+  }
+#theCarousel {margin-top: -20px;}
