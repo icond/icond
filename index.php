@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                    <a href="index.php">
+                    <a href="/index.php">
                         <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
                     </a>
                 </div>
@@ -42,14 +42,15 @@
                         <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span>: 00039</p></b></li>
                         <li><p class="navbar-text-data">
                         <!--<a href="#" class="myExitButton">Sair</a>-->
-                <li class="dropdown">
+                <li>
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                   <ul class="dropdown-menu" id="menu1">
                     <li>
                     <!--<li class="divider"></li>-->
-                    <li><a href="#">Stuff</a></li>
-                    <li><a href="#">Stuff</a></li>
-                    <li><a href="#">Stuff</a></li>
+                    <li><a href="#">Dados do Condomínio</a></li>
+                    <li><a href="#">Alterar Senha</a></li>
+                    <li><a href="#">Utilizadores</a></li>
+                    <li><a href="#">Terminar Sessão</a></li>
                   </ul>
                 </li></p></li>
                     </ul>
@@ -58,7 +59,6 @@
         </nav>
         <div class="navmenu">
             <ul class="nav nav-pills">
-
                 <!--<li class="active"><a href="#">Regular link</a></li>-->
                 <li class="dropdown">
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
@@ -95,7 +95,7 @@
                     <li><a href="#">Novo Documento</a></li>
                   </ul>
                 </li>
-                </ul>
+                </ul>             
             </ul>
         </div>
     </body>
