@@ -100,7 +100,7 @@
         <main>
             <div class="container">
                 <div class="panel panel-default">
-                    <div class="bluebg"><h3>Bem vindo</h3></div>
+                    <div class="panelheading"><h3>Bem vindo</h3></div>
                     <div class="panel-body">  
                         <p>Dados Condominio</p>
                         nif: 269009540<br>

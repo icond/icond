@@ -82,11 +82,12 @@ a {text-decoration: none;}
 .navbar {margin-right: px;}
 
 .dropdown-menu i{font-size: 12px; }
-.bluebg {
+
+/*END MENU*/
+.panelheading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  background-color: blue;
+  background-color: #4D4D4D;
 }
-/*END MENU*/
