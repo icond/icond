@@ -84,6 +84,13 @@ a {text-decoration: none;}
 .dropdown-menu i{font-size: 12px; }
 
 /*END MENU*/
+
+/* MAIN */
+
+.container{
+  margin-top: 1%;
+}
+
 .panelheading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
