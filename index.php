@@ -21,9 +21,12 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                    </button>
+                        <span class="icon-bar"></span>                    
+                    </button>
                     <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                    <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
+                    <a href="/index.php">
+                        <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
+                    </a>
                 </div>
                 <!--codigo para fazer login etc -->
                 <!--<div class="collapse navbar-collapse" id="myNavbar">
