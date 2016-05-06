@@ -41,43 +41,60 @@
                         <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador</span>: Admin</p></b></li>
                         <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span>: 00039</p></b></li>
                         <li><p class="navbar-text-data">
-                            <a href="#" class="myExitButton">Sair</a></p></li>
+                        <!--<a href="#" class="myExitButton">Sair</a>-->
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu" id="menu1">
+                    <li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">Stuff</a></li>
+                    <li><a href="#">Stuff</a></li>
+                    <li><a href="#">Stuff</a></li>
+                  </ul>
+                </li></p></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="navmenu">
             <ul class="nav nav-pills">
-<li class="active"><a href="#">Regular link</a></li>
-<li class="dropdown">
-  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
-  <ul class="dropdown-menu" id="menu1">
-    <li>
-        <a href="#">2-level Menu <i class="icon-arrow-right"></i></a>
-        <ul class="dropdown-menu sub-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li class="nav-header">Nav header</li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
-        </ul>
-    </li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#">Menu</a>
-</li>
-<li class="dropdown">
-  <a href="#">Menu</a>
-</li>
-</ul>
-
+                <!--<li class="active"><a href="#">Regular link</a></li>-->
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
+                  <ul class="dropdown-menu" id="menu1">
+                    <li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">Gestão de Quotas</a></li>
+                    <li><a href="#">Orçamentos Condomínio</a></li>
+                    <li><a href="#">Conta Bancária</a></li>
+                    <li><a href="#">Fundo Maneio</a></li>
+                    <li><a href="#">Despesas</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
+                  <ul class="dropdown-menu" id="menu1">
+                    <li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">Ocorrências</a></li>
+                    <li><a href="#">Vistorias</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Condomínios</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Frações</a>
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
+                  <ul class="dropdown-menu" id="menu1">
+                    <li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">Consulta de Documentos</a></li>
+                    <li><a href="#">Novo Documento</a></li>
+                  </ul>
+                </li>
+                </ul>
         </div>
     </body>
 </html>

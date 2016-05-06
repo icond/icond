@@ -25,8 +25,16 @@ a {text-decoration: none;}
 .myExitButton:hover {color:white; }
 
 /*navmenu*/
-.navmenu {background: #333333; margin-top: -20px; height:40px;color:white;}
+.navmenu {background: #333333; margin-top: -20px; height:40px;}
 
+@media screen and (min-width: 1200px) {
+
+.navmenu {padding-left: 10%;}
+}
+@media screen and (min-width: px) {
+
+.navmenu {padding-left: 0;}
+}
 
 
 /*MENU*/
@@ -72,5 +80,7 @@ a {text-decoration: none;}
     left: -6px;
 }
 .navbar {margin-right: px;}
+
+.dropdown-menu i{font-size: x-small; padding-bottom: 25px;}
 
 /*END MENU*/
