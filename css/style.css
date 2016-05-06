@@ -25,7 +25,9 @@ a {text-decoration: none;}
 .myExitButton:hover {color:white; }
 
 /*navmenu*/
-.navmenu {background: #333333; margin-top: -20px; height:28px;color:white;}
+.navmenu {background: #333333; margin-top: -20px; height:40px;color:white;}
+
+
 
 /*MENU*/
 .sidebar-nav {
@@ -69,5 +71,6 @@ a {text-decoration: none;}
     top: 11px;
     left: -6px;
 }
+.navbar {margin-right: px;}
 
 /*END MENU*/
