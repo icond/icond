@@ -82,5 +82,8 @@ a {text-decoration: none;}
 .navbar {margin-right: px;}
 
 .dropdown-menu i{font-size: 12px; }
-
+.headerpanel
+{
+    background-color: grey;
+}
 /*END MENU*/
