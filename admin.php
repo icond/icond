@@ -13,7 +13,7 @@
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     </head>
     <body>
-        <!--header-->
+          <!--header-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -23,7 +23,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                    <a href="/index.php">
+                    <a href="http://localhost/Projects/icond/index.php">
                         <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
                     </a>
                 </div>
@@ -97,20 +97,30 @@
                 </ul>             
             </ul>
         </div>
+        <!--FIMHEADER-->
         <main>
             <div class="container">
                 <div class="panel panel-default">
                     <div class="panelheading"><h3>Bem vindo</h3></div>
-                    <div class="panel-body">  
-                        <p>Dados Condominio</p>
-                        nif: 269009540<br>
-                        nome: condominio rua X<br>
-                        morada: rua x 1100 Lx<br><br>          
-                        <p>Dados Administrador</p>
-                        nome: Almerindo<br>
-                        tel: 129999999<br>
-                        tel: 219999999<br>
-                        email: cenas@cenas.pt
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <p><b>Dados Condominio</b></p>
+                                nif: 269009540<br>
+                                nome: condominio rua X<br>
+                                morada: rua x 1100 Lx<br><br
+                            </div >
+                            <div class="col-lg-3">
+                                cenas cenas    
+                            </div>
+                            <div class="col-lg-9">
+                                <p><b>Dados Administrador</b></p>
+                                nome: Almerindo<br>
+                                tel: 129999999<br>
+                                tel: 219999999<br>
+                                email: cenas@cenas.pt
+                            </div>
+                        </div>
                     </div>   
                 </div>
             </div>
