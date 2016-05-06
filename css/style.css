@@ -82,8 +82,11 @@ a {text-decoration: none;}
 .navbar {margin-right: px;}
 
 .dropdown-menu i{font-size: 12px; }
-.headerpanel
-{
-    background-color: grey;
+.bluebg {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: blue;
 }
 /*END MENU*/

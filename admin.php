@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<head>
         <title>icond</title>
         <meta charset="UTF-8">
         <!--css-->
@@ -101,13 +100,13 @@
         <main>
             <div class="container">
                 <div class="panel panel-default">
-                    <div class="panel-heading headerpanel">Bem vindo</div>
+                    <div class="bluebg"><h3>Bem vindo</h3></div>
                     <div class="panel-body">  
-                        Dados Condominio<br>
+                        <p>Dados Condominio</p>
                         nif: 269009540<br>
                         nome: condominio rua X<br>
-                        morada: rua x 1100 Lx<br>            
-                        Dados Administrador<br>
+                        morada: rua x 1100 Lx<br><br>          
+                        <p>Dados Administrador</p>
                         nome: Almerindo<br>
                         tel: 129999999<br>
                         tel: 219999999<br>
