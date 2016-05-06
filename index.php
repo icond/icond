@@ -12,6 +12,19 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <!--adicionar aqui jquery-->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+
+            $(window).load(function(){
+                $(document).ready(function(){
+                  $('.dropdown').on('show.bs.dropdown', function(e){
+                    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+                  });
+                  $('.dropdown').on('hide.bs.dropdown', function(e){
+                    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+                  });
+                });
+            });
+        </script>
     </head>
     <body>
         <!--header-->
@@ -24,7 +37,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                    <a href="/index.php">
+                    <a href="http://localhost/Projects/icond/index.php">
                         <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
                     </a>
                 </div>
