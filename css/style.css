@@ -9,11 +9,23 @@
 
 a {text-decoration: none;}
 /*image logo container*/
-.logo-img {width: 45px; padding-top: 2px;}
+.logo-img {width: 45px; padding-top: 2px; transition: .2s all ease;}
+.logo-img:hover {-webkit-filter: brightness(110%);}
 .img-away-left {margin-left: 10px;}
 
 .navbar-text {font-family: 'Montserrat', sans-serif; font-size: 13px;}
 .navbar-text-aux {color: white;}
+
+.navbar-effect a {-webkit-transition-property:color, text;
+-webkit-transition-duration: .15s, .15s;
+-webkit-transition-timing-function: linear, ease-in;
+-moz-transition-property:color, text;
+-moz-transition-duration:1s;
+-moz-transition-timing-function: linear, ease-in;
+
+-o-transition-property:color, text;
+-o-transition-duration:1s;
+-o-transition-timing-function: linear, ease-in;}
 
 
 .navbar-text-data { margin-top: 15px; margin-bottom: 15px; color: white;}
@@ -84,13 +96,10 @@ a {text-decoration: none;}
 .dropdown-menu i{font-size: 12px; }
 
 /*END MENU*/
-<<<<<<< HEAD
+
 
 /* MAIN */
-=======
 
-=======
->>>>>>> origin/master
 /* MAIN */
 
 .container{
@@ -103,10 +112,7 @@ a {text-decoration: none;}
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background-color: #4D4D4D;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
   color: floralwhite;
 }
 .panel-body p
@@ -114,7 +120,7 @@ a {text-decoration: none;}
     color: #0071BC;
     
 }
-<<<<<<< HEAD
+
  /* END MAIN*/
 /*banner*/
 .slide1{
@@ -152,7 +158,7 @@ a {text-decoration: none;}
     .logo {font-size: 300px;}
   }
 #theCarousel {margin-top: -20px;}
-=======
+
 .adminleft
 {
     float: left;
@@ -164,4 +170,3 @@ a {text-decoration: none;}
     width: 20%;
 }
  /* END MAIN*/
->>>>>>> origin/master

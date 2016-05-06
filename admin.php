@@ -78,8 +78,8 @@
                       <!--<li class="divider"></li>-->
                       <li><a href="#">Ocorrências</a></li>
                       <li><a href="#">Vistorias</a></li>
+                    </li>
                     </ul>
-                  </li>
                   <li class="dropdown">
                     <a href="#">Condomínios</a>
                   </li>
