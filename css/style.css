@@ -84,6 +84,7 @@ a {text-decoration: none;}
 .dropdown-menu i{font-size: 12px; }
 
 /*END MENU*/
+
 /* MAIN */
 
 .container{
@@ -102,15 +103,5 @@ a {text-decoration: none;}
 {
     color: #0071BC;
     
-}
-.adminleft
-{
-    float: left;
-    width:80%;
-}
-.adminright
-{
-    float: right;
-    width: 20%;
 }
  /* END MAIN*/
