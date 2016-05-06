@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>                    
                     </button>
                     <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                    <a href="index.php">
+                    <a href="/index.php">
                         <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
                     </a>
                 </div>
@@ -42,14 +42,15 @@
                         <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span>: 00039</p></b></li>
                         <li><p class="navbar-text-data">
                         <!--<a href="#" class="myExitButton">Sair</a>-->
-                <li class="dropdown">
+                <li>
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                   <ul class="dropdown-menu" id="menu1">
                     <li>
                     <!--<li class="divider"></li>-->
-                    <li><a href="#">Stuff</a></li>
-                    <li><a href="#">Stuff</a></li>
-                    <li><a href="#">Stuff</a></li>
+                    <li><a href="#">Dados do Condomínio</a></li>
+                    <li><a href="#">Alterar Senha</a></li>
+                    <li><a href="#">Utilizadores</a></li>
+                    <li><a href="#">Terminar Sessão</a></li>
                   </ul>
                 </li></p></li>
                     </ul>
@@ -58,7 +59,6 @@
         </nav>
         <div class="navmenu">
             <ul class="nav nav-pills">
-<<<<<<< HEAD
                 <!--<li class="active"><a href="#">Regular link</a></li>-->
                 <li class="dropdown">
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
@@ -96,37 +96,6 @@
                   </ul>
                 </li>
                 </ul>
-=======
-                <li class="active"><a href="#">Regular link</a></li>
-                <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu" id="menu1">
-                        <li>
-                            <a href="#">2-level Menu <i class="icon-arrow-right"></i></a>
-                            <ul class="dropdown-menu sub-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li class="nav-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Menu</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Menu</a>
-                </li>
-            </ul>
->>>>>>> origin/master
         </div>
     </body>
 </html>
