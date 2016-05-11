@@ -119,14 +119,14 @@ a {text-decoration: none;}
  /* END MAIN*/
 /*banner*/
 .slide1{
-    background-image: url('../img/banner1.png');
+    background-image: url('../img/banner6.jpg');
     height: 500px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
   .slide2{
-    background-image: url('../img/banner2.jpg');
+    background-image: url('../img/banner8.jpg');
     height: 500px;
     background-repeat: no-repeat;
     background-position: center;
@@ -192,10 +192,14 @@ a {text-decoration: none;}
     
 }
 /* end icons destaque*/
-.teste{
-    width: 100%;
-    height: 150px;
-    margin-top: 2%;
-    background-color: orange;
-    margin-bottom: 500px;
+.navbar-white{
+  background-color: white;
+  box-shadow: 10px 0px 10px grey;
+  z-index: 20;
+}
+.navbar-white .navbar-text {
+  color: #0071BC;
+}
+.navbar-white .navbar-nav > li > a {
+  color: #0071BC;
 }

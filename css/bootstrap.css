@@ -1608,6 +1608,8 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
 }
 .row {
   margin-right: -15px;
@@ -4496,9 +4498,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: white; /*COR DA BARRA DE MENU*/
-  box-shadow: 10px 0px 10px grey;
-  z-index: 20;
+  background-color: #4D4D4D;
   /*border-color: #e7e7e7;*/
 }
 .navbar-default .navbar-brand {
@@ -4510,10 +4510,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #0071BC;
+  color: #fff;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #0071BC;
+  color: #fff;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {

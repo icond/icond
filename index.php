@@ -15,7 +15,7 @@
     </head>
     <body>
         <!--header-->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -115,7 +115,7 @@
             </div>
         </div>
         <div class="teste">
-        
+        y
         </div>
     </body>
 </html>
