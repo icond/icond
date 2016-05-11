@@ -7,6 +7,9 @@
 /*Getting fonts from google*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+body{
+    background-color: #fff;
+}
 a {text-decoration: none;}
 /*image logo container*/
 .logo-img {width: 45px; padding-top: 2px; transition: .2s all ease;}
@@ -204,11 +207,23 @@ a {text-decoration: none;}
   color: #0071BC;
 }
 
-.teste{
+.bt-strip{
     width: 100%;
-    height: 150px;
+    height: 100px;
     margin-top: 2%;
-    background-color: orange;
+    background-color: #0071BC;
     margin-bottom: 500px;
 }
-
+.bt-strip .div{
+    width: 33.3%;
+    height: 100px;
+    color: #fff;
+    float: left;
+    text-align: center;
+}
+.bt-strip .div .bt{
+    margin-top: 25px;
+}
+.altitude {
+    box-shadow: 10px 0px 10px grey;
+}

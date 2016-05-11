@@ -2,7 +2,8 @@
 <html>
     <head>
         <title>icond</title>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">        
+        <link rel="icon" href="../img/icond_v1.png">
         <!--css-->
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
