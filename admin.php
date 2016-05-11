@@ -45,7 +45,7 @@
                 <li>
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                 <ul class="dropdown-menu" id="menu1">
-                <li>
+                
                 <!--<li class="divider"></li>-->
                 <li><a href="#">Dados do Condomínio</a></li>
                 <li><a href="#">Alterar Senha</a></li>
@@ -54,8 +54,6 @@
                 </ul>
                 </li></p></li>
                 </ul>
-              </li></p></li>
-                  </ul>
               </div>
           </div>
         </nav>
@@ -65,7 +63,7 @@
                   <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
-                      <li>
+                   
                       <!--<li class="divider"></li>-->
                       <li><a href="#">Gestão de Quotas</a></li>
                       <li><a href="#">Orçamentos Condomínio</a></li>
@@ -74,7 +72,7 @@
                       <li><a href="#">Despesas</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown">
+                <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
                       <li>
