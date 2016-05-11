@@ -50,7 +50,11 @@ a {text-decoration: none;}
 
 .navmenu {padding-left: 0;}
 }
-
+@media screen and (max-width: 768px) {
+  .container{
+    padding: 0;
+  }
+}
 
 /*MENU*/
 .sidebar-nav {
@@ -100,6 +104,9 @@ a {text-decoration: none;}
 /*END MENU*/
 
 /* MAIN */
+.adminbg{
+  background-color: #eee;
+}
 .container{
   margin-top: 1%;
 }
@@ -214,6 +221,7 @@ a {text-decoration: none;}
     background-color: #0071BC;
     margin-bottom: 500px;
 }
+
 .bt-strip .div{
     width: 33.3%;
     height: 100px;
@@ -226,4 +234,8 @@ a {text-decoration: none;}
 }
 .altitude {
     box-shadow: 10px 0px 10px grey;
+
+.hr-dropdown {
+    background: #4D4D4D; height:1px; margin-top: -10px;
+
 }

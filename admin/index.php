@@ -1,13 +1,14 @@
 <?php
   include '../include/headeradmin.php';
  ?>
+    <body>
         <main>
             <div class="container">
                 <div class="panel panel-default">
                     <div class="panelheading"><h3>Bem vindo</h3></div>
                     <div class="panel-body">
                         <div id="row">
-                            <div class="col-lg-8 col-md-6 col-sm-6">
+                            <div class="col-lg-8 col-md-6 col-sm-7">
                                 <div>
                                     <p><b>Dados Condominio</b></p>
                                     nif: 269009540<br>
@@ -22,7 +23,7 @@
                                     email: cenas@cenas.pt
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-5 col-sm-7">
+                            <div class="col-lg-3 col-md-5 col-sm-5">
                                 <p><b>Informações extra</b></p>
                                 Coisa partida<br>
                                 Festa no 3ºEsq<br>
