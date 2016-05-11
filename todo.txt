@@ -4,3 +4,7 @@
 ## tratar da barra de menu (deixa-la responsive as well)
 # acabar de estruturar o ficheiro admin.php e index.php
 # organizar o ficheiro admin.php (sim, o pedro rolo estava a indentar aquilo tudo)
+
+--Menu Admin
+# Existe redundância ao fazer hover e ao clicar no menu.
+# Ao fazer hover e ir para uma opção o menu item não mantém o highlight.
