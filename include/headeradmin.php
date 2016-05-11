@@ -38,8 +38,8 @@
                 codigo para utilizador com sessão-->
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador</span> <span style="color: #7B7777;">: Admin</span></p></b></li>
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span> <span style="color: #7B7777;">: 00039</span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador:</span> <span style="color: #fff;"> Admin</span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"> 00039</span></p></b></li>
                   <li>
                     <p class="navbar-text-data">
                       <!--<a href="#" class="myExitButton">Sair</a>-->
