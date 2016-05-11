@@ -15,7 +15,7 @@
     </head>
     <body>
         <!--header-->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -78,12 +78,12 @@
                 </div>
             </div>
             <!-- Quando clicamos numa das setas, determinar a sua acção -->
-            <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+            <!--<a class="left carousel-control" href="#theCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"> </span>
             </a>
             <a class="right carousel-control" href="#theCarousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+            </a>-->
         </div>
         <!--icons destaque-->
         <div class="container-fluid">
@@ -113,6 +113,9 @@
                     <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
+        </div>
+        <div class="teste">
+        
         </div>
     </body>
 </html>

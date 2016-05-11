@@ -133,7 +133,7 @@ a {text-decoration: none;}
     background-size: cover;
   }
   .slide3{
-    background-image: url('../img/banner3.jpg');
+    background-image: url('../img/banner4.jpg');
     height: 500px;
     background-repeat: no-repeat;
     background-position: center;
@@ -167,28 +167,35 @@ a {text-decoration: none;}
 /*end banner*/
 /*icons destaque*/
 @media only screen and (min-width: 350px) {
-    .highlight-icon {font-size: 45px; color: #4D4D4D; vertical-align: middle;}
+    .highlight-icon {font-size: 45px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
     .iconTitle {font-size: 35px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
 }
 @media only screen and (min-width: 768px) {
-    .highlight-icon {font-size: 55px; color: #4D4D4D; vertical-align: middle;}
+    .highlight-icon {font-size: 55px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
     .iconTitle {font-size: 40px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 100px 0 100px;}
 }
 @media only screen and (min-width: 998px) {
-    .highlight-icon {font-size: 55px; color: #4D4D4D; vertical-align: middle;}
+    .highlight-icon {font-size: 55px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 90px;}
     .iconTitle {font-size: 30px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
 }
 @media only screen and (min-width: 1200px) {
-    .highlight-icon {font-size: 80px; color: #4D4D4D; vertical-align: middle;}
+    .highlight-icon {font-size: 80px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
     .iconTitle {font-size: 35px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
     
 }
 /* end icons destaque*/
+.teste{
+    width: 100%;
+    height: 150px;
+    margin-top: 2%;
+    background-color: orange;
+    margin-bottom: 500px;
+}
