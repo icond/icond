@@ -1,6 +1,7 @@
 <?php
   include '../include/headeradmin.php';
  ?>
+    <body>
         <main>
             <div class="container">
                 <div class="panel panel-default">

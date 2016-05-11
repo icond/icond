@@ -38,8 +38,8 @@
                 codigo para utilizador com sessão-->
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador</span>: Admin</p></b></li>
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span>: 00039</p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador</span> <span style="color: #7B7777;">: Admin</span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio</span> <span style="color: #7B7777;">: 00039</span></p></b></li>
                   <li>
                     <p class="navbar-text-data">
                       <!--<a href="#" class="myExitButton">Sair</a>-->
@@ -55,11 +55,52 @@
                       </li>
                     </p>
                   </li>
+                  <!--em caso de o ecrã ser extra small -- MOSTRAR MENU LÁ EM CIMA KAPPA PRIDE-->
+                  <hr class="hr-dropdown">
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="menu1">
+                      <li><a href="#">Gestão de Quotas</a></li>
+                      <li><a href="#">Orçamentos Condomínio</a></li>
+                      <li><a href="#">Conta Bancária</a></li>
+                      <li><a href="#">Fundo Maneio</a></li>
+                      <li><a href="#">Despesas</a></li>
+                    </ul>
+                  </li>
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
+                      <ul class="dropdown-menu" id="menu1">
+                        <li>
+                          <!--<li class="divider"></li>-->
+                          <li><a href="#">Ocorrências</a></li>
+                          <li><a href="#">Vistorias</a></li>
+                       </li>
+                      </ul>
+                  </li>
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                    <a href="#">Condomínios</a>
+                  </li>
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                    <a href="#">Frações</a>
+                  </li>
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="menu1">
+                      <li>
+                      <!--<li class="divider"></li>-->
+                        <li><a href="#">Consulta de Documentos</a></li>
+                        <li><a href="#">Novo Documento</a></li>
+                      </li>
+                    </ul>
+                  </li>
+                  <!--end MENU para ecrãs pequenos-->
+
+
                 </ul>
               </div>
           </div>
         </nav>
-          <div class="navmenu">
+          <div class="navmenu hidden-xs">
               <ul class="nav nav-pills">
                   <!--<li class="active"><a href="#">Regular link</a></li>-->
                   <li class="dropdown">
@@ -74,31 +115,32 @@
                       <li><a href="#">Despesas</a></li>
                     </ul>
                   </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
-                    <ul class="dropdown-menu" id="menu1">
-                      <li>
-                      <!--<li class="divider"></li>-->
-                      <li><a href="#">Ocorrências</a></li>
-                      <li><a href="#">Vistorias</a></li>
-                    </li>
-                    </ul>
+                  <li class="dropdown">
+                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
+                      <ul class="dropdown-menu" id="menu1">
+                        <li>
+                        <!--<li class="divider"></li>-->
+                        <li><a href="#">Ocorrências</a></li>
+                        <li><a href="#">Vistorias</a></li>
+                      </li>
+                      </ul>
+                  </li>
                   <li class="dropdown">
                     <a href="#">Condomínios</a>
                   </li>
                   <li class="dropdown">
                     <a href="#">Frações</a>
+                  </li>
                   <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
                       <li>
                       <!--<li class="divider"></li>-->
-                      <li><a href="#">Consulta de Documentos</a></li>
-                      <li><a href="#">Novo Documento</a></li>
+                        <li><a href="#">Consulta de Documentos</a></li>
+                        <li><a href="#">Novo Documento</a></li>
+                      </li>
                     </ul>
                   </li>
-                  </ul>
-                </li>
                 </ul>
             </ul>
         </div>
