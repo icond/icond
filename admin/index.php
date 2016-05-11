@@ -1,5 +1,5 @@
 <?php
-  include '/include/headeradmin.php';
+  include '../include/headeradmin.php';
  ?>
         <main>
             <div class="container">
