@@ -7,6 +7,7 @@
         <!--css-->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/loginform.css">
        <!--jquery-->
         <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
         <!--js-->
@@ -17,7 +18,7 @@
             $("#jquery").hide();
             $( document ).ready(function() {
                 $("#jquery").slideUp( 0 ).delay( 300 ).fadeIn( 400 );
-                
+
                 $( "#bt1" ).click(function() {
                     $("#form1").slideToggle(400);
                     $("#form2").hide();
@@ -35,6 +36,18 @@
                 });
 
             });
+        </script>
+        <script>
+        $(document).ready(function() {
+          $("#popup").click(function() {
+            $("#modal-overlay").fadeIn();
+            $("#modal").fadeIn();
+          });
+          $("#modal-overlay").click(function() {
+            $("#modal-overlay").fadeOut();
+            $("#modal").fadeOut();
+          });
+        });
         </script>
     </head>
     <body>
@@ -57,9 +70,11 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav navbar-right navbar-effect">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="#" id="popup"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   </ul>
                 </div>
+
+
                 <!--codigo para utilizador com sessão-->
                 <!--<div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -68,6 +83,21 @@
                 </div>-->
             </div>
         </nav>
+        <div id="modal-overlay" class="modal-overlay"></div>
+        <div class="modal" id="modal">
+              <div class="form">
+                <button id="close" class="close">&times;</button>
+                <div class="login-page"><h2 style="text-align:center;">Login</h2>
+                <form class="login-form">
+                  <input type="text" placeholder="Username"/>
+                  <input type="password" placeholder="Password"/>
+                  <button>Login</button>
+                  <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
+                </form>
+              </div>
+            </div>
+        </div>
+
         <!--carrousel (banners)-->
         <div id="theCarousel" class="carousel slide" data-ride="carousel">
             <!-- Define how many slides to put in the carousel -->
