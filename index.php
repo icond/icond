@@ -3,13 +3,15 @@
     <head>
         <title>icond</title>
         <meta charset="UTF-8">
-        <link rel="icon" href="../img/icond_v1.png">
+        <link rel="icon" href="localhost/icond/img/favicon.png">
         <!--css-->
+		<link rel="stylesheet" type="text/css" href="css/css.css"> 
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
        <!--jquery-->
         <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
         <!--js-->
+        <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <!--adicionar aqui jquery-->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
@@ -57,7 +59,61 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav navbar-right navbar-effect">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    
+                        <li class="main-nav"><a class="signin" style="color: #0071BC" href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                    
+                    <div class="user-modal">
+                        <div class="user-modal-container">
+
+                            <div id="login">
+                                <form class="form" method="post">
+                                    <p class="fieldset">
+                                        <label class="image-replace email" for="signin-email">E-mail</label>
+                                        <input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="E-mail" name="user">
+                                        <span class="error-message">An account with this email address does not exist!</span>
+                                    </p>
+
+                                    <p class="fieldset">
+                                        <label class="image-replace password" for="signin-password">Password</label>
+                                        <input class="full-width has-padding has-border" id="signin-password" type="password" placeholder="Password" name="pass">
+                                        <a href="#0" class="hide-password">Show</a>
+                                        <span class="error-message">Wrong password! Try again.</span>
+                                    </p>
+
+                                    <p class="fieldset">
+                                        <input type="checkbox" id="remember-me" checked>
+                                        <label for="remember-me">Remember me</label>
+                                    </p>
+                                    <p class="fieldset" ><a href="#0">Forgot your password?</a></p>
+                                    <p class="fieldset">
+                                        <input class="full-width" type="submit" value="Login" name="submit">
+                                    </p>
+                                    
+                                </form>
+                                
+                                <!-- <a href="#0" class="close-form">Close</a> -->
+                            </div>
+
+                            <div id="reset-password">
+                                <p class="form-message">Lost your password? Please enter your email address.</br> You will receive a link to create a new password.</p>
+
+                                <form class="form">
+                                    <p class="fieldset">
+                                        <label class="image-replace email" for="reset-email">E-mail</label>
+                                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                                        <span class="error-message">An account with this email does not exist!</span>
+                                    </p>
+
+                                    <p class="fieldset">
+                                        <input class="full-width has-padding" type="submit" value="Reset password">
+                                    </p>
+                                </form>
+
+                                <p class="form-bottom-message"><a href="#0">Back to log-in</a></p>
+                            </div>
+                            <a href="#0" class="close-form">Close</a>
+                        </div>
+                    </div>
                   </ul>
                 </div>
                 <!--codigo para utilizador com sessão-->
