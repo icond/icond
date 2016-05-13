@@ -1,0 +1,11 @@
+# Contributors
+  *David Alexandre
+  *Pedro Rolo
+  *Sandro Milhanos
+  *Marco RAFAELA
+
+
+Version control
+# v0.0.1
+ - Bootstrap files added
+ - Laravel Files added
