@@ -13,8 +13,32 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <!--adicionar aqui jquery-->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+            $("#jquery").hide();
+            $( document ).ready(function() {
+                $("#jquery").slideUp( 0 ).delay( 300 ).fadeIn( 400 );
+                
+                $( "#bt1" ).click(function() {
+                    $("#form1").slideToggle(400);
+                    $("#form2").hide();
+                    $("#form3").hide();
+                });
+                $( "#bt2" ).click(function() {
+                    $("#form1").hide();
+                    $("#form2").slideToggle(400);
+                    $("#form3").hide();
+                });
+                $( "#bt3" ).click(function() {
+                    $("#form1").hide();
+                    $("#form2").hide();
+                    $("#form3").slideToggle(400);
+                });
+
+            });
+        </script>
     </head>
     <body>
+        <div id="jquery"><!--JQUERY PARA FADEIN TOTAL DO SITE-->
         <!--header-->
         <nav class="navbar navbar-default navbar-fixed-top navbar-white">
             <div class="container-fluid">
@@ -90,45 +114,61 @@
         <div class="container-fluid">
             <div class="row icons altitude">
                 <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
-                    <span class="glyphicon glyphicon-signal highlight-icon"></span>
-                    <span class="iconTitle">Sem Instalações</span>
+                    <span class="glyphicon glyphicon-user highlight-icon"></span>
+                    <span class="iconTitle">Condóminos</span>
                     <br />
                     <br />
                     <br />
                     <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <button class="bt" id="bt1">
+                        Click Me!
+                    </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
-                    <span class="glyphicon glyphicon-cog highlight-icon"></span>
-                    <span class="iconTitle">Sem Instalações</span>
+                    <span class="glyphicon glyphicon-home highlight-icon"></span>
+                    <span class="iconTitle">Administradores</span>
                     <br />
                     <br />
                     <br />
                     <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <button class="bt" id="bt2">
+                        Click Me!
+                    </button>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
-                    <span class="glyphicon glyphicon-refresh highlight-icon"></span>
-                    <span class="iconTitle">Sem Instalações</span>
+                    <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
+                    <span class="iconTitle">Empresas e Paerceiros</span>
                     <br />
                     <br />
                     <br />
                     <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <button class="bt" id="bt3">
+                        Click Me!
+                    </button>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div id="form1" class="collapse">
+                    FORM 1<br>
+                    FORM 1<br>
+                    FORM 1<br>
+                    FORM 1<br>
+                </div>
+                <div id="form2" class="collapse">
+                    FORM 2<br>
+                    FORM 2<br>
+                    FORM 2<br>
+                    FORM 2<br>
+                </div>
+                <div id="form3" class="collapse">
+                    FORM 3<br>
+                    FORM 3<br>
+                    FORM 3<br>
+                    FORM 3<br>
                 </div>
             </div>
         </div>
-        <div class="bt-strip">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center div">
-                        <button type="button" class="btn btn-warning btn-lg bt">Regista-te já!</button>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center div">
-                        <button type="button" class="btn btn-warning btn-lg bt">Regista-te já!</button>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center div">
-                        <button type="button" class="btn btn-warning btn-lg bt">Regista-te já!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE-->
     </body>
 </html>

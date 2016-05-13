@@ -176,25 +176,25 @@ a {text-decoration: none;}
 /*end banner*/
 /*icons destaque*/
 @media only screen and (min-width: 350px) {
-    .highlight-icon {font-size: 45px; color: #0071BC; vertical-align: middle;}
+    .highlight-icon {font-size: 30px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
     .iconTitle {font-size: 35px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
 }
 @media only screen and (min-width: 768px) {
-    .highlight-icon {font-size: 55px; color: #0071BC; vertical-align: middle;}
+    .highlight-icon {font-size: 35px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
     .iconTitle {font-size: 40px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 100px 0 100px;}
 }
 @media only screen and (min-width: 998px) {
-    .highlight-icon {font-size: 55px; color: #0071BC; vertical-align: middle;}
+    .highlight-icon {font-size: 35px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 90px;}
     .iconTitle {font-size: 30px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
 }
 @media only screen and (min-width: 1200px) {
-    .highlight-icon {font-size: 80px; color: #0071BC; vertical-align: middle;}
+    .highlight-icon {font-size: 40px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
     .iconTitle {font-size: 35px;padding:25px 0 25px 0; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
@@ -213,29 +213,30 @@ a {text-decoration: none;}
 .navbar-white .navbar-nav > li > a {
   color: #0071BC;
 }
-
-.bt-strip{
-    width: 100%;
-    height: 100px;
-    margin-top: 2%;
-    background-color: #0071BC;
-    margin-bottom: 500px;
-}
-
-.bt-strip .div{
-    width: 33.3%;
-    height: 100px;
-    color: #fff;
-    float: left;
-    text-align: center;
-}
-.bt-strip .div .bt{
-    margin-top: 25px;
-}
 .altitude {
-    box-shadow: 10px 0px 10px grey;
+    box-shadow: 1px 5px 5px -2px #dedede;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
+}
 .hr-dropdown {
     background: #4D4D4D; height:1px; margin-top: -10px;
-
+}
+.bt{
+    background-color: #fff;
+    width: 30%;
+    margin: auto;
+    height: 40px;
+    line-height: 40px;
+    color: #0071BC;
+    border: 1px solid #0071BC;
+    transition: border-color .2s ease;
+    transition: .2s all ease;
+}
+.bt:hover{
+    background-color: #0071BC;
+    color: #fff;
+    cursor: pointer;
+    transition: border-color .2s ease;
+    transition: .2s all ease;
 }
