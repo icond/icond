@@ -51,7 +51,7 @@
           <form class="login-form">
             <input type="text" placeholder="Username"/>
             <input type="password" placeholder="Password"/>
-            <button>Login</button>
+            <button class="btlogin">Login</button>
             <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
           </form>
         </div>

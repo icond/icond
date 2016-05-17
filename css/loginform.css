@@ -6,14 +6,14 @@
     margin: auto;
   }
   .login-pagepop {
-    margin: auto;
+    position: fixed;
+       margin: auto;
 	padding-bottom: 35px;
   }
   .form {
-    position: relative;
     z-index: 1;
     background: #FFFFFF;
-	width: 100%;
+	  width: 100%;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
@@ -35,7 +35,7 @@
     text-transform: uppercase;
     outline: 0;
     background: #0071BC;
-    width: 100%;
+
     border: 0;
     padding: 15px;
     color: #FFFFFF;
@@ -100,3 +100,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+.btlogin{
+  width:100%;
+}

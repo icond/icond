@@ -47,6 +47,10 @@
             $("#modal-overlay").fadeOut();
             $("#modal").fadeOut();
           });
+          $("#close").click(function() {
+            $("#modal-overlay").fadeOut();
+            $("#modal").fadeOut();
+          });
         });
         </script>
     </head>
@@ -84,17 +88,17 @@
             </div>
         </nav>
         <div id="modal-overlay" class="modal-overlay"></div>
-        <div class="modal" id="modal">
+        <div class="login-pagepop" id="modal">
               <div class="form">
                 <button id="close" class="close">&times;</button>
-                <div class="login-page"><h2 style="text-align:center;">Login</h2>
+                <h2 style="text-align:center;">Login</h2>
                 <form class="login-form">
                   <input type="text" placeholder="Username"/>
                   <input type="password" placeholder="Password"/>
-                  <button>Login</button>
+                  <button class="btlogin">Login</button>
                   <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
                 </form>
-              </div>
+
             </div>
         </div>
 

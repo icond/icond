@@ -121,7 +121,7 @@ a {text-decoration: none;}
 }
 #modal{
   z-index: 100;
-  position: absolute;
+  position: fixed;
   width: 25%;
   top: 18%;
   left: 37.5%;
