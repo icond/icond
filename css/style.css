@@ -34,6 +34,7 @@ a {text-decoration: none;}
 .navbar-text-data { margin-top: 15px; margin-bottom: 15px; color: white;}
 @media (min-width: 768px) {
   .navbar-text-data {float: left; margin-right: 15px; margin-left: 5px;}
+
 }
 
 .myExitButton {color: #fff; }
@@ -43,7 +44,6 @@ a {text-decoration: none;}
 .navmenu {background: #333333; margin-top: -20px; height:40px;}
 
 @media screen and (min-width: 1200px) {
-
 .navmenu {padding-left: 10%;}
 }
 @media screen and (min-width: px) {
@@ -54,6 +54,7 @@ a {text-decoration: none;}
   .container{
     padding: 0;
   }
+
 }
 
 /*MENU*/
@@ -103,32 +104,7 @@ a {text-decoration: none;}
 .dropdown-menu i{font-size: 12px; }
 /*END MENU*/
 
-/* LOGIN MODAL */
-.modal-overlay{
-  display: none;
-  width: 100%;
-  min-height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  z-index: 99;
-  position: fixed;
-  opacity: .5;
-  overflow: auto;
-  background-size: cover;
-}
-#modal{
-  z-index: 100;
-  position: fixed;
-  width: 25%;
-  top: 18%;
-  left: 37.5%;
-  display: none;
-}
 
-/* FIM LOGIN MODAL */
 
 
 

@@ -1,11 +1,37 @@
   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+  /* LOGIN MODAL */
+  .modal-overlay{
+    display: none;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    z-index: 99;
+    position: fixed;
+    opacity: .5;
+    overflow: auto;
+    background-size: cover;
+  }
+  #modal{
+    z-index: 100;
+    position: fixed;
+    width: 392px;
+    top: 18%;
+    left: 7.5%;
+    display: none;
+  }
 
+  /* FIM LOGIN MODAL */
   .login-page {
-    width: 25%;
+    width: 392px;
     padding: 8% 0 0;
     margin: auto;
   }
   .login-pagepop {
+    width: 392px;
     position: fixed;
        margin: auto;
 	padding-bottom: 35px;
@@ -102,4 +128,29 @@
   }
 .btlogin{
   width:100%;
+}
+@media (min-width:481px) {
+    #modal{
+        left :17.5%;
+      }
+}
+@media (min-width:641px) {
+    #modal{
+      left: 28.5%;
+    }
+}
+@media (min-width:961px) {
+    #modal{
+      left: 31.5%;
+    }
+}
+@media (min-width:1025px) {
+    #modal{
+        left: 34.5%;
+    }
+}
+@media (min-width:1281px) {
+    #modal{
+        left: 37.5%;
+    }
 }
