@@ -197,14 +197,15 @@
                         <div class="iconTitle form-reg-title">Condóminos</div>
                         <label>Código de Acesso</label><br>
                         <input type="text" placeholder="Código"/><br>
-                        <button class="btlogin">Login</button>
+                        <button class="btlogin">Registar</button>
                     </div>
                     <div id="form2" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Administradores</div>
-                        FORM 2<br>
-                        FORM 2<br>
-                        FORM 2<br>
-                        FORM 2<br>
+                        <label>E-Mail</label><br>
+                        <input type="text" placeholder="eg. rui.pereira@gmail.com"/><br>
+                        <label>Palavra Passe</label><br>
+                        <input type="password" placeholder="Palavra Passe"/><br>
+                        <button class="btlogin">Registar</button>
                     </div>
                     <div id="form3" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Empresas e Parceiros</div>
