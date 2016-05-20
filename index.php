@@ -57,8 +57,8 @@
         </script>
     </head>
     <body>
+        <div id="jquery"><!--JQUERY PARA FADEIN TOTAL DO SITE-->
         <div class="body">
-            <div id="jquery"><!--JQUERY PARA FADEIN TOTAL DO SITE-->
             <!--header-->
             <nav class="navbar navbar-default navbar-fixed-top navbar-white">
                 <div class="container-fluid">
@@ -190,9 +190,8 @@
                         FORM 3<br>
                     </div>
                 </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE-->
     </div>
     <!-- Caixa Login -->
 
@@ -218,5 +217,6 @@
         ?>
 
 
+    </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIZ FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR-->
     </body>
 </html>
