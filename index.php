@@ -70,14 +70,14 @@
                         </button>
                         <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
                         <a href="/index.php">
-                            <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
+                            <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs opensans"><b>Gestão Condominios Online</b></p>
                         </a>
                     </div>
                     <!--codigo para fazer login etc -->
                     <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav navbar-right navbar-effect">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#" id="popup"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user "></span> <span class="opensans">Sign Up</span></a></li>
+                        <li><a href="#" id="popup"><span class="glyphicon glyphicon-log-in"></span><span class="opensans"> Login</span></a></li>
                       </ul>
                     </div>
 
@@ -136,7 +136,7 @@
             <!--icons destaque-->
             <div class="container-fluid">
                 <div class="row icons altitude">
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-user highlight-icon"></span>
                         <span class="iconTitle">Condóminos</span>
                         <br />
@@ -147,7 +147,7 @@
                             Click Me!
                         </button>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-home highlight-icon"></span>
                         <span class="iconTitle">Administradores</span>
                         <br />
@@ -158,7 +158,7 @@
                             Click Me!
                         </button>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
                         <span class="iconTitle">Empresas e Paerceiros</span>
                         <br />

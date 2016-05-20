@@ -7,8 +7,13 @@
 /*Getting fonts from google*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
 body{
     background-color: #f2f2f2;
+    font-family: 'Montserrat', sans-serif;
 }
 a {text-decoration: none;}
 /*image logo container*/
@@ -293,6 +298,11 @@ a {text-decoration: none;}
     color: #0071BC;
 
 }
+
+.opensans{
+    font-family: 'Open Sans', sans-serif;
+}
+
  /* END MAIN*/
 /*banner*/
 .slide1{
@@ -421,4 +431,30 @@ a {text-decoration: none;}
     text-align: center;
 
     border: 1px solid #0071BC;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: #fff;
+    margin-bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: -5px 0 10px grey;
+    font-family: 'Montserrat', sans-serif;
+}
+#copyright{
+    width: 50%;
+    height: 100%;
+    float: left;
+    //font-family: 'Open Sans', sans-serif;
+}
+#social{
+    width: 50%;
+    height: 100%;
+    float: right;
+    text-align: right;
 }
