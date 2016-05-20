@@ -9,3 +9,7 @@ Version control
 # v0.0.1
  - Bootstrap files added
  - Laravel Files added
+# v0.1.0
+ - added Security folder
+ - index.php updated
+ - Security functions updated
