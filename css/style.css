@@ -419,6 +419,45 @@ a {text-decoration: none;}
     margin: auto;
     margin-top: 1%;
     text-align: center;
-
-    border: 1px solid #0071BC;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form-reg-title{
+    color: #000;
+    font-size: x-large;
+    line-height: 24px;
+}
+.color-black{
+    color: #000;
+}
+.form-registo input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 40%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+}
+.form-registo label {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: large;
+}
+.form-registo button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #0071BC;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    width: 40%;
+    margin-bottom: 2%;
 }

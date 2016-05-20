@@ -10,7 +10,14 @@
                     $("#form1").slideToggle(400);
                     $("#form2").hide();
                     $("#form3").hide();
-                    $("#bt1").addClass("active");
+
+                    if($("#bt1").hasClass("active")){
+                        $("#bt1").removeClass("active");
+                    }else{
+                        $("#bt1").addClass("active");
+                    }
+
+                    
                     $("#bt2").removeClass("active");
                     $("#bt3").removeClass("active");
                 });
@@ -18,17 +25,32 @@
                     $("#form1").hide();
                     $("#form2").slideToggle(400);
                     $("#form3").hide();
+
                     $("#bt1").removeClass("active");
-                    $("#bt2").addClass("active");
+
+                    if($("#bt2").hasClass("active")){
+                        $("#bt2").removeClass("active");
+                    }else{
+                        $("#bt2").addClass("active");
+                    }
+
                     $("#bt3").removeClass("active");
                 });
                 $( "#bt3" ).click(function() {
                     $("#form1").hide();
                     $("#form2").hide();
                     $("#form3").slideToggle(400);
+
                     $("#bt1").removeClass("active");
                     $("#bt2").removeClass("active");
-                    $("#bt3").addClass("active");
+
+                    if($("#bt3").hasClass("active")){
+                        $("#bt3").removeClass("active");
+                    }else{
+                        $("#bt3").addClass("active");
+                    }
+
+                    
                 });
 
             });
@@ -160,7 +182,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center ">
                         <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
-                        <span class="iconTitle">Empresas e Paerceiros</span>
+                        <span class="iconTitle">Empresas e Parceiros</span>
                         <br />
                         <br />
                         <br />
@@ -172,18 +194,20 @@
                 </div>
                 <div class="accordion-group">
                     <div id="form1" class="collapse form-registo">
-                        FORM 1<br>
-                        FORM 1<br>
-                        FORM 1<br>
-                        FORM 1<br>
+                        <div class="iconTitle form-reg-title">Condóminos</div>
+                        <label>Código de Acesso</label><br>
+                        <input type="text" placeholder="Código"/><br>
+                        <button class="btlogin">Login</button>
                     </div>
                     <div id="form2" class="collapse form-registo">
+                        <div class="iconTitle form-reg-title">Administradores</div>
                         FORM 2<br>
                         FORM 2<br>
                         FORM 2<br>
                         FORM 2<br>
                     </div>
                     <div id="form3" class="collapse form-registo">
+                        <div class="iconTitle form-reg-title">Empresas e Parceiros</div>
                         FORM 3<br>
                         FORM 3<br>
                         FORM 3<br>
