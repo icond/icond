@@ -10,16 +10,25 @@
                     $("#form1").slideToggle(400);
                     $("#form2").hide();
                     $("#form3").hide();
+                    $("#bt1").addClass("active");
+                    $("#bt2").removeClass("active");
+                    $("#bt3").removeClass("active");
                 });
                 $( "#bt2" ).click(function() {
                     $("#form1").hide();
                     $("#form2").slideToggle(400);
                     $("#form3").hide();
+                    $("#bt1").removeClass("active");
+                    $("#bt2").addClass("active");
+                    $("#bt3").removeClass("active");
                 });
                 $( "#bt3" ).click(function() {
                     $("#form1").hide();
                     $("#form2").hide();
                     $("#form3").slideToggle(400);
+                    $("#bt1").removeClass("active");
+                    $("#bt2").removeClass("active");
+                    $("#bt3").addClass("active");
                 });
 
             });
@@ -162,19 +171,19 @@
                     </div>
                 </div>
                 <div class="accordion-group">
-                    <div id="form1" class="collapse">
+                    <div id="form1" class="collapse form-registo">
                         FORM 1<br>
                         FORM 1<br>
                         FORM 1<br>
                         FORM 1<br>
                     </div>
-                    <div id="form2" class="collapse">
+                    <div id="form2" class="collapse form-registo">
                         FORM 2<br>
                         FORM 2<br>
                         FORM 2<br>
                         FORM 2<br>
                     </div>
-                    <div id="form3" class="collapse">
+                    <div id="form3" class="collapse form-registo">
                         FORM 3<br>
                         FORM 3<br>
                         FORM 3<br>

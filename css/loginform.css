@@ -117,14 +117,14 @@
     color: #EF3B3A;
   }
   body {
-    background: #fff; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #fff, #f2f2f2);
-    background: -moz-linear-gradient(right, #fff, #f2f2f2);
-    background: -o-linear-gradient(right, #fff, #f2f2f2);
-    background: linear-gradient(to left, #fff, #f2f2f2);
-    font-family: "Roboto", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    //background: #fff; /* fallback for old browsers */
+   // background: -webkit-linear-gradient(right, #fff, #f2f2f2);
+   // background: -moz-linear-gradient(right, #fff, #f2f2f2);
+   // background: -o-linear-gradient(right, #fff, #f2f2f2);
+   // background: linear-gradient(to left, #fff, #f2f2f2);
+   // font-family: "Roboto", sans-serif;
+   // -webkit-font-smoothing: antialiased;
+   // -moz-osx-font-smoothing: grayscale;
   }
 .btlogin{
   width:100%;
