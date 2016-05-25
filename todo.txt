@@ -6,7 +6,6 @@
 # Ao fazer hover e ir para uma opção o menu item não mantém o highlight.
 
 --Front-End
-# Deixar o popup responsive, e fundo blur
 
 
 

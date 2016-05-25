@@ -63,3 +63,40 @@ function passwordHash($value)
     ];
     return password_hash($value, PASSWORD_BCRYPT, $options);
 }
+/*
+ * ENCRYPTS PLAIN TEXT
+ *
+ * It is based upon SHA-512 encryption algorithm.
+ * in order to work, it needs to generate a custom salt based upon given
+ * parameters: 2 integers. So we need to pass 3 arguments:
+ * 1) The pain text to encrypt
+ * 2) One integer
+ * 3) Another integer
+ *
+ * RETURN: a password encrypted by auto-generated salt
+ */
+function textCrypt ($password)
+{
+    //alterar depois consoante o input da base de dados
+    $hash = '$6$8dN.92jwu/?mdMDK29Dmdc';    //o pedro rolo está a fazer uma cena engraçada
+    return crypt($password, $hash);
+}
+
+/*
+ * VERIFIES IF PLAIN TEXT PASSWORD EQUALS ENCRYPTED ONE
+ *
+ * It takes 3 arguments:
+ * 1) Plain text password to authenticate
+ * 2) Encrypted Password from level 2
+ * 3) hash code used to encrypt plain text
+ *
+ * RETURN: a boolean. If true then the passwords match. Else, they don't.
+ */
+function cryptText($password, $hash, $passwordEncrypted)
+{
+    $hash = '$6$8dN.92jwu/?mdMDK29Dmdc';        //implementar mais tarde a cena de gerar automaticamente salts
+    if(crypt($password, $hash) == $passwordEncrypted)
+        return true;
+    else
+        return false;
+}
