@@ -217,13 +217,15 @@
                         FORM 3<br>
                     </div>
                 </div>
-                <div id="vid" class="embed-responsive embed-responsive-16by9">
-                    <video width="960" height="540" controls>
-                        <source src="vid/atec.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+
+                <div class="row">
+                    <div class="col-xl-12 embed-responsive embed-responsive-16by9">
+                        <video width="960" height="540">
+                            <source src="vid/atec.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
-            </div>
     </div>
     <!-- Caixa Login -->
 
