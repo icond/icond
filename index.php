@@ -211,16 +211,25 @@
                     </div>
                     <div id="form3" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Empresas e Parceiros</div>
-                        FORM 3<br>
-                        FORM 3<br>
-                        FORM 3<br>
-                        FORM 3<br>
+                        <label>Primeiro Nome</label><br>
+                        <input type="text" placeholder="eg. Rui" /><br>
+                        <label>Ultimo Nome</label><br>
+                        <input type="text" placeholder="eg. Pereira" /><br>
+                        <label>Categoria</label><br>
+                        <input type="text"/><br>
+                        <label>Telemovél</label><br>
+                        <input type="text" placeholder="eg. 912345678" /><br>
+                        <label>E-Mail</label><br>
+                        <input type="text" placeholder="eg. rui.pereira@gmail.com" /><br>
+                        <label>Palavra Passe</label><br>
+                        <input type="password"/ placeholder="Palavra Passe" ><br>
+                        <button class="btlogin">Registar</button>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-12 embed-responsive embed-responsive-16by9">
-                        <video width="960" height="540">
+                    <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
+                        <video width="960" height="540" autoplay muted>
                             <source src="vid/atec.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
