@@ -79,6 +79,8 @@
         </script>
     </head>
     <body>
+
+
         <div id="jquery"><!--JQUERY PARA FADEIN TOTAL DO SITE-->
         <div class="body">
             <!--header-->
@@ -215,7 +217,12 @@
                         FORM 3<br>
                     </div>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div id="vid" class="embed-responsive embed-responsive-16by9">
+                    <video width="960" height="540" controls>
+                        <source src="vid/atec.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
     </div>
     <!-- Caixa Login -->
@@ -242,6 +249,6 @@
         ?>
 
 
-    </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIZ FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR-->
+    </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIV FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR-->
     </body>
 </html>
