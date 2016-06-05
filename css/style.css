@@ -497,7 +497,19 @@ footer{
     float: right;
     text-align: right;
 }
+/* END FOOTER */
+
 .video{
     margin-top: 1%;
     margin-bottom: 1%;
+}
+.preco{
+    font-weight: bold;
+    font-size: large;
+    background-color: #0071BC;
+    color: #f2f2f2;
+    height: 70px;
+    line-height: 70px;
+    width: 40%;
+    margin: auto;
 }
