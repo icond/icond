@@ -5,11 +5,29 @@
 # Existe redundância ao fazer hover e ao clicar no menu.
 # Ao fazer hover e ir para uma opção o menu item não mantém o highlight.
 
---Front-End
+--Front-End--
+# Footer							$Sandromix
+# Deixar tudo responsive 			$Marcus
+# aperfeiçoar zona de preços  		$marcus
+
+--Back-End--
+# algoritmo gerar salt				$David Lopes
+# script em c++ para gerar salt		$David Lopes
+# Base de dados 					$Pedro Rolo(na boa pedro?)
+# Sistema de Log in 				$Sandromix & Pedro Rolo
+# Sessões							$Sandromix
 
 
 
 
+
+
+
+
+
+
+
+<-------------Ideias do marco-------------->
 
 PORTANTO
 
