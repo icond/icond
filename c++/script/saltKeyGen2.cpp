@@ -14,13 +14,13 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include <ctype.h>
+//#include <ctype.h>
 
 using namespace std;
 
 //prototypes
-string letters(string salt, const long long foo, const long long bar, int len);
-string numbers(string salt, const long long foo, const long long bar, int len);
+string letters(string salt, long long foo, long long bar, int len);
+string numbers(string salt, long long foo, long long bar, int len);
 
 int main(int argc, char * argv[])
 {
@@ -33,14 +33,14 @@ int main(int argc, char * argv[])
     long long ID = (long long)atoi(argv[1]);
     long long condID = (long long)atoi(argv[2]);
     salt = letters(salt, ID, condID, salt.size());
-    salt = numbers(salt, ID, condID, salt.size());
+    //salt = numbers(salt, ID, condID, salt.size());
     cout << salt;
     return 0;
 }
 
 // down x letters (a -> z) & up x letters (z -> a)
 //esta função está a dar Core Dump. Provavelmente é das strings
-string letters(string salt, const long long foo, const long long bar, int len)
+string letters(string salt, long long foo, long long bar, int len)
 {
     //starts here (up -> down approach)
     for(int i = 0; i < len; i++)
@@ -61,6 +61,8 @@ string letters(string salt, const long long foo, const long long bar, int len)
             ch = (foo / bar) % 26;
             ch += 65;
             salt[i + 1] = (char)ch;
+            foo+=2;
+            bar+=4;
         }
     }
     return salt;
@@ -68,7 +70,8 @@ string letters(string salt, const long long foo, const long long bar, int len)
 
 //generate numbers to salt
 // vou ter de arranjar uma maneira de encaixar um long long numa string
-string numbers(string salt, const long long foo, const long long bar, int len)
+//caguei para isto ._.
+string numbers(string salt, long long foo, long long bar, int len)
 {
     /*char aux = 0;
     for(int i = 0; i < len; i++)
