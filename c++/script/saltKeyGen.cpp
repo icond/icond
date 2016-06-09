@@ -12,18 +12,17 @@
  * If it fails, we shall cry.
  */
 #include <iostream>
-#include <string>
 #include <cstdlib>
 
 using namespace std;
 
 //prototypes
-string letters(string salt, const long long foo, const long long bar);
-string numbers(string salt, const long long foo, const long long bar);
+char * letters(char salt[], const long long foo, const long long bar, int len);
+char * numbers(char salt[], const long long foo, const long long bar, int len);
 
 int main(int argc, char * argv[])
 {
-    string salt = "nJBND.yjxaysd2!bxJyilxjybxB";
+    char salt[] = "nJBND.yjxaysd2!bxJyilxjybxB";
     if(argc != 3)
     {
         cout << "ERROR";
@@ -31,7 +30,7 @@ int main(int argc, char * argv[])
     }
     long long ID = (long long)atoi(argv[1]);
     long long condID = (long long)atoi(argv[2]);
-    salt = letters(salt, ID, condID);
+    salt = letters(salt, ID, condID, sizeof(salt));
     //salt = numbers(salt, ID, condID);
     cout << salt;
     return 0;
@@ -39,10 +38,10 @@ int main(int argc, char * argv[])
 
 // down x letters (a -> z) & up x letters (z -> a)
 //esta função está a dar Core Dump. Provavelmente é das strings
-string letters(string salt, const long long foo, const long long bar)
+char * letters(char salt[], const long long foo, const long long bar, int len)
 {
     //starts here (up -> down approach)
-    for(int i = 0; salt.length(); i++)
+    for(int i = 0; i < len; i++)
     {
         if(salt[i] != 'x')
             continue;
@@ -62,7 +61,7 @@ string letters(string salt, const long long foo, const long long bar)
 }
 
 //generate numbers to salt
-string numbers(string salt, const long long foo, const long long bar)
+char * numbers(char salt[], const long long foo, const long long bar, int len)
 {
     //TODO
 }
