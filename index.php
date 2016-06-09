@@ -76,6 +76,31 @@
             $(".body").addClass("blur-out");
           });
         });
+
+
+        //So permitir numeros no field
+        //from http://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
+        $(document).ready(function() {
+            $("#sonumeros").keydown(function (e) {
+                // Allow: backspace, delete, tab, escape, enter and .
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                     // Allow: Ctrl+A
+                    (e.keyCode == 65 && e.ctrlKey === true) ||
+                     // Allow: Ctrl+C
+                    (e.keyCode == 67 && e.ctrlKey === true) ||
+                     // Allow: Ctrl+X
+                    (e.keyCode == 88 && e.ctrlKey === true) ||
+                     // Allow: home, end, left, right
+                    (e.keyCode >= 35 && e.keyCode <= 39)) {
+                         // let it happen, don't do anything
+                         return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+        });
         </script>
     </head>
     <body>
@@ -205,6 +230,8 @@
                         <div class="iconTitle form-reg-title">Administradores</div>
                         <label>E-Mail</label><br>
                         <input type="text" placeholder="eg. rui.pereira@gmail.com"/><br>
+                        <label>NIF</label><br>
+                        <input id="sonumeros" type="text" maxlength="9" placeholder="Número de Identificação Fiscal"/><br>
                         <label>Palavra Passe</label><br>
                         <input type="password" placeholder="Palavra Passe"/><br>
                         <button class="btlogin">Registar</button>
