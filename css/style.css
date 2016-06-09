@@ -350,12 +350,19 @@ a {text-decoration: none;}
     float: right;
     width: 20%;
 }
+
 /*end banner*/
 /*icons destaque*/
+@media only screen and (max-width: 349px) {
+    .highlight-icon {font-size: 30px; color: #0071BC; vertical-align: middle;}
+    .iconTitle {font-size: 35px; vertical-align: middle;}
+    .iconTextSpace {padding:0 15px 0 15px;}
+    .smalltext {font-size: x-large};
+}
 @media only screen and (min-width: 350px) {
     .highlight-icon {font-size: 30px; color: #0071BC; vertical-align: middle;}
     .icons {margin-top: 100px;}
-    .iconTitle {font-size: 35px;padding:25px 0 25px 0; vertical-align: middle;}
+    .iconTitle {font-size: 35px; vertical-align: middle;}
     .iconTextSpace {padding:0 15px 0 15px;}
 }
 @media only screen and (min-width: 768px) {
@@ -409,6 +416,7 @@ a {text-decoration: none;}
     border: 1px solid #0071BC;
     transition: border-color .2s ease;
     transition: .2s all ease;
+        margin-bottom: 50px;
 }
 .bt:hover{
     background-color: #0071BC;
@@ -513,3 +521,14 @@ footer{
     width: 40%;
     margin: auto;
 }
+@media only screen and (max-width: 349px) {
+.preco{
+    font-weight: bold;
+    font-size: medium;
+    background-color: #0071BC;
+    color: #f2f2f2;
+    height: 40px;
+    line-height: 40px;
+    width: 60%;
+    margin: auto;
+}}

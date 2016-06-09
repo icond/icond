@@ -7,9 +7,9 @@
                 $("#jquery").slideUp( 0 ).delay( 300 ).fadeIn( 400 );
 
                 $( "#bt1" ).click(function() {
-                    $("#form1").slideToggle(400);
                     $("#form2").hide();
                     $("#form3").hide();
+                    $("#form1").slideToggle(400);
 
                     if($("#bt1").hasClass("active")){
                         $("#bt1").removeClass("active");
@@ -23,8 +23,8 @@
                 });
                 $( "#bt2" ).click(function() {
                     $("#form1").hide();
-                    $("#form2").slideToggle(400);
                     $("#form3").hide();
+                    $("#form2").slideToggle(400);
 
                     $("#bt1").removeClass("active");
 
@@ -187,7 +187,7 @@
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-user highlight-icon"></span>
-                        <span class="iconTitle">Condóminos</span>
+                        <span class="iconTitle smalltext">Condóminos</span>
                         <br />
                         <br />
                         <br />
@@ -196,9 +196,19 @@
                             Click Me!
                         </button>
                     </div>
+
+                <div class="accordion-group hidden-xl-down">
+                    <div id="form1v2" class="collapse form-registo">
+                        <div class="iconTitle form-reg-title">Condóminos</div>
+                        <label>Código de Acesso</label><br>
+                        <input type="text" placeholder="Código"/><br>
+                        <button class="btlogin">Registar</button>
+                    </div>
+                </div>
+
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-home highlight-icon"></span>
-                        <span class="iconTitle">Administradores</span>
+                        <span class="iconTitle smalltext">Administradores</span>
                         <br />
                         <br />
                         <br />
@@ -209,7 +219,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
-                        <span class="iconTitle">Empresas e Parceiros</span>
+                        <span class="iconTitle smalltext">Empresas</span>
                         <br />
                         <br />
                         <br />
@@ -219,7 +229,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="accordion-group">
+                <div class="accordion-group hidden-sm-up">
                     <div id="form1" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Condóminos</div>
                         <label>Código de Acesso</label><br>
@@ -237,7 +247,7 @@
                         <button class="btlogin">Registar</button>
                     </div>
                     <div id="form3" class="collapse form-registo">
-                        <div class="iconTitle form-reg-title">Empresas e Parceiros</div>
+                        <div class="iconTitle form-reg-title">Empresas</div>
                         <label>Primeiro Nome</label><br>
                         <input type="text" placeholder="eg. Rui" /><br>
                         <label>Ultimo Nome</label><br>
@@ -282,7 +292,7 @@
                         <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <br />
-                        <label class="preco">Desde 10€/mês</label>
+                        <div class="preco">Desde 10€/mês</div>
                         <br />
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
