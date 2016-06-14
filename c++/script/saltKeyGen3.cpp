@@ -34,7 +34,7 @@ int main(int argc, char * argv[])
     }
     for(int i = 0; i < _SALTLEN; i++)
     {
-        char ch = (foo * bar) % 26;
+        char ch = (foo + bar) % 26;
         ch += 97;
         salt[i] = (char)ch;
         bar += foo;
