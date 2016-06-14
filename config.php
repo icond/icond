@@ -7,7 +7,11 @@ $cppPath = 'C:\xampp\htdocs\Projects\icond\c++\script\saltKeyGen3 ';
 //--------------------------------------------------------------------------------
 // Connection Variables
 //--------------------------------------------------------------------------------
-$hostname = 'locahost';
-$username = 'root';
-$password = '';
-$database = '';                 #Databasse's name
+$hostname = 'locahost';                     #IP do server
+$username = 'root';                         #admin
+$password = '';                             #Password
+$database = 'icond';                        #Databasse's name
+
+?>
+
+

@@ -12,9 +12,9 @@
 //
 
 //Global Configurations
-include '../config.php';
-include '../connection.php';
-
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+include "$root/Projects/icond/config.php";
+include "$root/Projects/icond/connection.php";
 
 //--------------------------------------------------------------------------------
 // Prevents XSS attacks (Cross-site Scripting).
@@ -78,8 +78,13 @@ function passwordHash($value)
 function textCrypt ($password)
 {
     //alterar depois consoante o input da base de dados
-    $hash = exec($cppPath . '8 23');
-    return crypt($password, $hash);
+    global $cppPath;
+    $options = '$6$rounds=5000$';
+    $hash = exec($cppPath . 'n 1');
+    $finalhash = $options . $hash;
+    echo '<br><br>' . $hash;
+    echo "<br><br>" . $finalhash;
+    return crypt($password, $finalhash);
 }
 
 //--------------------------------------------------------------------------------
