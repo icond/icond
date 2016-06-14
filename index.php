@@ -105,6 +105,22 @@
     </head>
     <body>
 
+    <!-- Caixa Login -->
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+        <div class="login-pagepop" id="modal">
+              <div class="form">
+                <button id="close" class="close">&times;</button>
+                <h2 style="text-align:center;">Login</h2>
+                <form class="login-form">
+                  <input type="text" placeholder="Username"/>
+                  <input type="password" placeholder="Password"/>
+                  <button class="btlogin">Login</button>
+                  <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
+                </form>
+
+            </div>
+        </div>
 
         <div id="jquery"><!--JQUERY PARA FADEIN TOTAL DO SITE-->
         <div class="body">
@@ -308,22 +324,7 @@
                     </div>
                 </div>
     </div>
-    <!-- Caixa Login -->
-
-    <div id="modal-overlay" class="modal-overlay"></div>
-        <div class="login-pagepop" id="modal">
-              <div class="form">
-                <button id="close" class="close">&times;</button>
-                <h2 style="text-align:center;">Login</h2>
-                <form class="login-form">
-                  <input type="text" placeholder="Username"/>
-                  <input type="password" placeholder="Password"/>
-                  <button class="btlogin">Login</button>
-                  <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
-                </form>
-
-            </div>
-        </div>
+    
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- include footer -->
