@@ -11,8 +11,9 @@
 // Any further updates are welcomed!
 //
 
-
-
+//Global Configurations
+include '../config.php';
+include '../connection.php';
 
 
 //--------------------------------------------------------------------------------
@@ -40,7 +41,7 @@ function xss_verify($value)
 }
 
 //--------------------------------------------------------------------------------
-// Generates password hashes
+// Generates password hashes (3rd level of encryption)
 //--------------------------------------------------------------------------------
 // This function is pretty straight forward. It receives a given password
 // and generates an hash code for it. It is based upon CRYPT_BLOWFISH algorithm
@@ -63,7 +64,7 @@ function passwordHash($value)
     return password_hash($value, PASSWORD_BCRYPT, $options);
 }
 //--------------------------------------------------------------------------------
-// ENCRYPTS PLAIN TEXT
+// ENCRYPTS PLAIN TEXT (2nd level of encryption)
 //--------------------------------------------------------------------------------
 // It is based upon SHA-512 encryption algorithm.
 // in order to work, it needs to generate a custom salt based upon given
@@ -77,7 +78,7 @@ function passwordHash($value)
 function textCrypt ($password)
 {
     //alterar depois consoante o input da base de dados
-    $hash = exec('C:\xampp\htdocs\Projects\icond\c++\script\saltKeyGen3 8 23');
+    $hash = exec($cppPath . '8 23');
     return crypt($password, $hash);
 }
 

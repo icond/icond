@@ -1,3 +1,13 @@
 <?php
-//path to c++ script
-$cppPath = 'C:\xampp\htdocs\Projects\icond\c++\script\saltKeyGen3';
+//--------------------------------------------------------------------------------
+// Path to c++ script
+//--------------------------------------------------------------------------------
+$cppPath = 'C:\xampp\htdocs\Projects\icond\c++\script\saltKeyGen3 ';
+
+//--------------------------------------------------------------------------------
+// Connection Variables
+//--------------------------------------------------------------------------------
+$hostname = 'locahost';
+$username = 'root';
+$password = '';
+$database = '';                 #Databasse's name
