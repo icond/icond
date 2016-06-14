@@ -253,14 +253,16 @@
                         <button class="btlogin">Registar</button>
                     </div>
                     <div id="form2" class="collapse form-registo">
-                        <div class="iconTitle form-reg-title">Administradores</div>
-                        <label>E-Mail</label><br>
-                        <input type="text" placeholder="eg. rui.pereira@gmail.com"/><br>
-                        <label>NIF</label><br>
-                        <input id="sonumeros" type="text" maxlength="9" placeholder="Número de Identificação Fiscal"/><br>
-                        <label>Palavra Passe</label><br>
-                        <input type="password" placeholder="Palavra Passe"/><br>
-                        <button class="btlogin">Registar</button>
+                        <form action="/regadmins.php" method="POST">
+                            <div class="iconTitle form-reg-title">Administradores</div>
+                            <label>E-Mail</label><br>
+                            <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com"/><br>
+                            <label>NIF</label><br>
+                            <input id="sonumeros" type="text" name="nif" maxlength="9" placeholder="Número de Identificação Fiscal"/><br>
+                            <label>Palavra Passe</label><br>
+                            <input type="password" name="password" placeholder="Palavra Passe"/><br>
+                            <button class="btlogin">Registar</button>
+                        </form>
                     </div>
                     <div id="form3" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Empresas</div>
