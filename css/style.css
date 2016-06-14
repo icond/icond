@@ -450,12 +450,21 @@ a{
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+  -webkit-transition: all 0.2 ease;
+  transition: border-color .2s ease;
+  transition: .2s all ease;
   cursor: pointer;
   width: 40%;
   margin-bottom: 2%;
   border: 1px solid #0071BC;
+}
+
+.form-registo button:hover{
+  background-color: #fff;
+  color: #0071BC;
+  cursor: pointer;
+  transition: border-color .2s ease;
+  transition: .2s all ease;
 }
 
 /* FOOTER */
@@ -512,6 +521,9 @@ footer{
     color: #0071BC; 
     vertical-align: middle;
   }
+  .icons{
+    margin-top: 50px;
+  }
   .iconTitle{
     font-size: 35px; 
     vertical-align: middle;
@@ -524,6 +536,7 @@ footer{
   }
   /*end icons destaque*/
 }
+
 @media only screen and (min-width: 350px){
   .col-sm-4{
     text-align: center;
@@ -544,7 +557,7 @@ footer{
     vertical-align: middle;
   }
   .icons{
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .iconTitle{
     font-size: 35px; 
@@ -554,6 +567,59 @@ footer{
     padding:0 15px 0 15px;
   }
   /*end icons destaque*/
+}
+
+@media screen and (max-width: 768px){
+  .container{
+    padding: 0;
+  }
+
+  .form-registo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .form-reg-title{
+    color: #000;
+    font-size: x-large;
+    line-height: 24px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .form-registo input{
+    width: 80%;
+    height: 35px;
+    font-size: medium;
+  }
+
+  .form-registo label{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: medium;
+  }
+
+  .form-registo button{
+    padding: 0;
+    font-size: medium;
+    width: 80%;
+    height: 35px;
+  }
+
+  .bt{
+    width: 50%;
+  }
+
+  .preco{
+    font-size: medium;
+    color: #f2f2f2;
+    height: 50px;
+    line-height: 50px;
+    width: 80%;
+    margin-bottom: 35px;
+    padding-bottom: -20px;
+  }
 }
 
 @media only screen and (min-width: 768px){
@@ -576,7 +642,7 @@ footer{
     vertical-align: middle;
   }
   .icons{
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .iconTitle{
     font-size: 40px;
@@ -587,11 +653,15 @@ footer{
     padding:0 100px 0 100px;
   }
   /*end icons destaque*/
-}
 
-@media screen and (max-width: 768px){
-  .container{
-    padding: 0;
+  .preco{
+    font-size: medium;
+    color: #f2f2f2;
+    height: 50px;
+    line-height: 50px;
+    width: 50%;
+    margin-bottom: 35px;
+    padding-bottom: -20px;
   }
 }
 
@@ -610,7 +680,7 @@ footer{
     vertical-align: middle;
   }
   .icons{
-    margin-top: 90px;
+    margin-top: 50px;
   }
   .iconTitle{
     font-size: 30px;
@@ -634,7 +704,7 @@ footer{
     vertical-align: middle;
   }
   .icons{
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .iconTitle{
     font-size: 35px;
@@ -643,6 +713,17 @@ footer{
   }
   .iconTextSpace{
     padding:0 15px 0 15px;
+  }
+  /*end icons destaque*/
+
+  .bt{
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .icons{
+    margin-top: 25px;
   }
   /*end icons destaque*/
 }

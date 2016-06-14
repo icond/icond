@@ -206,26 +206,15 @@
                         <span class="iconTitle smalltext">Condóminos</span>
                         <br />
                         <br />
-                        <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <button class="bt" id="bt1">
                             Click Me!
                         </button>
                     </div>
 
-                <div class="accordion-group hidden-xl-down">
-                    <div id="form1v2" class="collapse form-registo">
-                        <div class="iconTitle form-reg-title">Condóminos</div>
-                        <label>Código de Acesso</label><br>
-                        <input type="text" placeholder="Código"/><br>
-                        <button class="btlogin">Registar</button>
-                    </div>
-                </div>
-
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-home highlight-icon"></span>
                         <span class="iconTitle smalltext">Administradores</span>
-                        <br />
                         <br />
                         <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -233,10 +222,10 @@
                             Click Me!
                         </button>
                     </div>
+
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
                         <span class="iconTitle smalltext">Empresas</span>
-                        <br />
                         <br />
                         <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -245,7 +234,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="accordion-group hidden-sm-up">
+                <div class="accordion-group">
                     <div id="form1" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Condóminos</div>
                         <label>Código de Acesso</label><br>
@@ -282,19 +271,18 @@
                     </div>
                 </div>
 
-                <div class="row">
+               <!-- <div class="row">
                     <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
                         <video width="960" height="540" autoplay muted loop>
                             <source src="vid/atec.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                </div>
+                </div>-->
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-euro highlight-icon"></span>
                         <span class="iconTitle">Parceiros</span>
-                        <br />
                         <br />
                         <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -307,7 +295,6 @@
                         <span class="iconTitle">Condominios</span>
                         <br />
                         <br />
-                        <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <br />
                         <div class="preco">Desde 10€/mês</div>
@@ -318,14 +305,13 @@
                         <span class="iconTitle">Empresas</span>
                         <br />
                         <br />
-                        <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <br />
                         <div class="preco">Desde 10€/mês</div>
                         <br />
                     </div>
                 </div>
-    </div>
+            </div>
     
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
