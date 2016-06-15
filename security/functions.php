@@ -56,6 +56,8 @@ function xss_verify($value)
 // If omitted, a default value of 10 will be used. This is a good baseline cost,
 // but you may want to consider increasing it depending on your hardware.
 //
+// use password_verify() function to check whatever the passwords match
+//
 function passwordHash($value)
 {
     $options = [
@@ -80,10 +82,12 @@ function textCrypt ($password)
     //alterar depois consoante o input da base de dados
     global $cppPath;
     $options = '$6$rounds=5000$';
-    $hash = exec($cppPath . 'n 1');
+
+    $hash = exec($cppPath . '2 1');
+    if($hash == 'ERROR')
+        return 'ERROR';
+
     $finalhash = $options . $hash;
-    echo '<br><br>' . $hash;
-    echo "<br><br>" . $finalhash;
     return crypt($password, $finalhash);
 }
 
@@ -91,15 +95,19 @@ function textCrypt ($password)
 // VERIFIES IF PLAIN TEXT PASSWORD EQUALS ENCRYPTED ONE
 //--------------------------------------------------------------------------------
 // It takes 3 arguments:
-// 1) Plain text password to authenticate
+// 1) Plain text $password to authenticate
 // 2) Encrypted Password from level 2
 // 3) hash code used to encrypt plain text
 //
 // RETURN: a boolean. If true then the passwords match. Else, they don't.
 //
-function cryptText($password, $hash, $passwordEncrypted)
+function isRightPassword($password, $passwordEncrypted)
 {
-    $hash = '$6$8dN.92jwu/?mdMDK29Dmdc';        //implementar mais tarde a cena de gerar automaticamente salts
+    global $cppPath;
+    $hash = exec($cppPath . '2 1');
+    if($hash == 'ERROR')
+        return 'ERROR';
+
     if(crypt($password, $hash) == $passwordEncrypted)
         return true;
     else
