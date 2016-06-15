@@ -312,9 +312,6 @@
                     </div>
                 </div>
             </div>
-    
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- include footer -->
         <?php 
             include 'include/footer.php';
