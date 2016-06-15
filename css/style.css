@@ -16,8 +16,8 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-a{
-  text-decoration: none;
+a, a:hover, a:active, a:visited a:focus{
+    text-decoration:none;
 }
 
 /*image logo container*/
@@ -435,6 +435,20 @@ a{
   text-align: center;
 }
 
+.form-registo select{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 40%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-align: center;
+  //text-indent: 200px; 
+}
+
 .form-registo label{
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -475,10 +489,19 @@ footer{
   padding-left: 5%;
   padding-right: 5%;
   width: 100%;
-  height: 350px;
-  line-height: 350px;
+  height: 50px;
+  line-height: 50px;
   box-shadow: -5px 0 10px grey;
   font-family: 'Montserrat', sans-serif;
+  position: absolute;
+}
+footer a{
+  color: #333;
+}
+footer a:hover{  
+  color: #0071BC;
+  transition: .2s all ease;
+  cursor: pointer;
 }
 
 #copyright{
@@ -497,12 +520,6 @@ footer{
   font-family: 'Open Sans', sans-serif;
   color: #333;
   transition: .2s all ease;
-}
-
-.fa-facebook-square:hover, .fa-google-plus-square:hover, .fa-linkedin-square:hover{
-  color: #0071BC;
-  transition: .2s all ease;
-  cursor: pointer;
 }
 
 
@@ -614,6 +631,12 @@ footer{
     font-family: "Roboto", sans-serif;
     text-align: center;
     font-size: medium;
+  }
+
+  .form-registo select{
+    width: 80%;
+    height: 50px;
+    text-indent: 35%; 
   }
 
   .form-registo button{

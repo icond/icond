@@ -4,9 +4,9 @@
 		&copy;2016 iCond
 	</div>
 	<div id="social">
-		<i class="fa fa-facebook-square" aria-hidden="true"></i>
-		<i class="fa fa-google-plus-square" aria-hidden="true"></i>
-		<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+		<a href="https://www.google.pt" class="fa fa-facebook-square" aria-hidden="true"></a>
+		<a href="https://www.google.pt" class="fa fa-google-plus-square" aria-hidden="true"></a>
+		<a href="https://www.google.pt" class="fa fa-linkedin-square" aria-hidden="true"></a>
 	<!--	&nbsp;&nbsp;&nbsp;
 		<i class="fa fa-facebook" aria-hidden="true"></i>
 		<i class="fa fa-google-plus" aria-hidden="true"></i>

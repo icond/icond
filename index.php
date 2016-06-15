@@ -259,26 +259,32 @@
                         <input type="text" placeholder="eg. Rui" /><br>
                         <label>Ultimo Nome</label><br>
                         <input type="text" placeholder="eg. Pereira" /><br>
-                        <label>Categoria</label><br>
-                        <input type="text"/><br>
+                        <label>Categoria</label><br>                        
+                        <select name="cars" placeholder="asdasd">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="audi">Audi</option>
+                        </select><br>
                         <label>Telemovél</label><br>
                         <input type="text" placeholder="eg. 912345678" /><br>
                         <label>E-Mail</label><br>
                         <input type="text" placeholder="eg. rui.pereira@gmail.com" /><br>
                         <label>Palavra Passe</label><br>
                         <input type="password"/ placeholder="Palavra Passe" ><br>
+
                         <button class="btlogin">Registar</button>
                     </div>
                 </div>
 
-               <!-- <div class="row">
+                <div class="row">
                     <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
                         <video width="960" height="540" autoplay muted loop>
-                            <source src="vid/atec.mp4" type="video/mp4">
+                            <source src="vid/Video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                </div>-->
+                </div>
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-euro highlight-icon"></span>
