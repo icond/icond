@@ -260,7 +260,7 @@
                         <label>Ultimo Nome</label><br>
                         <input type="text" placeholder="eg. Pereira" /><br>
                         <label>Categoria</label><br>                        
-                        <select name="cars" placeholder="asdasd">
+                        <select name="cars">
                             <option value="volvo">Volvo</option>
                             <option value="saab">Saab</option>
                             <option value="fiat">Fiat</option>
@@ -322,8 +322,6 @@
         <?php 
             include 'include/footer.php';
         ?>
-
-
     </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIV FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR-->
     </body>
 </html>

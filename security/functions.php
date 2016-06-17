@@ -13,8 +13,8 @@
 
 //Global Configurations
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-include "$root/Projects/icond/config.php";
-include "$root/Projects/icond/connection.php";
+include '/../config.php';
+include '/../connection.php';
 
 //--------------------------------------------------------------------------------
 // Prevents XSS attacks (Cross-site Scripting).
@@ -113,3 +113,5 @@ function isRightPassword($password, $passwordEncrypted)
     else
         return false;
 }
+
+?>

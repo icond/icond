@@ -14,4 +14,5 @@ if($toConnect)
     $con = mysqli_connect($hostname, $username, $password, $database);
     mysqli_set_charset($con, 'utf-8');
 }
+?>
 
