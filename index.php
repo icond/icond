@@ -280,7 +280,7 @@
                 <div class="row">
                     <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
                         <video width="960" height="540" autoplay muted loop>
-                            <source src="vid/Video.mp4" type="video/mp4">
+                            <source src="vid/ideo.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
