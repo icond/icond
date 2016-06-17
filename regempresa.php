@@ -41,7 +41,7 @@
       <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de administrador</h4>
         <div class="form">
           <form class="login-form" action="" method="POST">
-            <div class="iconTitle form-reg-title">Empresas</div>
+            <div class="iconTitle form-reg-title regempresa">Empresas</div>
                 <label>Nome de empresa</label><br>
                 <input type="text" name="nomeempresa"placeholder="eg. Construções inc" /><br>
                 <label>Primeiro Nome</label><br>
@@ -49,7 +49,7 @@
                 <label>Ultimo Nome</label><br>
                 <input type="text" name="ultimonomeempresa" placeholder="eg. Pereira" /><br>
                 <label>Categoria</label><br>                        
-                <select name="cars" name="categoriaempresa" placeholder="asdasd">
+                <select name="cars" class="selectempresas" name="categoriaempresa">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="fiat">Fiat</option>
@@ -61,7 +61,19 @@
                 <input type="text" name="emailempresa" placeholder="eg. rui.pereira@gmail.com" /><br>
                 <label>Palavra Passe</label><br>
                 <input type="password" name="passwordempresa" placeholder="Palavra Passe" ><br>
-
+                <label>Morada</label><br>
+              <label>Rua</label><br>
+              <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
+              <div style="width:50%; float:left;">
+                <label>Lote</label><br>
+                <input style="width:40%;" type="text" name="lote" placeholder="5" required/>
+               </div>
+               <div style="width:50%; float:right;"> 
+                <label>Código Postal</label><br>
+                <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" required/><br>
+              </div>
+              <label>Cidade</label><br>
+              <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
                 <button class="btlogin">Registar</button>
             </div>
         </form>
