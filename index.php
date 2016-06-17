@@ -260,7 +260,7 @@
                         <label>Ultimo Nome</label><br>
                         <input type="text" placeholder="eg. Pereira" /><br>
                         <label>Categoria</label><br>                        
-                        <select name="cars" placeholder="asdasd">
+                        <select name="cars">
                             <option value="volvo">Volvo</option>
                             <option value="saab">Saab</option>
                             <option value="fiat">Fiat</option>
@@ -280,7 +280,7 @@
                 <div class="row">
                     <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
                         <video width="960" height="540" autoplay muted loop>
-                            <source src="vid/ideo.mp4" type="video/mp4">
+                            <source src="vid/Video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -322,8 +322,6 @@
         <?php 
             include 'include/footer.php';
         ?>
-
-
     </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIV FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR-->
     </body>
 </html>
