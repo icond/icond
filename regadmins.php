@@ -1,11 +1,12 @@
 <?php 
   include 'include/header.php';
-
+session_start();
   //Informações que vêm do Index
   if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $nif = $_POST['nif'];
     $password = $_POST['password'];
+
   }
 
   //Quando é feito o registo
@@ -19,10 +20,11 @@
     $cidade = $_POST['cidade'];
   }
 
+  
 ?>
     </head>
     <body>
-
+    
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
           <div class="container-fluid">
               <div class="navbar-header">
@@ -46,7 +48,7 @@
       </nav>
       <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de administrador</h4>
         <div class="form">
-          <form class="login-form" action="regadmins.php" method="POST">
+          <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
             <label>NIF</label><br>
@@ -58,7 +60,7 @@
             <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
             <div style="width:50%; float:left;">
               <label>Lote</label><br>
-              <input style="width:40%;" type="text" name="lote" placeholder="5" required/>
+              <input style="width:40%;" type="text" name="lote" maxlength="3" placeholder="5" required/>
              </div>
              <div style="width:50%; float:right;"> 
               <label>Código Postal</label><br>
@@ -68,6 +70,8 @@
             <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
             <button type="submit" name="registar" class="btlogin">Registar</button>
         </form>
+       
+       
         </div>
       </div>
     </body>
