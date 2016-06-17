@@ -8,9 +8,15 @@
     $password = $_POST['password'];
   }
 
-  //Quando é feiro o registo
+  //Quando é feito o registo
   if(isset($_POST['registar'])){
-    
+    $email = $_POST['email'];
+    $nif = $_POST['nif'];
+    $password = $_POST['password'];
+    $rua = $_POST['rua'];
+    $lote = $_POST['lote'];
+    $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
+    $cidade = $_POST['cidade'];
   }
 
 ?>
