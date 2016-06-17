@@ -1,22 +1,25 @@
 <?php 
   include 'include/header.php';
-
+session_start();
   //Informações que vêm do Index
-  if(isset($_POST['submit'])){
+  if(isset($_POST['registar'])){
     $email = $_POST['email'];
     $nif = $_POST['nif'];
     $password = $_POST['password'];
+    $rua = $_POST['rua'];
+    $lote = $_POST['lote'];
+   //$codigopostal = echo $_POST['postal1'].'-'. echo $_POST['postal2'];
+    $cidade = $_POST['cidade'];
+    
+
   }
 
-  //Quando é feiro o registo
-  if(isset($_POST['registar'])){
-    
-  }
+  
 
 ?>
     </head>
     <body>
-
+    
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
           <div class="container-fluid">
               <div class="navbar-header">
@@ -40,7 +43,7 @@
       </nav>
       <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de administrador</h4>
         <div class="form">
-          <form class="login-form" action="regadmins.php" method="POST">
+          <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
             <label>NIF</label><br>
@@ -52,7 +55,7 @@
             <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
             <div style="width:50%; float:left;">
               <label>Lote</label><br>
-              <input style="width:40%;" type="text" name="lote" placeholder="5" required/>
+              <input style="width:40%;" type="text" name="lote" maxlength="3" placeholder="5" required/>
              </div>
              <div style="width:50%; float:right;"> 
               <label>Código Postal</label><br>
@@ -60,8 +63,28 @@
             </div>
             <label>Cidade</label><br>
             <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
-            <button type="submit" name="registar" class="btlogin">Registar</button>
+            <button type="submit" name="registar" class="btlogin">Registar</button><?php
+       echo $email;
+    ?>
         </form>
+        <?php
+          //Quando é feiro o registo
+          if(isset($_POST['registar'])){
+            $con = mysqli_connect("localhost","root","","icond");
+            if (mysqli_connect_error())
+            {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
+            else
+            {
+              
+              $_SESSION['postal1'] = $_POST['postal1'];
+              $_SESSION['postal2'] = $_POST['postal2'];
+              //header('Location: try.php');
+              exit;
+            }
+          }
+        ?>
         </div>
       </div>
     </body>
