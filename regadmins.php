@@ -1,6 +1,8 @@
 <?php 
   include 'include/header.php';
-session_start();
+  include 'include/connection.php';
+  session_start();
+  
   //Informações que vêm do Index
   if(isset($_POST['submit'])){
     $email = $_POST['email'];
@@ -17,9 +19,19 @@ session_start();
     $lote = $_POST['lote'];
     $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
     $cidade = $_POST['cidade'];
-  }
+    $pais = 1;
 
-  
+    $sql = "INSERT INTO condominios(emailCond, nifCond, passwordCond, ruaCond, codigopostalCond, loteCond, cidadeCond, paisCond) VALUES('$email', '$nif', '$password', '$rua', '$codigoPostal', '$lote', '$cidade', '$pais')";
+
+    if (mysqli_query($conn, $sql)) {
+      echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    header("Location: login.php?s=1");
+
+  }
 ?>
     </head>
     <body>

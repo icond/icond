@@ -32,7 +32,21 @@
               </div>-->
           </div>
       </nav>
-      <div class="login-page"><h2 style="text-align:center;">Login</h2>
+
+      
+      <div class="login-page">
+        <?php
+        if(isset($_REQUEST['s'])){
+          
+          if($_REQUEST['s'] === '1'){
+            ?>
+            <div class="alert alert-success" role="alert">Registado com sucesso!</div>
+          <?php
+            }
+          }
+          ?>
+
+        <h2 style="text-align:center;">Login</h2>
         <div class="form">
           <form class="login-form">
             <input type="text" placeholder="Username"/>
@@ -43,7 +57,7 @@
         </div>
       </div>
     </body>
-    <?php 
-      include 'include/footer.php';
-    ?>
+    <!--
+        Não incluir o footer nesta página
+    -->
 </html>
