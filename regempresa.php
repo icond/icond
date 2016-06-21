@@ -44,18 +44,18 @@
               </div>
           </div>
       </nav>
-      <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de administrador</h4>
+      <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de empresas de gestão</h4>
         <div class="form">
           <form class="login-form" action="" method="POST">
             <div class="iconTitle form-reg-title regempresa">Empresas</div>
                 <label>Nome de empresa</label><br>
-                <input type="text" name="nomeempresa"placeholder="eg. Construções inc" /><br>
+                <input type="text" name="nomeempresa" <?php if(isset($nome)){echo "value='".$nome."'";} ?> placeholder="eg. Construções inc" /><br>
                 <label>Telemovél</label><br>
-                <input type="text" name="telemovelempresa" placeholder="eg. 912345678" /><br>
+                <input type="text" name="telemovelempresa" placeholder="eg. 912345678" <?php if(isset($tele)){echo "value='".$tele."'";} ?> /><br>
                 <label>E-Mail</label><br>
                 <input type="text" name="emailempresa" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> /><br>
                 <label>Palavra Passe</label><br>
-                <input type="password" name="passwordempresa" placeholder="Palavra Passe" ><br>
+                <input type="password" name="passwordempresa" <?php if(isset($password)){echo "value='".$password."'";} ?> placeholder="Palavra Passe" ><br>
                 <label>Morada</label><br>
               <label>Rua</label><br>
               <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
