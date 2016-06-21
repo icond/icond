@@ -104,7 +104,7 @@
         </script>
     </head>
     <body>
-
+<div style="z-index:99;">
     <!-- Caixa Login -->
 
     <div id="modal-overlay" class="modal-overlay"></div>
@@ -318,6 +318,7 @@
                     </div>
                 </div>
             </div>
+</div>
         <!-- include footer -->
         <?php 
             include 'include/footer.php';

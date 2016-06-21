@@ -497,7 +497,9 @@ a, a:hover, a:active, a:visited a:focus{
 
 /* FOOTER */
 
-
+footer{
+  z-index: -20;
+}
 
 /* END FOOTER */
 
