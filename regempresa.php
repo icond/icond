@@ -7,18 +7,30 @@
     $password = $_POST['password'];
     $tele = $_POST['tele'];
   }
-	//Informações que vêm do Index
-	/*if(isset($_POST['submit'])){
-		$nome =	$_POST['nomeempresa'];
-		$primeiro =	$_POST['primeironomeempresa'];
-		$ultimo =	$_POST['ultimonomeempresa'];
-		$categoria =	$_POST['categoriaempresa'];
-		$telemovel =	$_POST['telemovelempresa'];
-		$email=	$_POST['emailempresa'];
-		$password=	$_POST['passwordempresa'];
+	//Quando é feito o registo
+  if(isset($_POST['registar'])){
+    $nome = $_POST['nome'];
+    $tele = $_POST['tele'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $rua = $_POST['rua'];
+    $lote = $_POST['lote'];
+    $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
+    $cidade = $_POST['cidade'];
+    $pais = 1;
+
+    $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa, ruaEmpresa, loteEmpresa, codigoEmpresa, cidadeEmpresa, paisEmpresa) VALUES('$email', '$tele', '$email', '$password', '$rua', '$lote', '$codigoPostal', '$cidade', '$pais')";
+
+    if (mysqli_query($conn, $sql)) {
+      echo "New record created successfully";
+      $_SESSION['status'] = 1;
+      header("Location: login.php");
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
 
-	}*/
+  }
 ?>
 </head>
     <body>
@@ -49,13 +61,13 @@
           <form class="login-form" action="" method="POST">
             <div class="iconTitle form-reg-title regempresa">Empresas</div>
                 <label>Nome de empresa</label><br>
-                <input type="text" name="nomeempresa" <?php if(isset($nome)){echo "value='".$nome."'";} ?> placeholder="eg. Construções inc" /><br>
+                <input type="text" name="nome" <?php if(isset($nome)){echo "value='".$nome."'";} ?> placeholder="eg. Construções inc" /><br>
                 <label>Telemovél</label><br>
-                <input type="text" name="telemovelempresa" placeholder="eg. 912345678" <?php if(isset($tele)){echo "value='".$tele."'";} ?> /><br>
+                <input type="text" name="tele" placeholder="eg. 912345678" <?php if(isset($tele)){echo "value='".$tele."'";} ?> /><br>
                 <label>E-Mail</label><br>
-                <input type="text" name="emailempresa" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> /><br>
+                <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> /><br>
                 <label>Palavra Passe</label><br>
-                <input type="password" name="passwordempresa" <?php if(isset($password)){echo "value='".$password."'";} ?> placeholder="Palavra Passe" ><br>
+                <input type="password" name="password" <?php if(isset($password)){echo "value='".$password."'";} ?> placeholder="Palavra Passe" ><br>
                 <label>Morada</label><br>
               <label>Rua</label><br>
               <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
@@ -69,7 +81,7 @@
               </div>
               <label>Cidade</label><br>
               <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
-                <button class="btlogin">Registar</button>
+                <button type="submit" name="registar" class="btlogin">Registar</button>
             </div>
         </form>
       </div>
