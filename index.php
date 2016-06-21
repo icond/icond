@@ -199,7 +199,7 @@
                 </a>-->
             </div>
             <!--icons destaque-->
-            <div class="container-fluid" style="background-color: #f1f1f1; margin-bottom: 300px;">
+            <div class="container-fluid" style="background-color: #fff; margin-bottom: 300px;">
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-user highlight-icon"></span>
@@ -255,17 +255,8 @@
                     </div>
                     <div id="form3" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Empresas</div>
-                        <label>Primeiro Nome</label><br>
-                        <input type="text" placeholder="eg. Rui" /><br>
-                        <label>Ultimo Nome</label><br>
-                        <input type="text" placeholder="eg. Pereira" /><br>
-                        <label>Categoria</label><br>                        
-                        <select name="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="fiat">Fiat</option>
-                            <option value="audi">Audi</option>
-                        </select><br>
+                        <label>Nome da Empresa</label><br>
+                        <input type="text" placeholder="eg. Atec" /><br>
                         <label>Telemovél</label><br>
                         <input type="text" placeholder="eg. 912345678" /><br>
                         <label>E-Mail</label><br>
