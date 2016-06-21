@@ -104,7 +104,7 @@
         </script>
     </head>
     <body>
-<div style="z-index:99;">
+
     <!-- Caixa Login -->
 
     <div id="modal-overlay" class="modal-overlay"></div>
@@ -199,7 +199,7 @@
                 </a>-->
             </div>
             <!--icons destaque-->
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: #f1f1f1; margin-bottom: 300px;">
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-user highlight-icon"></span>
@@ -318,7 +318,7 @@
                     </div>
                 </div>
             </div>
-</div>
+
         <!-- include footer -->
         <?php 
             include 'include/footer.php';

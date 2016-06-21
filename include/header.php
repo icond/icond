@@ -19,13 +19,3 @@
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-
-
-
-
-
-        <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700" rel="stylesheet" />
-
-        <!-- The main CSS file -->
-        <link href="assets/css/style.css" rel="stylesheet" />
