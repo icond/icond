@@ -6,7 +6,6 @@ session_start();
     $email = $_POST['email'];
     $nif = $_POST['nif'];
     $password = $_POST['password'];
-
   }
 
   //Quando é feito o registo
