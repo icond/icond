@@ -36,14 +36,19 @@
       
       <div class="login-page">
         <?php
-        if(isset($_REQUEST['s'])){
-          
-          if($_REQUEST['s'] === '1'){
-            ?>
-            <div class="alert alert-success" role="alert">Registado com sucesso!</div>
-          <?php
-            }
+          session_start();
+          $state = false;
+          if(isset($_SESSION['status']))
+          {
+            if($_SESSION['status'] === true)
+              $state = true;
           }
+          if($state){
+            echo "<div class='alert alert-success' role='alert'>Registado com sucesso!</div>";
+            $state = false;
+            session_unset();
+            }
+          
           ?>
 
         <h2 style="text-align:center;">Login</h2>

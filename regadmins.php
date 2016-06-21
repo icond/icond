@@ -9,7 +9,6 @@
     $nif = $_POST['nif'];
     $password = $_POST['password'];
   }
-
   //Quando é feito o registo
   if(isset($_POST['registar'])){
     $email = $_POST['email'];
@@ -25,11 +24,13 @@
 
     if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
+      session_start();
+      $_SESSION['status'] = true;
+      header("Location: login.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    header("Location: login.php?s=1");
 
   }
 ?>
