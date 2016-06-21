@@ -12,7 +12,6 @@
 //
 
 //Global Configurations
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
 include '/../config.php';
 include '/../connection.php';
 
@@ -58,12 +57,15 @@ function xss_verify($value)
 //
 // use password_verify() function to check whatever the passwords match
 //
-function passwordHash($value)
+function passwordHash($password, $ID)
 {
+    global $cppThirdPath;
+    $salt = $cppThirdPath . $ID;
     $options = [
-        'cost' => 12
+        'cost' => 12,
+        'salt' => $salt
     ];
-    return password_hash($value, PASSWORD_BCRYPT, $options);
+    return password_hash($password, PASSWORD_BCRYPT, $options);
 }
 //--------------------------------------------------------------------------------
 // ENCRYPTS PLAIN TEXT (2nd level of encryption)
@@ -75,15 +77,15 @@ function passwordHash($value)
 // 2) One integer
 // 3) Another integer
 //
-// RETURN: a password encrypted by auto-generated salt
+// RETURN: a password encrypted by auto-generated salt - If something goes wrong, it returns 'ERROR'
 //
-function textCrypt ($password)
+function textCrypt($password, $ID, $IDCond)
 {
     //alterar depois consoante o input da base de dados
-    global $cppPath;
+    global $cppSecondPath;
     $options = '$6$rounds=5000$';
 
-    $hash = exec($cppPath . '2 1');
+    $hash = exec($cppSecondPath . $ID . ' ' . $IDCond);
     if($hash == 'ERROR')
         return 'ERROR';
 
@@ -101,10 +103,10 @@ function textCrypt ($password)
 //
 // RETURN: a boolean. If true then the passwords match. Else, they don't.
 //
-function isRightPassword($password, $passwordEncrypted)
+function isRightPassword($password, $passwordEncrypted, $ID, $IDCond)
 {
     global $cppPath;
-    $hash = exec($cppPath . '2 1');
+    $hash = exec($cppPath . $ID . ' ' . $IDCond);
     if($hash == 'ERROR')
         return 'ERROR';
 
@@ -113,5 +115,4 @@ function isRightPassword($password, $passwordEncrypted)
     else
         return false;
 }
-
 ?>
