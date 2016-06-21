@@ -254,17 +254,19 @@
                         </form>
                     </div>
                     <div id="form3" class="collapse form-registo">
-                        <div class="iconTitle form-reg-title">Empresas</div>
-                        <label>Nome da Empresa</label><br>
-                        <input type="text" placeholder="eg. Atec" /><br>
-                        <label>Telemovél</label><br>
-                        <input type="text" placeholder="eg. 912345678" /><br>
-                        <label>E-Mail</label><br>
-                        <input type="text" placeholder="eg. rui.pereira@gmail.com" /><br>
-                        <label>Palavra Passe</label><br>
-                        <input type="password"/ placeholder="Palavra Passe" ><br>
+                        <form action="regempresa.php" method="POST">
+                            <div class="iconTitle form-reg-title">Empresas</div>
+                            <label>Nome da Empresa</label><br>
+                            <input type="text" name="nome" placeholder="eg. Atec" /><br>
+                            <label>Telemovél</label><br>
+                            <input type="text" name="tele" placeholder="eg. 912345678" /><br>
+                            <label>E-Mail</label><br>
+                            <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
+                            <label>Palavra Passe</label><br>
+                            <input type="password" name="password" placeholder="Palavra Passe" ><br>
 
-                        <button class="btlogin">Registar</button>
+                            <button class="btlogin" name="submit">Registar</button>
+                        </form>
                     </div>
                 </div>
 

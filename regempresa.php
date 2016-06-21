@@ -1,8 +1,14 @@
 <?php 
 	include 'include/header.php';
-	session_start();
+  //dados do index
+	  if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
+    $password = $_POST['password'];
+    $tele = $_POST['tele'];
+  }
 	//Informações que vêm do Index
-	if(isset($_POST['submit'])){
+	/*if(isset($_POST['submit'])){
 		$nome =	$_POST['nomeempresa'];
 		$primeiro =	$_POST['primeironomeempresa'];
 		$ultimo =	$_POST['ultimonomeempresa'];
@@ -12,7 +18,7 @@
 		$password=	$_POST['passwordempresa'];
 
 
-	}
+	}*/
 ?>
 </head>
     <body>
@@ -44,21 +50,10 @@
             <div class="iconTitle form-reg-title regempresa">Empresas</div>
                 <label>Nome de empresa</label><br>
                 <input type="text" name="nomeempresa"placeholder="eg. Construções inc" /><br>
-                <label>Primeiro Nome</label><br>
-                <input type="text" name="primeironomeempresa" placeholder="eg. Rui" /><br>
-                <label>Ultimo Nome</label><br>
-                <input type="text" name="ultimonomeempresa" placeholder="eg. Pereira" /><br>
-                <label>Categoria</label><br>                        
-                <select name="cars" class="selectempresas" name="categoriaempresa">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                </select><br>
                 <label>Telemovél</label><br>
                 <input type="text" name="telemovelempresa" placeholder="eg. 912345678" /><br>
                 <label>E-Mail</label><br>
-                <input type="text" name="emailempresa" placeholder="eg. rui.pereira@gmail.com" /><br>
+                <input type="text" name="emailempresa" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> /><br>
                 <label>Palavra Passe</label><br>
                 <input type="password" name="passwordempresa" placeholder="Palavra Passe" ><br>
                 <label>Morada</label><br>
