@@ -1,5 +1,7 @@
 <?php 
 	include 'include/header.php';
+  include 'include/connection.php';
+  session_start();
   //dados do index
 	  if(isset($_POST['submit'])){
     $email = $_POST['email'];
@@ -19,16 +21,23 @@
     $cidade = $_POST['cidade'];
     $pais = 1;
 
-    $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa, ruaEmpresa, loteEmpresa, codigoEmpresa, cidadeEmpresa, paisEmpresa) VALUES('$email', '$tele', '$email', '$password', '$rua', '$lote', '$codigoPostal', '$cidade', '$pais')";
+    $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa, ruaEmpresa, loteEmpresa, codigopostalEmpresa, cidadeEmpresa, paisEmpresa) VALUES('$email', '$tele', '$email', '$password', '$rua', '$lote', '$codigoPostal', '$cidade', '$pais')";
 
-    if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
-      $_SESSION['status'] = 1;
-      header("Location: login.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    $verificar = "SELECT * from empresas where emailEmpresa like '$email'";
+
+
+    if (mysqli_query($conn, $verificar))
+    {
+       $_SESSION['status'] = 2;
     }
-
+    else{
+      if (mysqli_query($conn, $sql)) {
+        $_SESSION['status'] = 1;
+        header("Location: login.php");
+      } else {
+          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
+    }
 
   }
 ?>
@@ -56,7 +65,18 @@
               </div>
           </div>
       </nav>
+      
       <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de empresas de gestão</h4>
+      <?php
+       if(isset($_SESSION['status']))
+          {
+            if($_SESSION['status'] === 2)
+            {
+              echo "<div class='alert alert-danger' role='alert' >Email ja esta em uso, por favor introduza um email bacano</div>";
+              session_unset();
+            }
+          }
+      ?>
         <div class="form">
           <form class="login-form" action="" method="POST">
             <div class="iconTitle form-reg-title regempresa">Empresas</div>
