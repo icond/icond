@@ -199,7 +199,7 @@
                 </a>-->
             </div>
             <!--icons destaque-->
-            <div class="container-fluid" style="background-color: #fff; margin-bottom: 300px;">
+            <div class="container-fluid" style="background-color: #fff; margin-bottom: 250px;">
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-user highlight-icon"></span>

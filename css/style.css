@@ -499,12 +499,26 @@ a, a:hover, a:active, a:visited a:focus{
 
 footer{
   z-index: -20;
-  height: 300px;
+  height: 250px;
   width: 100%;
   background-color: #333;
   color: #fff;
   position: fixed;
   bottom: 0;
+}
+footer label{
+  font-size: large;
+  background-color: #0071BC;
+  color: #f2f2f2;
+  margin: auto;
+  width: 60%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.marginTOP{
+  margin-top: 40px;
+
 }
 
 /* END FOOTER */
