@@ -9,7 +9,8 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 
-		echo $email . ' ' .$password;
+		//Query para ver se existe o condominio
+		$loginQuery = "SELECT ";
 	}
 
 ?>
