@@ -24,9 +24,9 @@
     $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa, ruaEmpresa, loteEmpresa, codigopostalEmpresa, cidadeEmpresa, paisEmpresa) VALUES('$email', '$tele', '$email', '$password', '$rua', '$lote', '$codigoPostal', '$cidade', '$pais')";
 
     $verificar = "SELECT * from empresas where emailEmpresa like '$email'";
+    $query_ver = mysqli_query($conn, $verificar);
 
-
-    if (mysqli_query($conn, $verificar))
+    if (mysqli_num_rows($query_ver) !=0 )
     {
        $_SESSION['status'] = 2;
     }

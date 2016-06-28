@@ -10,7 +10,8 @@
     $password = $_POST['password'];
   }
   //Quando é feito o registo
-  if(isset($_POST['registar'])){
+  if(isset($_POST['registar']))
+  {
     $email = $_POST['email'];
     $nif = $_POST['nif'];
     $password = $_POST['password'];
@@ -21,13 +22,23 @@
     $pais = 1;
 
     $sql = "INSERT INTO condominios(emailCond, nifCond, passwordCond, ruaCond, codigopostalCond, loteCond, cidadeCond, paisCond) VALUES('$email', '$nif', '$password', '$rua', '$codigoPostal', '$lote', '$cidade', '$pais')";
+    $verificar = "SELECT * from condominios where emailCond like '$email'";
 
-    if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
-      $_SESSION['status'] = 1;
-      header("Location: login.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    $query_ver = mysqli_query($conn, $verificar);
+
+    if (mysqli_num_rows($query_ver) !=0 )
+    {
+       $_SESSION['status'] = 2;
+    }
+    else
+    {
+      if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+        $_SESSION['status'] = 1;
+        header("Location: login.php");
+      } else {
+          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
     }
   }
 ?>
@@ -55,7 +66,17 @@
               </div>
           </div>
       </nav>
-      <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de administrador</h4>
+      <div class="login-page"><h4 style="text-align:center; margin-top: 60px;"">Finalize o seu registo de administrador</h4>
+        <?php
+          if(isset($_SESSION['status']))
+          {
+            if($_SESSION['status'] === 2)
+            {
+              echo "<div class='alert alert-danger' role='alert' >Email ja esta em uso, por favor introduza um email bacano</div>";
+              session_unset();
+            }
+          }
+        ?>
         <div class="form">
           <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
