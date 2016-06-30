@@ -122,7 +122,7 @@ function textCrypt($password, $ID, $IDCond)
 function cryptHash($secondlevel, $ID)
 {
     global $cppThirdPath;
-    $salt = $cppThirdPath . $ID;
+    $salt = exec($cppThirdPath . $ID);
     $options = [
         'cost' => 12,
         'salt' => $salt
@@ -144,9 +144,7 @@ function isRightPassword($password, $passwordEncrypted, $ID, $IDCond)
     if(isset($_COOKIE["username"]))
     {
         if(isset($_COOKIE["password"]))
-        {
             $leveltwo = $_COOKIE["password"];
-        }
     }
     else
     {
