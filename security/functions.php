@@ -57,9 +57,30 @@ function xss_verify($value)
 //
 // use password_verify() function to check whatever the passwords match
 //
-function passwordHash($password, $ID)
+function securePassword($username, $password, $ID, $IDCond)
 {
+    // get config.php variables
+    global $timestamp, $hostname, $HTTPS;
     global $cppThirdPath;
+    // se existir cookie para username
+    if(!isset($_COOKIE["username"]))
+    {
+        // se existir cookie para password
+        if(!isset($_COOKIE["password"]))
+        {
+            //username's cookie
+            setcookie("username", $username, time() + $timestamp, '/', $hostname, $HTTPS, true);
+            //password
+            setcookie("password", textCrypt($password, $ID, $IDCond), time() + $timestamp, '/', $hostname, $HTTPS, true);
+            //get password
+            $password = $_COOKIE["password"];
+        }
+    }
+    //se existirem cookies
+    else
+    {
+        $password = $_COOKIE["password"];
+    }
     $salt = $cppThirdPath . $ID;
     $options = [
         'cost' => 12,
@@ -92,27 +113,51 @@ function textCrypt($password, $ID, $IDCond)
     $finalhash = $options . $hash;
     return crypt($password, $finalhash);
 }
-
+//--------------------------------------------------------------------------------
+// ENCRYPTS SECOND LEVEL TO THIRD LEVEL
+//--------------------------------------------------------------------------------
+// Receives second level encryption and turns it into third level
+// RETURN: a third level encryption
+//
+function cryptHash($secondlevel, $ID)
+{
+    global $cppThirdPath;
+    $salt = $cppThirdPath . $ID;
+    $options = [
+        'cost' => 12,
+        'salt' => $salt
+    ];
+    return password_hash($secondlevel, PASSWORD_BCRYPT, $options);
+}
 //--------------------------------------------------------------------------------
 // VERIFIES IF PLAIN TEXT PASSWORD EQUALS ENCRYPTED ONE
 //--------------------------------------------------------------------------------
 // It takes 3 arguments:
 // 1) Plain text $password to authenticate
-// 2) Encrypted Password from level 2
-// 3) hash code used to encrypt plain text
+// 2) Encrypted Password from level 3
 //
 // RETURN: a boolean. If true then the passwords match. Else, they don't.
 //
 function isRightPassword($password, $passwordEncrypted, $ID, $IDCond)
 {
-    global $cppPath;
-    $hash = exec($cppPath . $ID . ' ' . $IDCond);
-    if($hash == 'ERROR')
-        return 'ERROR';
+    $lvltwo = "";
+    if(isset($_COOKIE["username"]))
+    {
+        if(isset($_COOKIE["password"]))
+        {
+            $leveltwo = $_COOKIE["password"];
+        }
+    }
+    else
+    {
+        $leveltwo = textCrypt($password, $ID, $IDCond);
+        if($leveltwo === 'ERROR')
+            return false;
+    }
 
-    if(crypt($password, $hash) == $passwordEncrypted)
+    //check if password is correct
+    if(cryptHash($leveltwo, $ID) === $passwordEncrypted)
         return true;
     else
         return false;
 }
-?>
