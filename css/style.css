@@ -6,6 +6,13 @@
 
 /*Getting fonts from google*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
 
 html{
   font-family: 'Montserrat', sans-serif;
@@ -312,21 +319,21 @@ a, a:hover, a:active, a:visited a:focus{
 
 /*BANNER*/
 .slide1{
-  background-image: url('../img/banner6.jpg');
+  background-image: url('../img/banner11.jpg');
   height: 500px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .slide2{
-  background-image: url('../img/banner8.jpg');
+  background-image: url('../img/banner10.jpg');
   height: 500px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .slide3{
-  background-image: url('../img/banner4.jpg');
+  background-image: url('../img/banner9.jpg');
   height: 500px;
   background-repeat: no-repeat;
   background-position: center;
@@ -505,16 +512,26 @@ footer{
   color: #fff;
   position: fixed;
   bottom: 0;
-}
+}   
 footer label{
   font-size: large;
-  background-color: #0071BC;
+  font-weight: normal;
   color: #f2f2f2;
   margin: auto;
   width: 60%;
   height: 40px;
   line-height: 40px;
   text-align: center;
+}
+hr.style14 { 
+  border: 0; 
+  width: 60%;
+  margin: auto;
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #333, #fff, #333);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
 .marginTOP{
   margin-top: 40px;
