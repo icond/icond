@@ -1,27 +1,15 @@
 ﻿# acabar de estruturar o ficheiro admin.php e index.php
-# organizar o ficheiro admin.php (sim, o pedro rolo estava a indentar aquilo tudo)
 
---Menu Admin
-# Existe redund�ncia ao fazer hover e ao clicar no menu.
-# Ao fazer hover e ir para uma op��o o menu item n�o mant�m o highlight.
+
+--Menu Admin--
+
 
 --Front-End--
-# Footer							$Sandromix
-# Deixar tudo responsive 			$Marcus
-# aperfei�oar zona de pre�os  		$marcus
+# deixar o front-end responsive
 
 --Back-End--
-# algoritmo gerar salt				$David Lopes                    #já está em beta
-# script em c++ para gerar salt		$David Lopes
-# Base de dados 					$Pedro Rolo(na boa pedro?)
-# Sistema de Log in 				$Sandromix & Pedro Rolo
-# Sess�es							$Sandromix
-
-
-#DAVID Pôr a encriptação a funcionar no registo e no login. kthxbye
-
-
-
+# Planear e criar uma base de dados (sim, é já na proxima aula do machadus)
+# discutir ideias de funcionamento do sistema num todo
 
 
 
