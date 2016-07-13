@@ -10,6 +10,8 @@
 //
 // Any further updates are welcomed!
 //
+// Known Bugs: # cookies are not getting set
+//
 
 //Global Configurations
 include '/../config.php';
@@ -57,23 +59,25 @@ function xss_verify($value)
 //
 // use password_verify() function to check whatever the passwords match
 //
-function securePassword($username, $password, $ID, $IDCond)
+function securePassword($username, $passwrd, $ID, $IDCond)
 {
     // get config.php variables
     global $timestamp, $hostname, $HTTPS;
     global $cppThirdPath;
-    // se existir cookie para username
+    $password = "";
+    echo $timestamp . '<br>';
+    // se nao existir cookie para username
     if(!isset($_COOKIE["username"]))
     {
-        // se existir cookie para password
+        // se nao existir cookie para password
         if(!isset($_COOKIE["password"]))
         {
             //username's cookie
             setcookie("username", $username, time() + $timestamp, '/', $hostname, $HTTPS, true);
             //password
-            setcookie("password", textCrypt($password, $ID, $IDCond), time() + $timestamp, '/', $hostname, $HTTPS, true);
+            setcookie("password", textCrypt($passwrd, $ID, $IDCond), time() + $timestamp, '/', $hostname, $HTTPS, true);
             //get password
-            $password = $_COOKIE["password"];
+            $password = isset($_COOKIE["password"]);
         }
     }
     //se existirem cookies
