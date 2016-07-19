@@ -404,6 +404,28 @@ a, a:hover, a:active, a:visited a:focus{
   transition: .2s all ease;
 }
 
+.bt2{
+  background-color: #0071BC;
+  width: 50%;
+  margin: auto;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: border-color .2s ease;
+  transition: .2s all ease;
+  margin-bottom: 25px;
+}
+
+.bt2:hover{
+  background-color: #fff;
+  color: #0071BC;
+  cursor: pointer;
+  transition: border-color .2s ease;
+  border: 1px solid #0071BC;
+  transition: .2s all ease;
+}
+
 .active{
   background-color: #0071BC;
   color: #fff;  
@@ -508,7 +530,7 @@ footer{
   z-index: -20;
   height: 250px;
   width: 100%;
-  background-color: #333;
+  background-color: #34495E;
   color: #fff;
   position: fixed;
   bottom: 0;
@@ -528,7 +550,7 @@ hr.style14 {
   width: 60%;
   margin: auto;
   height: 1px; 
-  background-image: -webkit-linear-gradient(left, #333, #fff, #333);
+  background-image: -webkit-linear-gradient(left, #34495E, #fff, #34495E);
   background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
@@ -536,6 +558,9 @@ hr.style14 {
 .marginTOP{
   margin-top: 40px;
 
+}
+.marginBot{
+  margin-bottom: 250px;
 }
 
 /* END FOOTER */
@@ -555,8 +580,24 @@ hr.style14 {
   width: 40%;
   margin: auto;
 }
+  footer .block{
+    display: inline-block;
+    width: 20%;
+  }
+  footer ul{ margin: 0; padding:0; }
+  footer ul li{ display: block; list-style: none; }
+  footer .footerdivs{ text-align: left; }
 
 /********************************END GLOBAL******************************/
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 349px){
   /*icons destaque*/
   .highlight-icon {
@@ -577,7 +618,21 @@ hr.style14 {
   .smalltext{
     font-size: x-large;
   }
-  /*end icons destaque*/
+  /*end icons destaque*/  
+
+  .marginBot{
+    margin-bottom: 450px;
+  }
+  .marginTOP{ margin-top:20px; }
+  footer{
+    height: 450px;
+  } 
+  footer .block{
+    display: none;
+  }
+  footer ul{margin:0; padding: 0;}
+  footer ul li { display: inline; margin-right: 5%; }
+  footer .footerdivs{ text-align: center; }
 }
 
 @media only screen and (min-width: 350px){
@@ -706,11 +761,12 @@ hr.style14 {
   .preco{
     font-size: medium;
     color: #f2f2f2;
-    height: 50px;
-    line-height: 50px;
-    width: 50%;
+    height: 150px;
+    line-height: 150px;
+    width: 150px;
     margin-bottom: 35px;
     padding-bottom: -20px;
+    border-radius: 50%;
   }
 }
 

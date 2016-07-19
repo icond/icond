@@ -1,4 +1,4 @@
-<footer class="opensans">
+<footer class="opensans pad">
 
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-12 text-center marginTOP">
@@ -18,10 +18,18 @@
 			<br>
 			<hr class="style14">
 			<br>
-			<div style="width:60%; margin:auto; text-align:left;">
-				<a href="http://www.google.pt" target="_blank"><span class="brandico-facebook-rect"> Facebook</span></a> <br>
-				<a href="http://www.google.pt" target="_blank"><span class="brandico-googleplus-rect"> Google+</span></a> <br>
-				<a href="http://www.google.pt" target="_blank"><span class="brandico-linkedin-rect"> LinkedIn</span></a> <br>
+			<div style="width:60%; margin:auto;" class="footerdivs">
+				<!--<a href="http://www.google.pt" target="_blank"><span class="brandico-facebook-rect"> <div class="block">Facebook</div></span></a> <div class="block"></div>
+				<a href="http://www.google.pt" target="_blank"><span class="brandico-googleplus-rect"> <div class="block">Google+</div></span></a> <div class="block"></div>
+				<a href="http://www.google.pt" target="_blank"><span class="brandico-linkedin-rect"> <div class="block">LinkedIn</div></span></a> <div class="block">
+</div>
+			-->
+			<ul>
+			<li><a href="http://www.google.pt" target="_blank"><span class="brandico-facebook-rect"></span> <span class="block">Facebook</span></a></li>
+			<li><a href="http://www.google.pt" target="_blank"><span class="brandico-facebook-rect"></span> <span class="block">Facebook</span></a></li>
+			<li><a href="http://www.google.pt" target="_blank"><span class="brandico-facebook-rect"></span> <span class="block">Facebook</span></a></li>
+			</ul>
+				
 			</div>
 		</div>
 

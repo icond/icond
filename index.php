@@ -199,7 +199,7 @@
                 </a>-->
             </div>
             <!--icons destaque-->
-            <div class="container-fluid" style="background-color: #fff; margin-bottom: 250px;">
+            <div class="container-fluid marginBot" style="background-color: #fff;">
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-user highlight-icon"></span>
@@ -280,34 +280,58 @@
                 </div>
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
-                        <span class="glyphicon glyphicon-euro highlight-icon"></span>
-                        <span class="iconTitle">Parceiros</span>
-                        <br />
-                        <br />
-                        <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <br />
-                        <div class="preco">Desde 10€/mês</div>
-                        <br />
+                        <div style="background-color: #0071BC; color: #fff;">
+                            <span class="iconTitle">Parceiros</span>
+                            <br>
+                            <span style="font-size: 80px;">20</span>
+                            € /Mês
+                            <br>
+                            <button class="bt2">Click Me!</button>
+                        </div>
+                        <div style="border-color: #0071BC; border-style:solid; border-width:1px; padding-bottom:20px;">
+                        <br>
+                            <span class="glyphicon glyphicon-ok"></span> Fazemos umas coisas destas
+                            <hr style="width:44%; border-color:#0071BC; opacity: 0.7;">
+                            <span class="glyphicon glyphicon-user"></span> Fazemos umas coisas destas
+                            <hr style="width:44%; border-color:#0071BC; opacity: 0.7;">
+                            <span class="glyphicon glyphicon-home"></span> Fazemos umas coisas destas
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
-                        <span class="glyphicon glyphicon-euro highlight-icon"></span>
-                        <span class="iconTitle">Condominios</span>
-                        <br />
-                        <br />
-                        <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <br />
-                        <div class="preco">Desde 10€/mês</div>
-                        <br />
+                        <div style="background-color: #0071BC; color: #fff;">
+                            <span class="iconTitle">Parceiros</span>
+                            <br>
+                            <span style="font-size: 80px;">20</span>
+                            € /Mês
+                            <br>
+                            <button class="bt2">Click Me!</button>
+                        </div>
+                        <div style="border-color: #0071BC; border-style:solid; border-width:1px; padding-bottom:20px;">
+                        <br>
+                            <span class="glyphicon glyphicon-ok"></span> Fazemos umas coisas destas
+                            <hr style="width:44%; border-color:#0071BC; opacity: 0.7;">
+                            <span class="glyphicon glyphicon-user"></span> Fazemos umas coisas destas
+                            <hr style="width:44%; border-color:#0071BC; opacity: 0.7;">
+                            <span class="glyphicon glyphicon-home"></span> Fazemos umas coisas destas
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
-                        <span class="glyphicon glyphicon-euro highlight-icon"></span>
-                        <span class="iconTitle">Empresas</span>
-                        <br />
-                        <br />
-                        <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <br />
-                        <div class="preco">Desde 10€/mês</div>
-                        <br />
+                        <div style="background-color: #0071BC; color: #fff;">
+                            <span class="iconTitle">Parceiros</span>
+                            <br>
+                            <span style="font-size: 80px;">20</span>
+                            € /Mês
+                            <br>
+                            <button class="bt2">Click Me!</button>
+                        </div>
+                        <div style="border-color: #0071BC; border-style:solid; border-width:1px; padding-bottom:20px;">
+                        <br>
+                            <span class="glyphicon glyphicon-ok"></span> Fazemos umas coisas destas
+                            <hr style="width:44%; border-color:#0071BC; opacity: 0.7;">
+                            <span class="glyphicon glyphicon-user"></span> Fazemos umas coisas destas
+                            <hr style="width:44%; border-color:#0071BC; opacity: 0.7;">
+                            <span class="glyphicon glyphicon-home"></span> Fazemos umas coisas destas
+                        </div>
                     </div>
                 </div>
             </div>
