@@ -51,7 +51,7 @@
           if(isset($_SESSION['status'])){
             if($_SESSION['status'] === 1)
             {
-              echo "<div class='alert alert-success' role='alert'>Registado com sucesso!</div>";
+              echo "<div style='text-align:center;' class='alert alert-success' role='alert'>Registado com sucesso!</div>";
               session_unset();
             }
           }
@@ -61,12 +61,15 @@
         <h2 style="text-align:center;">Login</h2>
         <div class="form">
           <form class="login-form" action="process/login.process.php" method="POST">
-            <input name="email" type="email" placeholder="Email"/>
-            <input name="password" type="password" placeholder="Password"/>
+            <input name="email" type="email" placeholder="Email" required />
+            <input name="password" type="password" placeholder="Password" required/>
             <button name="login" class="btlogin">Login</button>
-            <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
+            <p class="message">Não registado? <a href="index.php">Crie uma conta</a></p>
           </form>
         </div>
+        <?php 
+          if(isset($_REQUEST['loginerror']))echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>Email e/ou palavra passe incorretos.</div>";
+         ?>
       </div>
     </body>
     <!--

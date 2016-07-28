@@ -15,30 +15,52 @@
     $email = $_POST['email'];
     $nif = $_POST['nif'];
     $password = $_POST['password'];
-    $rua = $_POST['rua'];
+    $morada = $_POST['rua'];
     $lote = $_POST['lote'];
     $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
+    $localidade = $_POST['localidade'];
     $cidade = $_POST['cidade'];
     $pais = 1;
+    $idEmpresa = 0;
 
-    $sql = "INSERT INTO condominios(emailCond, nifCond, passwordCond, ruaCond, codigopostalCond, loteCond, cidadeCond, paisCond) VALUES('$email', '$nif', '$password', '$rua', '$codigoPostal', '$lote', '$cidade', '$pais')";
-    $verificar = "SELECT * from condominios where emailCond like '$email'";
+    $sqlCondos = "INSERT INTO condominios(morada, lote, codPostal, localidade, cidade, idPais, nifCond, idEmpresa) 
+                  VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nif', '$idEmpresa')";
 
-    $query_ver = mysqli_query($conn, $verificar);
+    $checkIfNifExists = "SELECT nifCond FROM condominios WHERE nifCond = '$nif'";
 
-    if (mysqli_num_rows($query_ver) !=0 )
-    {
-       $_SESSION['status'] = 2;
-    }
-    else
-    {
-      if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-        $_SESSION['status'] = 1;
-        header("Location: login.php");
-      } else {
-          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    $ifRows = mysqli_query($conn, $checkIfNifExists);
+
+    if(mysqli_num_rows($ifRows) == 0){
+
+      if (mysqli_query($conn, $sqlCondos)) {
+
+        $selectCondos = "SELECT idCond FROM condominios WHERE nifCond = '$nif'";
+
+        $result = $conn->query($selectCondos);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $idCond = $row["idCond"];
+            }
+        } else {
+            echo "0 results";
+        }
+
+        $sqlParcelas = "INSERT INTO parcelas(email, password, idCond) 
+                        VALUES('$email', '$password', '$idCond')";
+
+        if (mysqli_query($conn, $sqlParcelas)) {
+          echo "New record created successfully";
+          $_SESSION['status'] = 1;
+          header("Location: login.php");
+        }
       }
+      else{
+        echo "Error: " . $sqlCondos . "<br><br><br>" . $sqlParcelas . mysqli_error($conn);
+      }    
+    }
+    else{
+      $nifAlreadyExists = 1;
     }
   }
 ?>
@@ -67,16 +89,15 @@
           </div>
       </nav>
       <div class="login-page"><h4 style="text-align:center; margin-top: 60px;"">Finalize o seu registo de administrador</h4>
-        <?php
-          if(isset($_SESSION['status']))
-          {
-            if($_SESSION['status'] === 2)
-            {
-              echo "<div class='alert alert-danger' role='alert' >Email ja esta em uso, por favor introduza um email bacano</div>";
-              session_unset();
-            }
+       
+       <?php 
+
+          if(isset($nifAlreadyExists)){
+            echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>NIF já em uso.</div>";
           }
+
         ?>
+        
         <div class="form">
           <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
@@ -96,12 +117,13 @@
               <label>Código Postal</label><br>
               <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" required/><br>
             </div>
+            <label>Localidade</label><br>
+            <input type="text" name="localidade" placeholder="eg. Santos" required /><br>
             <label>Cidade</label><br>
             <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
             <button type="submit" name="registar" class="btlogin">Registar</button>
         </form>
-       
-       
+
         </div>
       </div>
     </body>

@@ -134,7 +134,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                        <a href="/index.php">
+                        <a href="index.php">
                             <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs opensans"><b>Gestão Condominios Online</b></p>
                         </a>
                     </div>

@@ -3,12 +3,13 @@
 // Includes config file - global variables
 // ------------------------------------------------------------------
 include "/../config.php";
-global $servername, $dbname, $password, $username;
+global $servername, $database, $password, $username;
 
 // ------------------------------------------------------------------
 
 //Cria a conecção
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
+
 
 //Verifica se há conecção
 if (!$conn) {
