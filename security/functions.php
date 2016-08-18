@@ -66,16 +66,21 @@ function securePassword($username, $passwrd, $ID, $IDCond)
     global $cppThirdPath;
     $password = "";
     echo $timestamp . '<br>';
+    var_dump($hostname);
+    var_dump($HTTPS);
+    var_dump($timestamp);
     // se nao existir cookie para username
     if(!isset($_COOKIE["username"]))
     {
         // se nao existir cookie para password
         if(!isset($_COOKIE["password"]))
         {
+            $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
+
             //username's cookie
-            setcookie("username", $username, time() + $timestamp, '/', $hostname, $HTTPS, true);
+            setcookie("username", $username, time() + $timestamp, '/', $domain, $HTTPS, false);
             //password
-            setcookie("password", textCrypt($passwrd, $ID, $IDCond), time() + $timestamp, '/', $hostname, $HTTPS, true);
+            setcookie("password", textCrypt($passwrd, $ID, $IDCond), time() + $timestamp, '/', $domain, $HTTPS, true);
             //get password
             $password = isset($_COOKIE["password"]);
         }
