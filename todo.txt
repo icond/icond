@@ -1,17 +1,20 @@
-﻿# acabar de estruturar o ficheiro admin.php e index.php
+﻿###################################
+############ WARNING ##############
+###################################
 
+# QUEM TIVER A BASE DE DADOS, FAVOR DE INCLUIR UM FICHEIRO NA PASTA ROOT DESTE PROJETO QUE CONTENHA LÁ TUDO. SEM ISTO NÃO PODEMOS AVANÇAR COM NADA. (caps para chamar a atenção)
+ 
 
 --Menu Admin--
 
 
 --Front-End--
-# deixar o front-end responsive
+# trabalhar o front-end (marco)
+# deixar o front-end responsive (marco)
 
 --Back-End--
-# Planear e criar uma base de dados (sim, é já na proxima aula do machadus)
-# discutir ideias de funcionamento do sistema num todo
-
-
+# terminar o sistema de login
+# preparar a pagina inicial(back-end) ao entraR
 
 
 
