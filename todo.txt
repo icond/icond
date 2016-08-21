@@ -1,20 +1,16 @@
-﻿###################################
-############ WARNING ##############
-###################################
-
-# QUEM TIVER A BASE DE DADOS, FAVOR DE INCLUIR UM FICHEIRO NA PASTA ROOT DESTE PROJETO QUE CONTENHA LÁ TUDO. SEM ISTO NÃO PODEMOS AVANÇAR COM NADA. (caps para chamar a atenção)
- 
-
---Menu Admin--
-
-
---Front-End--
-# trabalhar o front-end (marco)
-# deixar o front-end responsive (marco)
+﻿--Front-End--
+# ao clicar no botao "click me" em modo mobile, fazer com que o ecrã vá para onde aparecem os dados
+# fix bugs em modo mobile no footer
+# reduzir o height do video (colocar um video com uma time lapse do céu à noite (exemplo))
+ideia: podiamos usar o video para colocar em cima do mesmo mais informações sobre o que vendemos
+# colocar uma area no site que mostra alguns dos parceiros
+# colocar uma area que permita colocar uma imagem de ilustração com diagramas e cenas (depois vamos ao fiverr e arranjamos isso)
+  
 
 --Back-End--
-# terminar o sistema de login
-# preparar a pagina inicial(back-end) ao entraR
+# sistema de login
+# escrever a base de dados para um bloco de notas
+# exportar a bd default para o diretorio do icond
 
 
 
