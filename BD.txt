@@ -57,3 +57,14 @@
 
 -> idPais
 -> Pais
+
+---------------------------------------------------
+-- Apartamentos - contem a informação de cada parcela
+---------------------------------------------------
+
+-> idApartamento
+-> andar
+-> letra
+-> nrPredio
+-> idCond
+-> idParcela
