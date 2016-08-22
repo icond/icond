@@ -1,0 +1,59 @@
+ # verificar a integridade disto sff
+
+---------------------------------------------------
+-- Condominios
+---------------------------------------------------
+
+-> idCond
+-> morada
+-> lote
+-> codigoPostal
+-> localidade
+-> cidade
+-> idPais (TODO)
+-> nifCond
+-> nAndares
+-> ibanCond (pagamentos e afins)
+-> idEmpresa (porque é que isto está aqui?)
+
+---------------------------------------------------
+-- Parcelas
+---------------------------------------------------
+
+-> idParcela
+-> email
+-> password
+-> isAdmin (true or false)
+-> codigo
+-> idCond
+-> nifParcela
+-> andar
+-> comissaoMensal (money a pagar por mes)
+-> organizacao (supostamente se é direito ou esquerdo ou cenas)
+
+---------------------------------------------------
+-- Pagamentos - Histórico de pagamentos
+---------------------------------------------------
+
+-> idPagamento
+-> quantia
+-> data
+-> idParcela
+-> isPaid (true or false)
+
+---------------------------------------------------
+-- Despesas - Em caso de arranjos e afins
+---------------------------------------------------
+
+-> idDespesa
+-> idCond
+-> descricao
+-> valor
+-> data
+
+---------------------------------------------------
+-- Pais
+---------------------------------------------------
+
+-> idPais
+-> Pais
