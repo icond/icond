@@ -1,70 +1,70 @@
- # verificar a integridade disto sff
+﻿ # Todos os varchar estão com o tamanho 255
 
 ---------------------------------------------------
 -- Condominios
 ---------------------------------------------------
 
--> idCond
--> morada
--> lote
--> codigoPostal
--> localidade
--> cidade
--> idPais (TODO)
--> nifCond
--> nAndares
--> ibanCond (pagamentos e afins)
--> idEmpresa (porque é que isto está aqui?)
+-> idCond INT
+-> morada VARCHAR
+-> lote VARCHAR
+-> codigoPostal VARCHAR
+-> localidade VARCHAR
+-> cidade VARCHAR
+-> idPais (TODO) INT
+-> nifCond VARCHAR
+-> nAndares INT
+-> ibanCond (pagamentos e afins) INT
+-> idEmpresa (porque é que isto está aqui?) INT
 
 ---------------------------------------------------
 -- Parcelas
 ---------------------------------------------------
 
--> idParcela
--> email
--> password
--> isAdmin (true or false)
--> codigo
--> idCond
--> nifParcela
--> andar
--> comissaoMensal (money a pagar por mes)
--> organizacao (supostamente se é direito ou esquerdo ou cenas)
+-> idParcela INT (Nao tem auto incremento porque nao estava a dar para por)
+-> email VARCHAR
+-> password VARCHAR
+-> isAdmin (true or false) TINYINT
+-> codigo VARCHAR
+-> idCond INT
+-> nifParcela INT
+-> andar INT
+-> comissaoMensal (money a pagar por mes) INT
+-> organizacao (supostamente se é direito ou esquerdo ou cenas) VARCHAR
 
 ---------------------------------------------------
 -- Pagamentos - Histórico de pagamentos
 ---------------------------------------------------
 
--> idPagamento
--> quantia
--> data
--> idParcela
--> isPaid (true or false)
+-> idPagamento INT
+-> quantia INT
+-> data DATE ???
+-> idParcela INT
+-> isPaid (true or false) TINYINT
 
 ---------------------------------------------------
 -- Despesas - Em caso de arranjos e afins
 ---------------------------------------------------
 
--> idDespesa
--> idCond
--> descricao
--> valor
--> data
+-> idDespesa INT
+-> idCond INT
+-> descricao TEXT
+-> valor INT
+-> data DATE ???
 
 ---------------------------------------------------
 -- Pais
 ---------------------------------------------------
 
--> idPais
--> Pais
+-> idPais INT
+-> Pais VARCHAR
 
 ---------------------------------------------------
 -- Apartamentos - contem a informação de cada parcela
 ---------------------------------------------------
 
--> idApartamento
--> andar
--> letra
--> nrPredio
--> idCond
--> idParcela
+-> idApartamento INT
+-> andar INT
+-> letra VARCHAR
+-> nPredio INT
+-> idCond INT
+-> idParcela INT
