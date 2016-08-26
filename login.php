@@ -36,27 +36,13 @@
       
       <div class="login-page">
         <?php
-          session_start();
-         // $state = false;
-          //if(isset($_SESSION['status']))
-          //{
-            //if($_SESSION['status'] === 1)
-              //$state = 1;
-          //}
-          //if($state){
-            //echo "<div class='alert alert-success' role='alert'>Registado com sucesso!</div>";
-            //$state = false;
-            //session_unset();
-            //}
-          if(isset($_SESSION['status'])){
-            if($_SESSION['status'] === 1)
-            {
+          if(isset($_GET['s'])){
+            if($_GET['s'] == 1){
               echo "<div style='text-align:center;' class='alert alert-success' role='alert'>Registado com sucesso!</div>";
-              session_unset();
             }
           }
           
-          ?> 
+        ?> 
 
         <h2 style="text-align:center;">Login</h2>
         <div class="form">
