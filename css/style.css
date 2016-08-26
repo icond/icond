@@ -137,17 +137,17 @@ a, a:hover, a:active, a:visited a:focus{
 /* BLUR*/
 
 .blur-in {
-  -webkit-animation: blur 0.5s forwards;
-  -moz-animation: blur 0.5s forwards;
-  -o-animation: blur 0.5s forwards;
-  animation: blur 0.5s forwards;
+  -webkit-animation: blur 0.2s forwards;
+  -moz-animation: blur 0.2s forwards;
+  -o-animation: blur 0.2s forwards;
+  animation: blur 0.2s forwards;
 }
 
 .blur-out {
-  -webkit-animation: blur-out 0.5s forwards;
-  -moz-animation: blur-out 0.5s forwards;
-  -o-animation: blur-out 0.5s forwards;
-  animation: blur-out 0.5s forwards;
+  -webkit-animation: blur-out 0.2s forwards;
+  -moz-animation: blur-out 0.2s forwards;
+  -o-animation: blur-out 0.2s forwards;
+  animation: blur-out 0.2s forwards;
 }
 
 @-webkit-keyframes blur {
@@ -530,7 +530,9 @@ footer{
   z-index: -20;
   height: 250px;
   width: 100%;
-  background-color: #34495E;
+  /*
+  background-color: #34495E;*/
+  background-color: #0E1B2C;
   color: #fff;
   position: fixed;
   bottom: 0;
@@ -832,3 +834,141 @@ hr.style14 {
   }
   /*end icons destaque*/
 }
+/*****************************************/
+/* CSS PARA OS TESTEMUNHOS               */
+/*****************************************/
+@media only screen and (min-width: 320px)
+{
+  .testemunhos {
+    background-color: white; /* alterar para f1f1f1 depois */
+    padding-bottom: 20px;
+  }
+  .testemunho-esquerda {
+    padding-top: 0;
+  }
+  blockquote.pull-right {border-right: 0;}
+}
+@media only screen and (min-width: 480px)
+{
+
+}
+@media only screen and (min-width: 768px)
+{
+  .testemunho-esquerda {
+    padding-top: 10px;
+  }
+}
+@media only screen and (min-width: 992px)
+{
+
+
+}
+@media only screen and (min-width: 1200px)
+{
+  .testemunhos {
+    background-color: #f1f1f1; /* alterar para f1f1f1 depois */
+    padding-bottom: 80px;
+    padding-top: 30px;
+  }
+  .passive-people-left {
+    margin-top: 0px;
+    padding-right: 10px;
+  }
+  .passive-people-right {
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+
+  .img-testemunho-esquerda {
+    padding-top: 80px;
+    padding-left: 0px;
+  }
+  .img-testemunho-esquerda img {
+    display: block;
+    border: 1px solid #0071BC;
+    padding: 3px;
+  }
+  .blockquote_left {
+    width: 85%;
+    margin-top: 18px;
+    margin-left: 10px;
+    border: 1px solid #0071BC;
+    
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    position: relative;
+  }
+  .quotes blockquote:after{
+    position: absolute;
+    top:-13px;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+  .quotes blockquote:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #0071BC;
+    left:70px;
+  }
+  blockquote p {
+    padding: 10px;
+    font-size: 15px;
+  }
+  .img-testemunho-direita {
+    padding-top: 80px;
+    padding-right:0px; /* para ser simetrico com a outra imagem*/
+  }
+  .img-testemunho-direita img {
+    display: block;
+    border: 1px solid #0071BC;
+    padding: 3px;
+  }
+  .blockquote_right {
+    width:85%;
+    margin-top: 18px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border: 1px solid #0071BC;
+    position: relative;
+  }
+  .quotes2 blockquote:after{
+    position: absolute;
+    top:-13px;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+  .quotes2 blockquote:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #0071BC;
+    right:70px;
+  }
+
+  .client-name { font-size: 18px; color: #0071BC; font-style: italic;}
+  .job-name {font-size: 11px; color: #0E1B2C; font-weight: bold;}
+  .client-info-r {margin: 30px 20px 0 0; }
+  .client-info-l {margin: 30px 0 0 20px; }
+
+  .img1-left {padding-right: 10px;}
+  .img1-left img { padding:3px; border: 1px solid #0071BC;}
+  .img2-left {padding-right: 50px;}
+  .img2-left img { padding:3px; border: 1px solid #0071BC;}
+  .img3-left {padding-right: 15px;}
+  .img3-left img { padding:3px; border: 1px solid #0071BC;}
+  .img1-right {padding-left: 10px;}
+  .img1-right img { padding:3px; border: 1px solid #0071BC;}
+  .img2-right {padding-left: 50px;}
+  .img2-right img { padding:3px; border: 1px solid #0071BC;}
+  .img3-right {padding-left: 15px;}
+  .img3-right img { padding:3px; border: 1px solid #0071BC;}
+}
+
+
+

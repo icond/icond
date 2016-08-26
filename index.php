@@ -269,7 +269,7 @@
                         </form>
                     </div>
                 </div>
-
+                <!-- esquece o video, podemos fazer melhor 
                 <div class="row">
                     <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
                         <video width="960" height="540" autoplay muted loop>
@@ -278,6 +278,82 @@
                         </video>
                     </div>
                 </div>
+                -->
+
+                <!--div de pessoal a dizer que isto é muita bom-->
+                <div class="row testemunhos">
+                    <!-- caras de pessoas random -->
+                    <div class="col-lg-2 visible-lg passive-people-left clearfix">
+                        <div class="row">
+                            <div class="col-lg-12 clearfix img1-left">
+                                <img src="img/faces/meme.jpg" alt="..." class="img-circle pull-right">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 clearfix img2-left">
+                                <img src="img/faces/marco.jpg" alt="..." class="img-circle pull-right">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 clearfix img3-left">
+                                <img src="img/faces/cat.jpg" alt="..." class="img-circle pull-right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="testemunho-esquerda">
+                            <div class="img-testemunho-esquerda clearfix">
+                                <img src="img/faces/peter-1.jpg" alt="..." class="img-circle pull-left">
+                                <div class="pull-left client-info-l">
+                                    <span class="client-name">Pedro Pinheiro</span><br />
+                                    <span class="job-name">- Procrastinador Profissional</span>
+                                </div>
+                            </div>
+                            <div class="quote-left quotes">
+                                <blockquote class="blockquote_left center-block">
+                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- aqui vem cenas -->
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="testemunho-direita">
+                            <div class="img-testemunho-direita clearfix">
+                                <img src="img/faces/me.jpg" alt="..." class="img-circle pull-right">
+                                <div class="pull-right client-info-r">
+                                    <span class="client-name">David Alexandre</span>
+                                    <br />
+                                    <span class="job-name">- Estudo cenas sem sentido</span>
+                                </div>
+                            </div>
+                            <div class="quote-right quotes2">
+                                <blockquote class="blockquote_right center-block">
+                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 visible-lg passive-people-right">
+                        <div class="row">
+                            <div class="col-lg-12 clearfix img1-right">
+                                <img src="img/faces/sandro.jpg" alt="..." class="img-circle pull-left">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 clearfix img2-right">
+                                <img src="img/faces/rat.jpg" alt="..." class="img-circle pull-left">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 clearfix img3-right">
+                                <img src="img/faces/rachel.jpg" alt="..." class="img-circle pull-left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="row icons altitude">
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <div style="background-color: #0071BC; color: #fff;">
@@ -340,6 +416,9 @@
         <?php 
             include 'include/footer.php';
         ?>
-    </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIV FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR-->
+    </div><!--FIM DO JQUERY PARA FADEIN TOTAL DO SITE--> <!--ATENÇAO!!!! NÃO POR NADA PARA ALEM DESTA DIV, ESTA DIV FAZ COM QUE TODO O SITE DÊ FADE IN AO INICIAR
+
+    Im impressed..
+    -->
     </body>
 </html>
