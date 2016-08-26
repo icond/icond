@@ -347,7 +347,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 clearfix img3-right">
-                                <img src="img/faces/rachel.jpg" alt="..." class="img-circle pull-left">
+                                <img src="img/faces/spacegoat.jpg" alt="..." class="img-circle pull-left">
                             </div>
                         </div>
                     </div>
