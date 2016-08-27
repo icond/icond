@@ -16,6 +16,8 @@
     $password = $_POST['password'];
     $morada = $_POST['rua'];
     $lote = $_POST['lote'];
+    $postal1 = $_POST['postal1'];
+    $postal2 = $_POST['postal2'];
     $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
     $localidade = $_POST['localidade'];
     $cidade = $_POST['cidade'];
@@ -114,19 +116,19 @@
             <input type="password" name="password" placeholder="Palavra Passe" <?php if(isset($password)){echo "value='".$password."'";} ?> required /><br>
             <label>Morada</label><br>
             <label>Rua</label><br>
-            <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
+            <input type="text" name="rua" placeholder="Rua do condomínio" <?php if(isset($morada)){echo "value='".$morada."'";} ?> required /><br>
             <div style="width:50%; float:left;">
               <label>Lote</label><br>
-              <input style="width:40%;" type="text" name="lote" maxlength="3" placeholder="5" required/>
+              <input style="width:40%;" type="text" name="lote" maxlength="3" placeholder="5" <?php if(isset($lote)){echo "value='".$lote."'";} ?> required/>
              </div>
              <div style="width:50%; float:right;"> 
               <label>Código Postal</label><br>
-              <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" required/><br>
+              <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" <?php if(isset($postal1)){echo "value='".$postal1."'";} ?> required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" <?php if(isset($postal2)){echo "value='".$postal2."'";} ?> required/><br>
             </div>
             <label>Localidade</label><br>
-            <input type="text" name="localidade" placeholder="eg. Santos" required /><br>
+            <input type="text" name="localidade" placeholder="eg. Santos" <?php if(isset($localidade)){echo "value='".$localidade."'";} ?> required /><br>
             <label>Cidade</label><br>
-            <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
+            <input type="text" name="cidade" placeholder="eg. Lisboa" <?php if(isset($cidade)){echo "value='".$cidade."'";} ?> required /><br>
             <button type="submit" name="registar" class="btlogin">Registar</button>
         </form>
 
