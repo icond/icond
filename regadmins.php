@@ -53,8 +53,11 @@
             echo "Nao foi encontrado o NIF, mas devia.";
         }
 
+        //Encriptar a pass para md5
+        $passmd5 = md5($password);
+
         //SQL para criar a parcela do admin do condominio
-    	$sqlParcelaAdmin = "INSERT INTO parcelas(email, password, idCond, isAdmin) VALUES('$email', '$password', '$idCond','1')";
+    	$sqlParcelaAdmin = "INSERT INTO parcelas(email, password, idCond, isAdmin) VALUES('$email', '$passmd5', '$idCond','1')";
 
         if (mysqli_query($conn, $sqlParcelaAdmin)){
         	//Parcela do admin do condominio criada com sucesso
@@ -74,7 +77,7 @@
 ?>
     </head>
     <body>
-    
+
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
           <div class="container-fluid">
               <div class="navbar-header">
@@ -105,7 +108,7 @@
           }
 
         ?>
-        
+
         <div class="form">
           <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>

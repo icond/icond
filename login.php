@@ -1,5 +1,7 @@
 <?php 
     include 'include/header.php';
+    include 'include/connection.php';
+
 ?>
     </head>
     <body>
@@ -39,6 +41,10 @@
           if(isset($_GET['s'])){
             if($_GET['s'] == 1){
               echo "<div style='text-align:center;' class='alert alert-success' role='alert'>Registado com sucesso!</div>";
+            }elseif ($_GET['s'] == 2) {
+              echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>Login incorreto!</div>";
+            }elseif ($_GET['s'] == 3) {
+              echo "<div style='text-align:center;' class='alert alert-success' role='alert'>Login feito com sucesso!". $_SESSION['user'] ."</div>";
             }
           }
           
@@ -53,9 +59,6 @@
             <p class="message">Não registado? <a href="index.php">Crie uma conta</a></p>
           </form>
         </div>
-        <?php 
-          if(isset($_REQUEST['loginerror']))echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>Email e/ou palavra passe incorretos.</div>";
-         ?>
       </div>
     </body>
     <!--

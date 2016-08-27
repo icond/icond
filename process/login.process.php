@@ -1,27 +1,37 @@
 <?php
 	//------------------------------
-	//Página para verificar o login
+	//Página para efectuar o login
 	//------------------------------
 
 	include '/../include/connection.php';
 
-	if(isset($_POST['login'])){
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+	session_start();
 
-		//Query para ver se existe o condominio
-		$loginQuery = "SELECT email, password from parcelas where email like '$email' and password like '$password'";
+    //Codigo para login
+    if(isset($_POST['login'])){
+    	$email = $_POST['email'];
+    	$password = $_POST['password'];
 
-		$exec = mysqli_query($conn, $loginQuery);
+    	//Converter a pass em plaintext para md5
+    	$passmd5 = md5($password);
 
-		if (mysqli_num_rows($exec) !=0 )
-	    {
-	      header("Location: http://localhost/icond/admin/");
-	    }
-	    else
-	    {
-	      header("Location: http://localhost/icond/login.php?loginerror=1");
-	    }
-	}
+    	//SQL para login
+    	$sqlLogin = "SELECT idParcela, email, password, isAdmin FROM parcelas WHERE email = $email AND password = $passmd5";
+    	$result = mysqli_query($db, $sqlLogin);
+    	$count = mysqli_num_rows($result);
+
+    	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    	$idLogged = $row['idParcela'];
+
+    	if($count == 1){
+      		//Login com sucesso
+      		$_SESSION['user'] = $idLogged;
+      		header("Location: ../login.php?s=3");
+    	}else{
+      		//Login falhado, mensagem de erro
+      		header("Location: ../login.php?s=2&".$count);
+    	}
+
+    }
 
 ?>
