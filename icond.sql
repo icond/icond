@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2016 at 05:14 PM
+-- Generation Time: Aug 27, 2016 at 06:28 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -148,6 +148,12 @@ ALTER TABLE `pais`
   ADD PRIMARY KEY (`idPais`);
 
 --
+-- Indexes for table `parcelas`
+--
+ALTER TABLE `parcelas`
+  ADD PRIMARY KEY (`idParcela`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -160,7 +166,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `condominios`
 --
 ALTER TABLE `condominios`
-  MODIFY `idCond` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCond` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `despesas`
 --
@@ -176,6 +182,11 @@ ALTER TABLE `pagamentos`
 --
 ALTER TABLE `pais`
   MODIFY `idPais` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `parcelas`
+--
+ALTER TABLE `parcelas`
+  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

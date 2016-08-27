@@ -20,7 +20,7 @@
 -- Parcelas
 ---------------------------------------------------
 
--> idParcela INT (Nao tem auto incremento porque nao estava a dar para por)
+-> idParcela INT
 -> email VARCHAR
 -> password VARCHAR
 -> isAdmin (true or false) TINYINT
