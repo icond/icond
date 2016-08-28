@@ -54,10 +54,10 @@
         }
 
         //Encriptar a pass para md5
-        $passmd5 = md5($password);
+        //$passmd5 = md5($password);
 
         //SQL para criar a parcela do admin do condominio
-    	$sqlParcelaAdmin = "INSERT INTO parcelas(email, password, idCond, isAdmin) VALUES('$email', '$passmd5', '$idCond','1')";
+    	$sqlParcelaAdmin = "INSERT INTO parcelas(email, password, idCond, isAdmin) VALUES('$email', '$password', '$idCond','1')";
 
         if (mysqli_query($conn, $sqlParcelaAdmin)){
         	//Parcela do admin do condominio criada com sucesso

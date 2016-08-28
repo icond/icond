@@ -38,6 +38,7 @@
       
       <div class="login-page">
         <?php
+          session_start();
           if(isset($_GET['s'])){
             if($_GET['s'] == 1){
               echo "<div style='text-align:center;' class='alert alert-success' role='alert'>Registado com sucesso!</div>";
