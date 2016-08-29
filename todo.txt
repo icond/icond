@@ -26,3 +26,6 @@ BY MARCO, NO BOOTSTRAP INCLUDED!!!!!!!!!11!!1!!1
 
 
 NO FORM DE REGISTO DE ADMINISTRADORES, O MADJ� INSERE O SEU MAIL PESSOAL E A SUA PASSWORD, E SER-LHE-� ENVIADO PARA O MAIL, UM EMAIL DE CONFIRMA��O QUE O LEVAR� PARA OUTRA PAGINA PARA CONCLUIR O REGISTO. NOME, MORADA, CONTACTO BLA BLA BLA
+
+<---------------Ideias do pedro----------->
+O header da parte de administraçao tem de ser alterado, existem campos desnecesarios nas dropdowns e as cores devem ser alteradas.
