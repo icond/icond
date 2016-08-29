@@ -11,35 +11,54 @@
         <body>
             <main>
                 <div class="container">
-                    <div class="panel panel-default">
-                        <div class="panelheading"><h3>Bem vindo</h3></div>
+                    <div class="info-panel">
+                        <div class="panelheading"><h3>Informações do Condominio</h3></div>
                         <div class="panel-body">
-                            <div id="row">
-                                <div class="col-lg-8 col-md-6 col-sm-7">
-                                    <div>
-                                        <p><b>Dados Condominio</b></p>
-                                        nif: 269009540<br>
-                                        nome: condominio rua X<br>
-                                        morada: rua x 1100 Lx<br><br>
+                            <div class="panel-menu">
+
+                                <div class="admin-menu-item admin-menu-item-active" id="op1">
+                                    <span class="glyphicon glyphicon-home"></span> Dados do Condominio
+                                </div> 
+                                <div class="admin-menu-item" id="op2">
+                                    <span class="glyphicon glyphicon-user"></span> Dados do Administrador
+                                </div> 
+                            </div>
+
+                            <div class="panel-menu-info">
+                                <div id="op1-data">
+                                    <div class="panel-menu-info-titles">
+                                        <span class="title">Morada</span><br><br>
+                                        <span class="title">Lote</span><br><br>
+                                        <span class="title">Codigo Postal</span><br><br>
+                                        <span class="title">Localidade</span><br><br>
+                                        <span class="title">Cidade</span><br><br>
+                                        <span class="title">Pais</span><br><br>
+                                        <span class="title">Nif</span><br>
                                     </div>
-                                    <div>
-                                        <p><b>Dados Administrador</b></p>
-                                        nome: Almerindo<br>
-                                        tel: 129999999<br>
-                                        tel: 219999999<br>
-                                        email: cenas@cenas.pt
+                                    <div class="panel-menu-info-data">
+                                        <span class="data">Avenida Alberto Caeiro Nº33</span><br><br>
+                                        <span class="data">2F</span><br><br>
+                                        <span class="data">2562-225</span><br><br>
+                                        <span class="data">Palmela</span><br><br>
+                                        <span class="data">Setubal</span><br><br>
+                                        <span class="data">Portugal</span><br><br>
+                                        <span class="data">269009540</span><br>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-5 col-sm-5">
-                                    <p><b>Informações extra</b></p>
-                                    Coisa partida<br>
-                                    Festa no 3ºEsq<br>
-                                    asdasdasdasdasd<br>
-                                    asdasdasdadasd<br>
-                                    asdasdasdasd<br>
-                                    asdasdasdasdasds<br>
-                                    asdasdasdasdas<br>
-                                    asdasdasdasd<br>
+
+                                <div id="op2-data">
+                                    <div class="panel-menu-info-titles">
+                                        <span class="title">Nome</span><br><br>
+                                        <span class="title">Telemovel</span><br><br>
+                                        <span class="title">Email</span><br><br>
+                                        <span class="title">Lote</span><br>
+                                    </div>
+                                    <div class="panel-menu-info-data">
+                                        <span class="data">Marco Sandro David Pedro</span><br><br>
+                                        <span class="data">917758465</span><br><br>
+                                        <span class="data">msdp@icond.pt</span><br><br>
+                                        <span class="data">2F</span><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>

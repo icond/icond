@@ -15,6 +15,37 @@
         <script type="text/javascript" src="../js/bootstrap.min.js"></script>
         <!--adicionar aqui jquery-->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <script>
+          $( document ).ready(function() {
+              $("#op1-data").show();
+              $("#op2-data").hide();
+
+              $( "#op1" ).click(function() {
+                $("#op1-data").show();
+                $("#op2-data").hide();
+
+                if($("#op1").hasClass("admin-menu-item-active")){
+                }else{
+                    $("#op1").addClass("admin-menu-item-active");
+                }
+                
+                $("#op2").removeClass("admin-menu-item-active");
+              });
+
+              $( "#op2" ).click(function() {
+                $("#op1-data").hide();
+                $("#op2-data").show();
+
+                if($("#op2").hasClass("admin-menu-item-active")){
+                }else{
+                    $("#op2").addClass("admin-menu-item-active");
+                }
+                
+                $("#op1").removeClass("admin-menu-item-active");
+              });
+
+          });
+        </script>
     </head>
     <body class="adminbg">
     <!--header-->

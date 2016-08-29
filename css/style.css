@@ -287,20 +287,72 @@ a, a:hover, a:active, a:visited a:focus{
 }
 
 .adminbg{
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .container{
   margin-top: 1%;
 }
 
+.info-panel{
+    background-color: #fff;
+    border-bottom: 1px solid;
+    border-color: #0071BC;
+}
+
+.panel-menu{
+    width: 30%;
+    color: #000;
+    float: left;
+}
+
+.panel-menu-info{
+    width: 70%;
+    color: #000;
+    float: left;
+    border-left: 1px solid;
+    border-color: #0071BC;
+    padding-left: 15px;
+}
+
+.admin-menu-item{
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 130%;
+    margin-right: 15px;
+}
+
+.panel-menu-info-titles .title{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.panel-menu-info-titles{
+    width: 30%;
+    float: left;
+}
+
+.panel-menu-info-data{
+    width: 70%;
+    float: left;
+}
+
+.admin-menu-item-active{
+    background-color: #e3e3e3;
+}
+
+.admin-menu-item:hover, .admin-menu-item-active:hover{
+    cursor: pointer;
+}
+
 .panelheading {
   padding: 10px 15px;
-  border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  background-color: #4D4D4D;
-  color: floralwhite;
+  background-color: #fff;
+  color: #0071BC;
+  border-bottom: 1px solid;
 }
 
 .panel-body p
