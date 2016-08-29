@@ -9,10 +9,12 @@
                 $( "#bt1" ).click(function() {
                     $("#form2").hide();
                     $("#form3").hide();
+                    document.getElementById("testimonials").style.marginTop="20px";
                     $("#form1").slideToggle(400);
 
                     if($("#bt1").hasClass("active")){
                         $("#bt1").removeClass("active");
+                        document.getElementById("testimonials").style.marginTop="0px";
                     }else{
                         $("#bt1").addClass("active");
                     }
@@ -24,12 +26,14 @@
                 $( "#bt2" ).click(function() {
                     $("#form1").hide();
                     $("#form3").hide();
+                    document.getElementById("testimonials").style.marginTop="20px";
                     $("#form2").slideToggle(400);
 
                     $("#bt1").removeClass("active");
 
                     if($("#bt2").hasClass("active")){
                         $("#bt2").removeClass("active");
+                        document.getElementById("testimonials").style.marginTop="0px";
                     }else{
                         $("#bt2").addClass("active");
                     }
@@ -39,6 +43,7 @@
                 $( "#bt3" ).click(function() {
                     $("#form1").hide();
                     $("#form2").hide();
+                    document.getElementById("testimonials").style.marginTop="20px";
                     $("#form3").slideToggle(400);
 
                     $("#bt1").removeClass("active");
@@ -46,6 +51,7 @@
 
                     if($("#bt3").hasClass("active")){
                         $("#bt3").removeClass("active");
+                        document.getElementById("testimonials").style.marginTop="0px";
                     }else{
                         $("#bt3").addClass("active");
                     }
@@ -281,7 +287,16 @@
                 -->
 
                 <!--div de pessoal a dizer que isto é muita bom-->
-                <div class="row testemunhos">
+                <div class="row testemunhos" id="testimonials">
+                    <div class="row">
+                        <div class="testemunhos-titulo text-center">
+                            <div class="row">
+                                <div class="col-lg-offset-2 col-lg-8">
+                                    <h2>Clientes de várias partes do mundo..</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- caras de pessoas random -->
                     <div class="col-lg-2 visible-lg passive-people-left clearfix">
                         <div class="row">
@@ -300,7 +315,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-4 col-sm-6 col-xs-12 vertical-hr-testimonials">
                         <div class="testemunho-esquerda">
                             <div class="img-testemunho-esquerda clearfix">
                                 <img src="img/faces/peter-1.jpg" alt="..." class="img-circle pull-left">
