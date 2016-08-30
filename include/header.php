@@ -14,6 +14,7 @@
         <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
         <!--js-->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/frontPageEffects.js"></script>
         <!--adicionar aqui jquery-->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <!-- Google Fonts -->

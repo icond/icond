@@ -1,112 +1,6 @@
 <?php 
     include 'include/header.php';
 ?>
-        <script>
-            $("#jquery").hide();
-            $( document ).ready(function() {
-                $("#jquery").slideUp( 0 ).delay( 300 ).fadeIn( 400 );
-                $( "#bt1" ).click(function() {
-                    $("#form2").hide();
-                    $("#form3").hide();
-                    document.getElementById("testimonials").style.marginTop="20px";
-                    $("#form1").slideToggle(400);
-
-                    if($("#bt1").hasClass("active")){
-                        $("#bt1").removeClass("active");
-                        document.getElementById("testimonials").style.marginTop="0px";
-                    }else{
-                        $("#bt1").addClass("active");
-                    }
-
-                    
-                    $("#bt2").removeClass("active");
-                    $("#bt3").removeClass("active");
-                });
-                $( "#bt2" ).click(function() {
-                    $("#form1").hide();
-                    $("#form3").hide();
-                    document.getElementById("testimonials").style.marginTop="20px";
-                    $("#form2").slideToggle(400);
-
-                    $("#bt1").removeClass("active");
-
-                    if($("#bt2").hasClass("active")){
-                        $("#bt2").removeClass("active");
-                        document.getElementById("testimonials").style.marginTop="0px";
-                    }else{
-                        $("#bt2").addClass("active");
-                    }
-
-                    $("#bt3").removeClass("active");
-                });
-                $( "#bt3" ).click(function() {
-                    $("#form1").hide();
-                    $("#form2").hide();
-                    document.getElementById("testimonials").style.marginTop="20px";
-                    $("#form3").slideToggle(400);
-
-                    $("#bt1").removeClass("active");
-                    $("#bt2").removeClass("active");
-
-                    if($("#bt3").hasClass("active")){
-                        $("#bt3").removeClass("active");
-                        document.getElementById("testimonials").style.marginTop="0px";
-                    }else{
-                        $("#bt3").addClass("active");
-                    }
-
-                    
-                });
-
-            });
-        </script>
-        <script>
-        $(document).ready(function() {
-          $("#popup").click(function() {
-            $("#modal-overlay").fadeIn();
-            $("#modal").fadeIn();
-            $(".body").addClass("blur-in");
-            $(".body").removeClass("blur-out");
-          });
-          $("#modal-overlay").click(function() {
-            $("#modal-overlay").fadeOut();
-            $("#modal").fadeOut();
-            $(".body").removeClass("blur-in");
-            $(".body").addClass("blur-out");
-          });
-          $("#close").click(function() {
-            $("#modal-overlay").fadeOut();
-            $("#modal").fadeOut();
-            $(".body").removeClass("blur-in");
-            $(".body").addClass("blur-out");
-          });
-        });
-
-
-        //So permitir numeros no field
-        //from http://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
-        $(document).ready(function() {
-            $("#sonumeros").keydown(function (e) {
-                // Allow: backspace, delete, tab, escape, enter and .
-                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-                     // Allow: Ctrl+A
-                    (e.keyCode == 65 && e.ctrlKey === true) ||
-                     // Allow: Ctrl+C
-                    (e.keyCode == 67 && e.ctrlKey === true) ||
-                     // Allow: Ctrl+X
-                    (e.keyCode == 88 && e.ctrlKey === true) ||
-                     // Allow: home, end, left, right
-                    (e.keyCode >= 35 && e.keyCode <= 39)) {
-                         // let it happen, don't do anything
-                         return;
-                }
-                // Ensure that it is a number and stop the keypress
-                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-                    e.preventDefault();
-                }
-            });
-        });
-        </script>
     </head>
     <body>
 
@@ -215,9 +109,21 @@
                         <button class="bt" id="bt1">
                             Click Me!
                         </button>
+                        <!-- para mobile apenas -->
+                        <div class="row">
+                            <div class="col-md-12 hidden-lg">
+                                <div class="accordion-group">
+                                    <div id="form1Mobile" class="collapse form-registo">
+                                        <div class="iconTitle form-reg-title">Condóminos</div>
+                                        <label>Código de Acesso</label><br>
+                                        <input type="text" placeholder="Código"/><br>
+                                        <button class="btlogin">Registar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans" id="adminReg">
                         <span class="glyphicon glyphicon-home highlight-icon"></span>
                         <span class="iconTitle smalltext">Administradores</span>
                         <br />
@@ -226,9 +132,26 @@
                         <button class="bt" id="bt2">
                             Click Me!
                         </button>
+                        <!-- para mobile apenas -->
+                        <div class="row">
+                            <div class="accordion-group col-md-12 hidden-lg">
+                                <div id="form2Mobile" class="collapse form-registo">
+                                    <form action="regadmins.php" method="POST">
+                                        <div class="iconTitle form-reg-title">Administradores</div>
+                                        <label>E-Mail</label><br>
+                                        <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com"/><br>
+                                        <label>NIF</label><br>
+                                        <input id="sonumeros" type="text" name="nif" maxlength="9" placeholder="Número de Identificação Fiscal"/><br>
+                                        <label>Palavra Passe</label><br>
+                                        <input type="password" name="password" placeholder="Palavra Passe"/><br>
+                                        <button type="submit" name="submit" class="btlogin">Registar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
+                    <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans" id="empresasReg">
                         <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
                         <span class="iconTitle smalltext">Empresas</span>
                         <br />
@@ -237,9 +160,27 @@
                         <button class="bt" id="bt3">
                             Click Me!
                         </button>
+                        <div class="row">
+                            <div class="accordion-group col-md-12 hidden-lg">
+                                <div id="form3Mobile" class="collapse form-registo">
+                                    <form action="regempresa.php" method="POST">
+                                        <div class="iconTitle form-reg-title">Empresas de Gestão</div>
+                                        <label>Nome da Empresa</label><br>
+                                        <input type="text" name="nome" placeholder="eg. Atec" /><br>
+                                        <label>Telemovél</label><br>
+                                        <input type="text" name="tele" maxlength="9" placeholder="eg. 912345678" /><br>
+                                        <label>E-Mail</label><br>
+                                        <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
+                                        <label>Palavra Passe</label><br>
+                                        <input type="password" name="password" placeholder="Palavra Passe" ><br>
+                                        <button class="btlogin" name="submit">Registar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-group">
+                <div class="accordion-group visible-lg">
                     <div id="form1" class="collapse form-registo">
                         <div class="iconTitle form-reg-title">Condóminos</div>
                         <label>Código de Acesso</label><br>

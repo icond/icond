@@ -8,9 +8,6 @@ ideia: podiamos usar o video para colocar em cima do mesmo mais informações so
   
 
 --Back-End--
-# sistema de login
-# escrever a base de dados para um bloco de notas
-# exportar a bd default para o diretorio do icond
 
 
 
