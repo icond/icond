@@ -115,7 +115,7 @@
                     <a href="#">Condomínios</a>
                   </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
-                    <a href="#">Frações</a>
+                    <a href="fracao.php">Frações</a>
                   </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
@@ -163,7 +163,7 @@
                     <a href="#">Condomínios</a>
                   </li>
                   <li class="dropdown">
-                    <a href="#">Frações</a>
+                    <a href="fracao.php">Frações</a>
                   </li>
                   <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
