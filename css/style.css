@@ -14,6 +14,9 @@
 [class*="brandico-"]:before {
   font-family: 'brandico', sans-serif;
 }
+.joseSans {
+    font-family: 'Josefin Sans', sans-serif;
+  }
 
 html{
   font-family: 'Montserrat', sans-serif;
@@ -1029,5 +1032,102 @@ hr.style14 {
   .img3-right img { padding:3px; border: 1px solid #0071BC;}
 }
 
+/* area de apresentação do produto em si */
 
+@media only screen and (min-width: 320px)
+{
+  .productPresentation1
+  {
+    background-color: #F2F3F5;
+    height:550px;
+    padding-top:20px;
+  }
+  .productimages {
+  position: relative;
+  }
+  .productDesc1 {
+   line-height: 150%;
+   padding: 10px 20px 10px 20px;
+   font-size: 15px;
+  }
+  .productTitle {
+  font-size: 25px;
+  }
+  .iphoneShowoff{
+  position: absolute;
+  display: block;
+  left: 5%;
+  top: 40px;
+  width:100px;
+  }
+  .computershowoff {
+  position: absolute;
+  top:40px;
+  left:70px;
+  width: 350px;
+  }
+}
+@media only screen and (min-width: 480px)
+{
+  .iphoneShowoff{
+  position: absolute;
+  left: 20%;
+  top: 40px;
+  width:120px;
+  }
+  .computershowoff{
+  position: absolute;
+  top:40px;
+  left:30%;
+  width: 400px;
+  }
+}
+@media only screen and (min-width: 768px)
+{
+  .iphoneShowoff{
+  position: absolute;
+  left: 30%;
+  top: 40px;
+  width:110px;
+  }
+  .computershowoff{
+  position: absolute;
+  top:40px;
+  left:35%;
+  width: 400px;
+  }
+  
+}
+@media only screen and (min-width: 992px)
+{
+.productPresentation1
+  {
+    height:350px;
+    padding-top:20px;
+  }
+.productDesc1 {
+   line-height: 200%;
+   padding: 20px 50px 10px 50px;
+   font-size: 15px;
+}
+.productTitle {
+  font-size: 40px;
+}
+.iphoneShowoff{
+  position: absolute;
+  left: 10%;
+  top: 40px;
+  width:130px;
+}
+.computershowoff{
+  position: absolute;
+  top:0px;
+  left:20%;
+  width: 550px;
+  }
 
+}
+@media only screen and (min-width: 1200px)
+{
+  
+}

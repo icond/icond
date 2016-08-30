@@ -226,6 +226,25 @@
                 </div>
                 -->
 
+                <!--apresentar o produto-->
+                <div class="row productPresentation1">
+                    <div class="col-lg-offset-2 col-lg-10 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 kk">
+                                <h3 class="joseSans text-center productTitle">Funcional onde quer que seja</h3>
+                                <div class="">
+                                <br />
+                                    <p class="productDesc1 text-center opensans">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 productimages text-center">
+                                <img src="img/iphone.png" class="iphoneShowoff">
+                                <img src="img/mbp.png" class="computershowoff">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!--div de pessoal a dizer que isto é muita bom-->
                 <div class="row testemunhos" id="testimonials">
                     <div class="row">
