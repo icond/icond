@@ -927,6 +927,7 @@ hr.style14 {
     background: url(../img/stock3.png) repeat #f2f3f5; /* alterar para f1f1f1 depois */
     padding-bottom: 80px;
     padding-top: 30px;
+    overflow: hidden;
   }
   .passive-people-left {
     margin-top: 0px;

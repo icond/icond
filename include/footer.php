@@ -47,5 +47,4 @@
 	</div>
 
 	<div style="width:100%; text-align:center; position:fixed; bottom:0;">iCond&copy; 2016</div>
-
 </footer>

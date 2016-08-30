@@ -5,7 +5,6 @@
             $("#jquery").hide();
             $( document ).ready(function() {
                 $("#jquery").slideUp( 0 ).delay( 300 ).fadeIn( 400 );
-
                 $( "#bt1" ).click(function() {
                     $("#form2").hide();
                     $("#form3").hide();
@@ -231,7 +230,7 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-12 text-center opensans">
                         <span class="glyphicon glyphicon-briefcase highlight-icon"></span>
-                        <span class="iconTitle smalltext">Empresas de Gestão</span>
+                        <span class="iconTitle smalltext">Empresas</span>
                         <br />
                         <br />
                         <p class="container-fluid text-justify iconTextSpace">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
