@@ -3,6 +3,8 @@
   
   //User só para debug
   $_SESSION["user"] = "debug";
+  $_SESSION["idCond"] = "5";
+  $idCond = $_SESSION["idCond"];
 
   if($_SESSION["user"] != "") {
     include '../include/headeradmin.php';
@@ -43,7 +45,7 @@
                 echo $codigo;
 
                 $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
-                  VALUES('$codigo', '$x', '$z', '4')"; //TEM DE SE FAZER QUERY COM O SESSION USER PARA IR BUSCAR O ID COND
+                  VALUES('$codigo', '$x', '$z', '$idCond')"; //TEM DE SE FAZER QUERY COM O SESSION USER PARA IR BUSCAR O ID COND
                   mysqli_query($conn, $query);
 
 
@@ -71,6 +73,27 @@
 
             <input type="submit" name="submeter">
 </form>
+
+        <?php 
+
+        $queryParcelas = "SELECT email, password, codigo, idCond, nifParcela, andar, comissaoMensal, organizacao
+                            FROM parcelas
+                            WHERE idCond = $idCond";
+        echo $queryParcelas . "<br>";
+
+        $resultParcelas = mysqli_query($conn, $queryParcelas);
+
+        if(mysqli_num_rows($resultParcelas) > 0){
+            echo "<table border='1'><tr><td>Email</td><td>Password</td><td>Codigo</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td></tr>";
+            while($row = mysqli_fetch_assoc($resultParcelas)){
+                echo "<tr><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td></tr>";
+            }
+            echo "</table>";
+        }else{
+            echo "Nao há parcelas registadas.";
+        }
+
+        ?>
 
         </div>
     </body>
