@@ -54,46 +54,49 @@
             }
             echo "<br>";
         }
-
-
-
     }
 
 ?>
     <body>
         <div class="container">
-        <form method="post">
-            Nº de Andares <input type="text" name="andares"> <br>
-            Nº de Parcelas por Andar <input type="text" name="parcelas"> <br>
-            Orientação das parcelas 
-            <select name="orientacao">
-                <option value="0">Direções</option>
-                <option value="1">Letras</option>
-            </select>
+            
 
-            <input type="submit" name="submeter">
-</form>
+            <?php 
 
-        <?php 
+            $queryParcelas = "SELECT email, password, codigo, idCond, nifParcela, andar, comissaoMensal, organizacao
+                                FROM parcelas
+                                WHERE idCond = $idCond";
+            //echo $queryParcelas . "<br>";
 
-        $queryParcelas = "SELECT email, password, codigo, idCond, nifParcela, andar, comissaoMensal, organizacao
-                            FROM parcelas
-                            WHERE idCond = $idCond";
-        echo $queryParcelas . "<br>";
+            $resultParcelas = mysqli_query($conn, $queryParcelas);
 
-        $resultParcelas = mysqli_query($conn, $queryParcelas);
+            if(mysqli_num_rows($resultParcelas) > 0){
+                echo "<table border='1'><tr><td>Email</td><td>Password</td><td>Codigo</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td></tr>";
+                while($row = mysqli_fetch_assoc($resultParcelas)){
+                    echo "<tr><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td></tr>";
+                }
+                echo "</table>";
+            }else{
+                echo "<b>Nao há parcelas registadas.</b><br><br>";
+                //O formulario só vai aparecer quando nao existe nada
+            ?>
 
-        if(mysqli_num_rows($resultParcelas) > 0){
-            echo "<table border='1'><tr><td>Email</td><td>Password</td><td>Codigo</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td></tr>";
-            while($row = mysqli_fetch_assoc($resultParcelas)){
-                echo "<tr><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td></tr>";
+                <form method="post">
+                    Nº de Andares <input type="text" name="andares"> <br>
+                    Nº de Parcelas por Andar <input type="text" name="parcelas"> <br>
+                    Orientação das parcelas 
+                    <select name="orientacao">
+                        <option value="0">Direções</option>
+                        <option value="1">Letras</option>
+                    </select>
+
+                    <input type="submit" name="submeter">
+                </form>
+
+            <?php
             }
-            echo "</table>";
-        }else{
-            echo "Nao há parcelas registadas.";
-        }
 
-        ?>
+            ?>              
 
         </div>
     </body>
