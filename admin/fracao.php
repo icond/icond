@@ -71,9 +71,9 @@
             $resultParcelas = mysqli_query($conn, $queryParcelas);
 
             if(mysqli_num_rows($resultParcelas) > 0){
-                echo "<table border='1'><tr><td>Email</td><td>Password</td><td>Codigo</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td></tr>";
+                echo "<table border='1'><tr><td>Email</td><td>Password</td><td>Codigo</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td><td>Apagar</td></tr>";
                 while($row = mysqli_fetch_assoc($resultParcelas)){
-                    echo "<tr><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td></tr>";
+                    echo "<tr><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td><td>X</td></tr>";
                 }
                 echo "</table>";
             }else{
