@@ -1,8 +1,5 @@
 <?php
   session_start();
-  
-  //User só para debug
-  $_SESSION["user"] = "debug";
 
   if($_SESSION["user"] != "") {
     include '../include/headeradmin.php';

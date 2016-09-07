@@ -4,7 +4,7 @@
 	//------------------------------
 
 	include '/../include/connection.php';
-  var_dump($conn);
+  	var_dump($conn);
 	session_start();
 
     //Codigo para login
@@ -26,11 +26,10 @@
     	if($count == 1){
       		//Login com sucesso
       		$_SESSION['user'] = $idLogged;
-      		header("Location: ../login.php?s=3");
-    	}
-      else{
+      		header("Location: ../admin/");
+    	}else{
       		//Login falhado, mensagem de erro
-      		header("Location: ../login.php?s=2&".$count);
+      		header("Location: ../login.php?s=2");
     	}
 
     }
