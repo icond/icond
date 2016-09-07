@@ -89,13 +89,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Quando clicamos numa das setas, determinar a sua acção -->
-                <!--<a class="left carousel-control" href="#theCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"> </span>
-                </a>
-                <a class="right carousel-control" href="#theCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>-->
             </div>
             <!--icons destaque-->
             <div class="container-fluid marginBot" style="background-color: #fff;">
@@ -215,17 +208,6 @@
                         </form>
                     </div>
                 </div>
-                <!-- esquece o video, podemos fazer melhor 
-                <div class="row">
-                    <div class="col-xl-12 embed-responsive embed-responsive-16by9 video">
-                        <video width="960" height="540" autoplay muted loop>
-                            <source src="vid/Video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                -->
-
                 <!--apresentar o produto-->
                 <div class="row productPresentation1" style="overflow: hidden;" id="presentationSHOW">
                     <div class="col-lg-offset-2 col-lg-10 col-md-12">
