@@ -68,7 +68,7 @@
                       <div class="item active" >
                           <div class ="slide1"></div>
                           <div class="carousel-caption">
-                                <h1>Chama-se carrousel ueh</h1>
+                                <h1>Slide 1</h1>
                                 <p>À distância de um click...</p>
                                 <p><a href="#" class="btn btn-primary btn-md">Regista-te já!</a></p>
                           </div>
@@ -76,7 +76,7 @@
                     <div class="item">
                         <div class="slide2"></div>
                         <div class="carousel-caption">
-                          <h1>Isto é uma treta</h1>
+                          <h1>Slide 2</h1>
                           <p>O céu é o limite!</p>
                           <p><a href="#" class="btn btn-primary btn-md">Neeeeepia</a></p>
                         </div>
@@ -84,7 +84,7 @@
                     <div class="item">
                         <div class="slide3"></div>
                         <div class="carousel-caption">
-                            <h1>Bootstrap does it all!</h1>
+                            <h1>Slide 3</h1>
                             <p>Querias um site de gestão?! AH Ah ah</p>
                         </div>
                     </div>
