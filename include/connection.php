@@ -2,7 +2,8 @@
 // ------------------------------------------------------------------
 // Includes config file - global variables
 // ------------------------------------------------------------------
-include "/../config.php";
+
+include $_SERVER['DOCUMENT_ROOT'] . "/icond/config.php";
 global $servername, $database, $password, $username;
 
 // ------------------------------------------------------------------

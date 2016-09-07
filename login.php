@@ -5,7 +5,6 @@
 ?>
     </head>
     <body>
-
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
           <div class="container-fluid">
               <div class="navbar-header">
