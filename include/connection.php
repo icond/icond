@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------
 // Includes config file - global variables
 // ------------------------------------------------------------------
-include "/../config.php";
+include './config.php';
 global $servername, $database, $password, $username;
 
 // ------------------------------------------------------------------
