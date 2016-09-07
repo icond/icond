@@ -26,3 +26,6 @@ NO FORM DE REGISTO DE ADMINISTRADORES, O MADJ� INSERE O SEU MAIL PESSOAL E A S
 
 <---------------Ideias do pedro----------->
 O header da parte de administraçao tem de ser alterado, existem campos desnecesarios nas dropdowns e as cores devem ser alteradas.
+
+Ideias para mais tarde!!
+botao remember me

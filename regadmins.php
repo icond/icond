@@ -1,77 +1,38 @@
 <?php 
+  session_start();
   include 'include/header.php';
   include 'include/connection.php';
   
   //Informações que vêm do Index
   if(isset($_POST['submit'])){
     $email = $_POST['email'];
-    $nif = $_POST['nif'];
+    $nifParc = $_POST['nifParc'];
     $password = $_POST['password'];
   }
 
   //Quando é feito o registo
   if(isset($_POST['registar'])){
-    $email = $_POST['email'];
-    $nif = $_POST['nif'];
-    $password = $_POST['password'];
-    $morada = $_POST['rua'];
-    $lote = $_POST['lote'];
-    $postal1 = $_POST['postal1'];
-    $postal2 = $_POST['postal2'];
-    $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
-    $localidade = $_POST['localidade'];
-    $cidade = $_POST['cidade'];
-    $pais = 1;
-    $idEmpresa = 0;
+
+
+    $_SESSION["email"] = $_POST['email'];
+    $_SESSION["nifParc"] = $_POST['nifParc'];
+    $_SESSION["nifCond"] = $_POST['nifCond'];
+    $_SESSION["password"] = $_POST['password'];
+    $_SESSION["morada"] = $_POST['rua'];
+    $_SESSION["lote"] = $_POST['lote'];
+    $_SESSION["codigoPostal"] = $_POST['postal1'].'-'.$_POST['postal2'];
+    $_SESSION["localidade"] = $_POST['localidade'];
+    $_SESSION["cidade"] = $_POST['cidade'];
+    $_SESSION["pais"] = 1;
+    $_SESSION["idEmpresa"] = 0;
 
     //SQL para ver se o NIF existe na BD
     $checkIfNifExists = "SELECT nifCond FROM condominios WHERE nifCond = '$nif'";
-
-    //SQL para criar o registo de novo condominio
-    //idEmpresa está a ser enviado como 0 porque o registo
-    //nao esta associado a nenhuma empresa de gestao de condominios
-    $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, idEmpresa) 
-                  VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nif', '0')";
-
     $ifRows = mysqli_query($conn, $checkIfNifExists);
-
-    //Se o NIF ainda não existir
-    if(mysqli_num_rows($ifRows) == 0){
-
-      if(mysqli_query($conn, $sqlCondos)){
-      	//Condominio criado com sucesso
-
-      	//SQL para encontrar o ID do condominio que acabou de ser criado
-        $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nif'";
-		$result = mysqli_query($conn, $idCondo);
-
-		if(mysqli_num_rows($result) > 0){
-			while($row = mysqli_fetch_assoc($result)){
-                $idCond = $row["idCond"];
-            }
-        }else{
-            echo "Nao foi encontrado o NIF, mas devia.";
-        }
-
-        //Encriptar a pass para md5
-        //$passmd5 = md5($password);
-
-        //SQL para criar a parcela do admin do condominio
-    	$sqlParcelaAdmin = "INSERT INTO parcelas(email, password, idCond, isAdmin) VALUES('$email', '$password', '$idCond','1')";
-
-        if (mysqli_query($conn, $sqlParcelaAdmin)){
-        	//Parcela do admin do condominio criada com sucesso
-          header("Location: login.php?s=1");
-        }
-      }
-      else{
-        echo "Error: " . $sqlCondos . "<br><br><br>" . $sqlParcelas . mysqli_error($conn);
-      }    
-    }
-
-    //O NIF já existe
-    else{
+    if(mysqli_num_rows($ifRows) != 0){
       $nifAlreadyExists = 1;
+    }else{
+      header("Location: regfra.php");
     }
   }
 ?>
@@ -113,8 +74,8 @@
           <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
-            <label>NIF</label><br>
-            <input id="sonumeros" type="text" name="nif" maxlength="9" placeholder="Número de Identificação Fiscal" <?php if(isset($nif)){echo "value='".$nif."'";} ?> required/><br>
+            <label>NIF Parcela</label><br>
+            <input id="sonumeros" type="text" name="nifParc" maxlength="9" placeholder="Número de Identificação Fiscal do Utilizador" <?php if(isset($nifParc)){echo "value='".$nifParc."'";} ?> required/><br>
             <label>Palavra Passe</label><br>
             <input type="password" name="password" placeholder="Palavra Passe" <?php if(isset($password)){echo "value='".$password."'";} ?> required /><br>
             <label>Morada</label><br>
@@ -128,6 +89,9 @@
               <label>Código Postal</label><br>
               <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" <?php if(isset($postal1)){echo "value='".$postal1."'";} ?> required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" <?php if(isset($postal2)){echo "value='".$postal2."'";} ?> required/><br>
             </div>
+            
+            <label>NIF Condominio</label><br>
+            <input id="sonumeros" type="text" name="nifCond" maxlength="9" placeholder="Número de Identificação Fiscal do Condominio" <?php if(isset($nif)){echo "value='".$nif."'";} ?> required/><br>
             <label>Localidade</label><br>
             <input type="text" name="localidade" placeholder="eg. Santos" <?php if(isset($localidade)){echo "value='".$localidade."'";} ?> required /><br>
             <label>Cidade</label><br>
