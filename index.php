@@ -227,7 +227,7 @@
                 -->
 
                 <!--apresentar o produto-->
-                <div class="row productPresentation1" style="overflow: hidden;">
+                <div class="row productPresentation1" style="overflow: hidden;" id="presentationSHOW">
                     <div class="col-lg-offset-2 col-lg-10 col-md-12">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 kk">

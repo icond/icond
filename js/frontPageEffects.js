@@ -7,7 +7,7 @@
             if(windowWidth > 992) {
                 $("#form2").hide();
                 $("#form3").hide();
-                document.getElementById("testimonials").style.marginTop="20px";
+                document.getElementById("presentationSHOW").style.marginTop="20px";
                 $("#form1").slideToggle(400);
             }
             else {
@@ -18,7 +18,7 @@
 
             if($("#bt1").hasClass("active")){
                 $("#bt1").removeClass("active");
-                document.getElementById("testimonials").style.marginTop="0px";
+                document.getElementById("presentationSHOW").style.marginTop="0px";
             }else{
                 $("#bt1").addClass("active");
             }
@@ -32,7 +32,7 @@
             {
                 $("#form1").hide();
                 $("#form3").hide();
-                document.getElementById("testimonials").style.marginTop="20px";
+                document.getElementById("presentationSHOW").style.marginTop="20px";
                 $("#form2").slideToggle(400);
             }
             else 
@@ -46,7 +46,7 @@
 
             if($("#bt2").hasClass("active")){
                 $("#bt2").removeClass("active");
-                document.getElementById("testimonials").style.marginTop="0px";
+                document.getElementById("presentationSHOW").style.marginTop="0px";
             }else{
                 $("#bt2").addClass("active");
             }
@@ -60,7 +60,7 @@
             {
                 $("#form1").hide();
                 $("#form2").hide();
-                document.getElementById("testimonials").style.marginTop="20px";
+                document.getElementById("presentationSHOW").style.marginTop="20px";
                 $("#form3").slideToggle(400);
             }
             else 
@@ -75,7 +75,7 @@
 
             if($("#bt3").hasClass("active")){
                 $("#bt3").removeClass("active");
-                document.getElementById("testimonials").style.marginTop="0px";
+                document.getElementById("presentationSHOW").style.marginTop="0px";
             }else{
                 $("#bt3").addClass("active");
             }
