@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 08-Set-2016 às 11:50
+-- Generation Time: 08-Set-2016 às 12:11
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -54,13 +54,6 @@ CREATE TABLE `condominios` (
   `ibanCond` int(11) NOT NULL,
   `idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `condominios`
---
-
-INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`) VALUES
-(1, 'Rua atec', '5', '2500-300', 'Lisboa', 'Lisboa', 1, '912312393', 5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -120,37 +113,6 @@ CREATE TABLE `parcelas` (
   `comissaoMensal` int(11) NOT NULL,
   `organizacao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `parcelas`
---
-
-INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `isAdmin`, `codigo`, `idCond`, `nifParcela`, `andar`, `comissaoMensal`, `organizacao`) VALUES
-(1, '', '', '', 0, 'zN5c5', 1, 0, 1, 0, 'Esquerdo'),
-(2, '', '', '', 0, 'maN5c', 1, 0, 1, 0, 'Direito'),
-(3, '', '', '', 0, 'hLfhx', 1, 0, 1, 0, 'Frente'),
-(4, '', '', '', 0, 'Vtnq4', 1, 0, 1, 0, 'Frente'),
-(5, '', '', '', 0, 'tCuEU', 1, 0, 1, 0, 'Frente'),
-(6, '', '', '', 0, 'AX9y9', 1, 0, 2, 0, 'Esquerdo'),
-(7, '', '', '', 0, 'J5VNf', 1, 0, 2, 0, 'Direito'),
-(8, '', '', '', 0, 'Y7rMb', 1, 0, 2, 0, 'Frente'),
-(9, '', '', '', 0, 'B3VPk', 1, 0, 2, 0, 'Frente'),
-(10, '', '', '', 0, 'sLLM8', 1, 0, 2, 0, 'Frente'),
-(11, '', '', '', 0, 'OdJfQ', 1, 0, 3, 0, 'Esquerdo'),
-(12, '', '', '', 0, 'DPOLm', 1, 0, 3, 0, 'Direito'),
-(13, '', '', '', 0, 'VurQe', 1, 0, 3, 0, 'Frente'),
-(14, '', '', '', 0, 'FOm4z', 1, 0, 3, 0, 'Frente'),
-(15, '', '', '', 0, 'xDBst', 1, 0, 3, 0, 'Frente'),
-(16, '', '', '', 0, 'TQbEC', 1, 0, 4, 0, 'Esquerdo'),
-(17, '', '', '', 0, 'jsO2G', 1, 0, 4, 0, 'Direito'),
-(18, '', '', '', 0, 'DDvsn', 1, 0, 4, 0, 'Frente'),
-(19, '', '', '', 0, 'PmOda', 1, 0, 4, 0, 'Frente'),
-(20, '', '', '', 0, '3RXpT', 1, 0, 4, 0, 'Frente'),
-(21, '', '', '', 0, 'xSx6h', 1, 0, 5, 0, 'Esquerdo'),
-(22, '', '', '', 0, 'WY87C', 1, 0, 5, 0, 'Direito'),
-(23, '', '', '', 0, 'Jr3xr', 1, 0, 5, 0, 'Frente'),
-(24, '', '', '', 0, 'H93bz', 1, 0, 5, 0, 'Frente'),
-(25, '', '', '', 0, 'pYSbb', 1, 0, 5, 0, 'Frente');
 
 --
 -- Indexes for dumped tables
