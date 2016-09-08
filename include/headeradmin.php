@@ -84,7 +84,7 @@
                           <li><a href="#">Dados do Condomínio</a></li>
                           <li><a href="#">Alterar Senha</a></li>
                           <li><a href="#">Utilizadores</a></li>
-                          <li><a href="#">Terminar Sessão</a></li>
+                          <li><a href="../logout.php">Terminar Sessão</a></li>
                         </ul>
                       </li>
                     </p>
