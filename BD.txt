@@ -1,7 +1,7 @@
 ﻿ # Todos os varchar estão com o tamanho 255
 
 ---------------------------------------------------
--- Condominios
+-- condominios
 ---------------------------------------------------
 
 -> idCond INT
@@ -17,7 +17,7 @@
 -> idEmpresa (porque é que isto está aqui?) INT
 
 ---------------------------------------------------
--- Parcelas
+-- parcelas
 ---------------------------------------------------
 
 -> idParcela INT
@@ -32,7 +32,7 @@
 -> organizacao (supostamente se é direito ou esquerdo ou cenas) VARCHAR
 
 ---------------------------------------------------
--- Pagamentos - Histórico de pagamentos
+-- pagamentos - Histórico de pagamentos
 ---------------------------------------------------
 
 -> idPagamento INT
@@ -42,7 +42,7 @@
 -> isPaid (true or false) TINYINT
 
 ---------------------------------------------------
--- Despesas - Em caso de arranjos e afins
+-- despesas - Em caso de arranjos e afins
 ---------------------------------------------------
 
 -> idDespesa INT
@@ -52,14 +52,14 @@
 -> data DATE ???
 
 ---------------------------------------------------
--- Pais
+-- pais
 ---------------------------------------------------
 
 -> idPais INT
 -> Pais VARCHAR
 
 ---------------------------------------------------
--- Apartamentos - contem a informação de cada parcela
+-- apartamentos - contem a informação de cada parcela
 ---------------------------------------------------
 
 -> idApartamento INT
