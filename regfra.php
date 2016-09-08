@@ -5,23 +5,7 @@
     session_start();
 
 ?>
-    <script>
-      function sim(and, par, ori) {
-        if (and.length == 0 ) { 
-            document.getElementById("show").innerHTML = "";
-            return;
-        }else{
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("show").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET", "simfrac.php?A=" + and + "&P=" + par + "&O=" + ori , true);
-            xmlhttp.send();
-        }
-      }
-    </script>
+   
     <script>
     $(document).ready(function() {
     $("#sonumeros").keydown(function (e) {
@@ -44,19 +28,35 @@
                     }
                 });
       });
+    </script> 
+    <script>
+      function sim(and, par, ori) {
+        if (and.length == 0 ) { 
+            document.getElementById("show").innerHTML = "";
+            return;
+        }else{
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("show").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "simfrac.php?A=" + and + "&P=" + par + "&O=" + ori , true);
+            xmlhttp.send();
+        }
+      }
     </script>
     <script type="text/javascript">
       function verificar(andares, parcelas, orientacao){
         if(parcelas > 3 && orientacao  == 0){
           document.getElementById("ori").selectedIndex = "1";
         }
-        sim(andares, parcelas, orientacao);
-
       }
     </script>
     <script type="text/javascript">
       function correr(andares, parcelas, orientacao){
         verificar(andares, parcelas, orientacao);
+        var orientacao = document.getElementById("ori").value; 
         sim(andares, parcelas, orientacao);
       }
     </script>
@@ -93,7 +93,7 @@
         <div class="form">
           <form class="login-form" action="" method="POST">
             Andares <br>
-            <input id="sonumeros" style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeydown="correr(andares.value, parcelas.value, orientacao.value)" /><br>
+            <input id="sonumeros" style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeydown="sim(andares.value, parcelas.value, orientacao.value)" /><br>
             Parcelas <br>
             <input id="sonumeros" style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="correr(andares.value, parcelas.value, orientacao.value)" /> <br>
                     Orientação das parcelas <br>
