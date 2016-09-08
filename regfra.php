@@ -22,6 +22,44 @@
         }
       }
     </script>
+    <script>
+    $(document).ready(function() {
+    $("#sonumeros").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                            // Allow: Ctrl+A
+                            (e.keyCode == 65 && e.ctrlKey === true) ||
+                         // Allow: Ctrl+C
+                         (e.keyCode == 67 && e.ctrlKey === true) ||
+                         // Allow: Ctrl+X
+                         (e.keyCode == 88 && e.ctrlKey === true) ||
+                         // Allow: home, end, left, right
+                         (e.keyCode >= 35 && e.keyCode <= 39)) {
+                             // let it happen, don't do anything
+                         return;
+                     }
+                    // Ensure that it is a number and stop the keypress
+                    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                        e.preventDefault();
+                    }
+                });
+      });
+    </script>
+    <script type="text/javascript">
+      function verificar(andares, parcelas, orientacao){
+        if(parcelas > 3 && orientacao  == 0){
+          document.getElementById("ori").selectedIndex = "1";
+        }
+        sim(andares, parcelas, orientacao);
+
+      }
+    </script>
+    <script type="text/javascript">
+      function correr(andares, parcelas, orientacao){
+        verificar(andares, parcelas, orientacao);
+        sim(andares, parcelas, orientacao);
+      }
+    </script>
     </head>
     <body>
 
@@ -55,11 +93,11 @@
         <div class="form">
           <form class="login-form" action="" method="POST">
             Andares <br>
-            <input style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeyup="sim(andares.value, parcelas.value, orientacao.value)" /><br>
+            <input id="sonumeros" style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeydown="correr(andares.value, parcelas.value, orientacao.value)" /><br>
             Parcelas <br>
-            <input style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="sim(andares.value, parcelas.value, orientacao.value)" /> <br>
+            <input id="sonumeros" style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="correr(andares.value, parcelas.value, orientacao.value)" /> <br>
                     Orientação das parcelas <br>
-                    <select name="orientacao" onchange="sim(andares.value, parcelas.value, orientacao.value)">
+                    <select name="orientacao" id="ori" onchange="correr(andares.value, parcelas.value, orientacao.value)">
                         <option value="0">Direções</option>
                         <option value="1">Letras</option>
                     </select><br>
@@ -73,6 +111,7 @@
             <?php 
 
               if(isset($_POST['regfracoes'])){
+                if($_POST['parcelas'] < 3 && $_POST['orientacao'] == 0){
                 $andares = $_POST['andares'];
                 $parcelas = $_POST['parcelas'];
                 $orientacao = $_POST['orientacao'];
@@ -150,7 +189,9 @@
 
                 //header("Location: /admin/fracao.php");
 
-                
+                }else{
+                  //a dropbox tem valor direçoes e as parelas sao mais do que 3
+                }
               }
 
              ?>
