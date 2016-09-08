@@ -21,7 +21,7 @@
     	if($count == 1){
       		//Login com sucesso
       		$_SESSION['user'] = $idLogged;
-      		header("Location: ../admin/");
+      		header("Location: ../admin/index.php");
     	}else{
       		//Login falhado, mensagem de erro
       		header("Location: ../login.php?s=2");

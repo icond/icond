@@ -1,7 +1,7 @@
 <?php
 
   //Utilizador Logado
-  if($_SESSION["user"] != "") {
+  if($_SESSION["user"] !== "") {
     include '../include/headeradmin.php';
     include '../include/connection.php';
     
@@ -88,6 +88,7 @@
 <?php
 
   }else{
+    // aqui podia-se enviar um parametro para pedir para fazer outra vez login
     header("Location: ../login.php");
   }
 
