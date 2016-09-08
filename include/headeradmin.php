@@ -36,11 +36,6 @@
       $last_name = $words[$name_count - 1];
     }
   }
-  // caso não haja sessão
-  else
-  {
-      header("Location: ../login.php");
-  }
 ?>
 <!DOCTYPE html>
 <html>
