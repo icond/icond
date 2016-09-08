@@ -5,6 +5,23 @@
     session_start();
 
 ?>
+    <script>
+      function sim(and, par, ori) {
+        if (and.length == 0 ) { 
+            document.getElementById("show").innerHTML = "";
+            return;
+        }else{
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("show").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "simfrac.php?A=" + and + "&P=" + par + "&O=" + ori , true);
+            xmlhttp.send();
+        }
+      }
+    </script>
     </head>
     <body>
 
@@ -38,15 +55,20 @@
         <div class="form">
           <form class="login-form" action="" method="POST">
             Andares <br>
-            <input style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required /><br>
+            <input style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeyup="sim(andares.value, parcelas.value, orientacao.value)" /><br>
             Parcelas <br>
-            <input style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required/> <br>
+            <input style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="sim(andares.value, parcelas.value, orientacao.value)" /> <br>
                     Orientação das parcelas <br>
-                    <select name="orientacao">
+                    <select name="orientacao" onchange="sim(andares.value, parcelas.value, orientacao.value)">
                         <option value="0">Direções</option>
                         <option value="1">Letras</option>
-                    </select>
-                    <br><br>
+                    </select><br>
+            <div>
+              <span  id="show"> </span>   
+            </div>   
+            
+                
+            <br><br>
             <button name="regfracoes" class="btlogin">Finalizar Registo</button>
             <?php 
 
@@ -133,6 +155,7 @@
 
              ?>
           </form>
+               
         </div>
       </div>
     </body>
