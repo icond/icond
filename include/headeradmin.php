@@ -1,8 +1,46 @@
 <?php
+  //ainda não foi testado
   session_start();
   include "connection.php";
 
-  
+  if(isset($_SESSION['user']))
+  {
+    $first_name = "";
+    $last_name = "";
+
+    // get user's name
+    $sql = "SELECT full_name FROM parcelas WHERE idCond = " . $_SESSION['user'];
+    //para poupar latin
+    $row = mysqli_fetch_array(mysqli_query($conn, $sql));
+
+    $full_name = $row['full_name'];
+    $name_count = str_word_count($full_name);
+
+    // decide either to split the string or just use it right away
+    if($name_count == 0)
+    {
+      $first_name = "nullPHP";
+    }
+    else if($name_count == 1)
+    {
+      $first_name = $full_name;
+    }
+    else if($name_count == 2)
+    {
+      list($first_name, $last_name) = explode(" ", $full_name)
+    }
+    else
+    {
+      $words = explode(" ", $full_name);
+      $first_name = $words[0];
+      $last_name = $words[$name_count - 1];
+    }
+  }
+  // caso não haja sessão
+  else
+  {
+      header("Location: ../login.php");
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,8 +116,8 @@
                 codigo para utilizador com sessão-->
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador:</span> <span style="color: #fff;"> (Valor de Cookie)</span></p></b></li>
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"> (Via BD)</span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador:</span> <span style="color: #fff;"><?php echo $first_name . ' ' . $last_name;?></span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"><?php echo $_SESSION['user'];?></span></p></b></li>
                   <li>
                     <p class="navbar-text-data">
                       <!--<a href="#" class="myExitButton">Sair</a>-->
