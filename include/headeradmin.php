@@ -7,13 +7,15 @@
   {
     $first_name = "";
     $last_name = "";
+    $idCond = 0;
 
     // get user's name
-    $sql = "SELECT full_name FROM parcelas WHERE idParcela = " . $_SESSION['user'];
+    $sql = "SELECT full_name, idCond FROM parcelas WHERE idParcela = " . $_SESSION['user'];
     //para poupar latin
     $row = mysqli_fetch_array(mysqli_query($conn, $sql));
 
     $full_name = $row['full_name'];
+    $idCond = $row['idCond'];
     $name_count = str_word_count($full_name);
 
     // decide either to split the string or just use it right away
@@ -38,7 +40,7 @@
   }
   else
   {
-    header("Location: ../login.php");
+    header("Location: ../login.php"); 
   }
 ?>
 <!DOCTYPE html>
@@ -116,7 +118,7 @@
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                   <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador:</span> <span style="color: #fff;"><?php echo $first_name . ' ' . $last_name;?></span></p></b></li>
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"><?php echo $_SESSION['user'];?></span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"><?php echo $idCond;?></span></p></b></li>
                   <li>
                     <p class="navbar-text-data">
                       <!--<a href="#" class="myExitButton">Sair</a>-->
