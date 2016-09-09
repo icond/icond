@@ -15,6 +15,7 @@
 
 
     $_SESSION["email"] = $_POST['email'];
+    $_SESSION["nome"] = $_POST['nome'];
     $_SESSION["nifParc"] = $_POST['nifParc'];
     $_SESSION["nifCond"] = $_POST['nifCond'];
     $_SESSION["password"] = $_POST['password'];
@@ -74,6 +75,8 @@
           <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
+            <label>Nome Completo</label><br>
+            <input type="text" name="nome" placeholder="Rui Perreira"  required/><br>
             <label>NIF Parcela</label><br>
             <input id="sonumeros" type="text" name="nifParc" maxlength="9" placeholder="Número de Identificação Fiscal do Utilizador" <?php if(isset($nifParc)){echo "value='".$nifParc."'";} ?> required/><br>
             <label>Palavra Passe</label><br>

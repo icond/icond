@@ -135,16 +135,16 @@
                   echo $sqlCondos . "<br><br>";
                 if(mysqli_query($conn, $sqlCondos)){
                   $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
-                  $result = mysqli_query($conn, $idCondo);
+                  //$result = mysqli_query($conn, $idCondo);
 
-                  if(mysqli_num_rows($result) > 0){
+                 /* if(mysqli_num_rows($result) > 0){
                       while($row = mysqli_fetch_assoc($result)){
                           $idCond = $row["idCond"];
                           $_SESSION['idCond'] = $idCond;
                       }
                   }else{
                       header("Location: ../index.php");
-                  }
+                  }*/
                 }
 
                 //Fim do Registo de Condominios
@@ -180,14 +180,22 @@
                         $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
                           VALUES('$codigo', '$x', '$z', '$idCond')"; //TEM DE SE FAZER QUERY COM O SESSION USER PARA IR BUSCAR O ID COND
 
-                          mysqli_query($conn, $query);
+                          //mysqli_query($conn, $query);
                           echo $query . "<br>";
                     }
                 }
 
                 //Fim do Registo de Parcelas
+                $email = $_SESSION["email"];
+                $nome = $_SESSION["nome"];
+                $password = $_SESSION["password"];
+                $parc = $_POST['adminparc'];
 
+                $help = explode(' ', $parc);
+                echo '1' . $help[0] . '2' . $help[1];
                 //header("Location: /admin/fracao.php");
+
+                
 
                 }else{
                   //a dropbox tem valor direçoes e as parelas sao mais do que 3
