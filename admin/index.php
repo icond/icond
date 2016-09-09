@@ -53,13 +53,14 @@
                                         <span class="title">Nif</span><br>
                                     </div>
                                     <div class="panel-menu-info-data">
-                                        <span class="data">Avenida Alberto Caeiro Nº33</span><br><br>
-                                        <span class="data">2F</span><br><br>
-                                        <span class="data">2562-225</span><br><br>
-                                        <span class="data">Palmela</span><br><br>
-                                        <span class="data">Setubal</span><br><br>
-                                        <span class="data">Portugal</span><br><br>
-                                        <span class="data">269009540</span><br>
+                                        <span class="data"><?php echo $morada; ?></span><br><br>
+                                        <span class="data"><?php echo $lote; ?></span><br><br>
+                                        <span class="data"><?php echo $codigoPostal; ?></span><br><br>
+                                        <span class="data"><?php echo $localidade; ?></span><br><br>
+                                        <span class="data"><?php echo $cidade; ?></span><br><br>
+                                        <!-- TODO Ir buscar o país de acordo com o ID à tabela dos países -->
+                                        <span class="data"><?php echo "ID País: ".$idPais." (Portugal)"; ?></span><br><br>
+                                        <span class="data"><?php echo $nifCond; ?></span><br>
                                     </div>
                                 </div>
 
