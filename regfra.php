@@ -113,52 +113,70 @@
 
               $ok = true;
 
+              //Receção de variaveis que vêm do regadmin
+              $email = $_POST['email'];
+              $nome = $_POST['nome'];
+              $nifParc = $_POST['nifParc'];
+              $password = $_POST['password'];
+              $morada = $_POST['rua'];
+              $lote = $_POST['lote'];
+              $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
+              $nifCond = $_POST['nifCond'];
+              $localidade = $_POST['localidade'];
+              $cidade = $_POST['cidade'];
+
+              $pais = 1;
+              $idEmpresa = 0;
+              $ibanCond = 0;
+
               if(isset($_POST['regfracoes'])){
                 
                 $andares = $_POST['andares'];
                 $parcelas = $_POST['parcelas'];
                 $orientacao = $_POST['orientacao'];
 
-                $nifCond = $_SESSION["nifCond"];
-                $nifParc = $_SESSION["nifParc"];
-                $morada = $_SESSION["morada"];
-                $lote = $_SESSION["lote"];
-                $codigoPostal = $_SESSION["codigoPostal"];
-                $localidade = $_SESSION["localidade"];
-                $cidade = $_SESSION["cidade"];
-                $pais = $_SESSION["pais"];
-                $idEmpresa = $_SESSION["idEmpresa"];
-
                 $idCond = "";
 
-                $email = $_SESSION["email"];
-                $nome = $_SESSION["nome"];
-                $password = $_SESSION["password"];
                 $parc = $_POST['adminparc'];
 
                 //Registo de Condominios
+                if($ok){
+                  $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa) 
+                    VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nifCond', '$andares', '$ibanCond', '$idEmpresa')";
 
-                $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, idEmpresa, nAndares) 
-                  VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nifCond', '$idEmpresa', '$andares')";
-                  //echo $sqlCondos . "<br><br>";
+                  if(mysqli_query($conn, $sqlCondos)){
+                    $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
+                    $result = mysqli_query($conn, $idCondo);
 
-                if(mysqli_query($conn, $sqlCondos)){
-                  $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
-                  $result = mysqli_query($conn, $idCondo);
-
-                  if(mysqli_num_rows($result) > 0){
+                    if(mysqli_num_rows($result) > 0){
                       while($row = mysqli_fetch_assoc($result)){
                           $idCond = $row["idCond"];
-                          $_SESSION['idCond'] = $idCond;
                       }
-                  }else{
-                      header("Location: ../index.php");
-                      $page = ""
-                      //E takvez faça mais coisas
+                    }else{
+                      $pageRedirect = "../index.php";
+                      $ok = false;
+                      //E talvez faça mais coisas
+                    }
                   }
                 }
-
                 //Fim do Registo de Condominios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
                 //Registo de Parcelas
 
                 for($x=1;$x<=$andares;$x++){
