@@ -1,30 +1,30 @@
 <?php
-
-  //Utilizador Logado
-  if($_SESSION["user"] !== "") {
     include '../include/headeradmin.php';
     include '../include/connection.php';
     
-    //Saber qual o user que está logado
-    $idParcela = $_SESSION["user"];
+    //Utilizador Logado
+    if(isset($_SESSION["user"])) {
 
-    //Obter a info do condominio
-    $sqlInfoCond = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond";
-    $sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($result);
-    $morada = $row['morada'];
-    $lote = $row['lote'];
-    $codigoPostal = $row['codigoPostal'];
-    $localidade = $row['localidade'];
-    $cidade = $row['cidade'];
-    $idPais = $row['idPais'];
-    $nifCond = $row['nifCond'];
-    $nAndares = $row['nAndares'];
-    $ibanCond = $row['ibanCond'];
-    $idEmpresa = $row['idEmpresa'];
+        //Saber qual o user que está logado
+        $idParcela = $_SESSION["user"];
 
+        //Obter a info do condominio
+        $sqlInfoCond = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond";
+        $sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $morada = $row['morada'];
+        $lote = $row['lote'];
+        $codigoPostal = $row['codigoPostal'];
+        $localidade = $row['localidade'];
+        $cidade = $row['cidade'];
+        $idPais = $row['idPais'];
+        $nifCond = $row['nifCond'];
+        $nAndares = $row['nAndares'];
+        $ibanCond = $row['ibanCond'];
+        $idEmpresa = $row['idEmpresa'];
     ?>
+
         <body>
             <main>
                 <div class="container">
@@ -92,6 +92,4 @@
     header("Location: ../login.php");
   }
 
-
  ?>
-    

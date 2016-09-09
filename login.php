@@ -45,6 +45,8 @@
               echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>Login incorreto!</div>";
             }elseif ($_GET['s'] == 3) {
               echo "<div style='text-align:center;' class='alert alert-success' role='alert'>Login feito com sucesso!". $_SESSION['user'] ."</div>";
+            }elseif ($_GET['s'] == 4) {
+              echo "<div style='text-align:center;' class='alert alert-warning' role='alert'>Por favor faça login". $_SESSION['user'] ."</div>";
             }
           }
           
