@@ -13,23 +13,10 @@
   //Quando é feito o registo
   if(isset($_POST['registar'])){
 
-
-    $_SESSION["email"] = $_POST['email'];
-    $_SESSION["nome"] = $_POST['nome'];
-    $_SESSION["nifParc"] = $_POST['nifParc'];
-    $_SESSION["nifCond"] = $_POST['nifCond'];
-    $_SESSION["password"] = $_POST['password'];
-    $_SESSION["morada"] = $_POST['rua'];
-    $_SESSION["lote"] = $_POST['lote'];
-    $_SESSION["codigoPostal"] = $_POST['postal1'].'-'.$_POST['postal2'];
-    $_SESSION["localidade"] = $_POST['localidade'];
-    $_SESSION["cidade"] = $_POST['cidade'];
-    $_SESSION["pais"] = 1;
-    $_SESSION["idEmpresa"] = 0;
-
     //SQL para ver se o NIF existe na BD
     $checkIfNifExists = "SELECT nifCond FROM condominios WHERE nifCond = '$nif'";
     $ifRows = mysqli_query($conn, $checkIfNifExists);
+
     if(mysqli_num_rows($ifRows) != 0){
       $nifAlreadyExists = 1;
     }else{
@@ -83,22 +70,22 @@
             <input type="password" name="password" placeholder="Palavra Passe" <?php if(isset($password)){echo "value='".$password."'";} ?> required /><br>
             <label>Morada</label><br>
             <label>Rua</label><br>
-            <input type="text" name="rua" placeholder="Rua do condomínio" <?php if(isset($morada)){echo "value='".$morada."'";} ?> required /><br>
+            <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
             <div style="width:50%; float:left;">
               <label>Lote</label><br>
-              <input style="width:40%;" type="text" name="lote" maxlength="3" placeholder="5" <?php if(isset($lote)){echo "value='".$lote."'";} ?> required/>
+              <input style="width:40%;" type="text" name="lote" maxlength="3" placeholder="5" required/>
              </div>
              <div style="width:50%; float:right;"> 
               <label>Código Postal</label><br>
-              <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" <?php if(isset($postal1)){echo "value='".$postal1."'";} ?> required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" <?php if(isset($postal2)){echo "value='".$postal2."'";} ?> required/><br>
+              <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" required/><br>
             </div>
             
             <label>NIF Condominio</label><br>
-            <input id="sonumeros" type="text" name="nifCond" maxlength="9" placeholder="Número de Identificação Fiscal do Condominio" <?php if(isset($nif)){echo "value='".$nif."'";} ?> required/><br>
+            <input id="sonumeros" type="text" name="nifCond" maxlength="9" placeholder="Número de Identificação Fiscal do Condominio" required/><br>
             <label>Localidade</label><br>
-            <input type="text" name="localidade" placeholder="eg. Santos" <?php if(isset($localidade)){echo "value='".$localidade."'";} ?> required /><br>
+            <input type="text" name="localidade" placeholder="eg. Santos" required /><br>
             <label>Cidade</label><br>
-            <input type="text" name="cidade" placeholder="eg. Lisboa" <?php if(isset($cidade)){echo "value='".$cidade."'";} ?> required /><br>
+            <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
             <button type="submit" name="registar" class="btlogin">Registar</button>
         </form>
 

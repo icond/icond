@@ -5,7 +5,6 @@
     session_start();
 
 ?>
-   
     <script>
     $(document).ready(function() {
     $("#sonumeros").keydown(function (e) {
@@ -102,7 +101,7 @@
                         <option value="1">Letras</option>
                     </select><br>
             <div>
-              <span  id="show"> </span>   
+              <span id="show"></span>   
             </div>   
             
                 
@@ -110,8 +109,12 @@
             <button name="regfracoes" class="btlogin">Finalizar Registo</button>
             <?php 
 
+              //$ok é uma variavel para ver se tudo está a correr bem, só avança para o bloco de if se estiver tudo ok, caso contrario vai para o fim da pagina em que no header vai ter uma variavel para o utilizador ser redirecionado
+
+              $ok = true;
+
               if(isset($_POST['regfracoes'])){
-                if($_POST['parcelas'] < 3 && $_POST['orientacao'] == 0){
+                
                 $andares = $_POST['andares'];
                 $parcelas = $_POST['parcelas'];
                 $orientacao = $_POST['orientacao'];
@@ -128,23 +131,31 @@
 
                 $idCond = "";
 
+                $email = $_SESSION["email"];
+                $nome = $_SESSION["nome"];
+                $password = $_SESSION["password"];
+                $parc = $_POST['adminparc'];
+
                 //Registo de Condominios
 
                 $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, idEmpresa, nAndares) 
                   VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nifCond', '$idEmpresa', '$andares')";
-                  echo $sqlCondos . "<br><br>";
+                  //echo $sqlCondos . "<br><br>";
+
                 if(mysqli_query($conn, $sqlCondos)){
                   $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
-                  //$result = mysqli_query($conn, $idCondo);
+                  $result = mysqli_query($conn, $idCondo);
 
-                 /* if(mysqli_num_rows($result) > 0){
+                  if(mysqli_num_rows($result) > 0){
                       while($row = mysqli_fetch_assoc($result)){
                           $idCond = $row["idCond"];
                           $_SESSION['idCond'] = $idCond;
                       }
                   }else{
                       header("Location: ../index.php");
-                  }*/
+                      $page = ""
+                      //E takvez faça mais coisas
+                  }
                 }
 
                 //Fim do Registo de Condominios
@@ -180,26 +191,33 @@
                         $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
                           VALUES('$codigo', '$x', '$z', '$idCond')"; //TEM DE SE FAZER QUERY COM O SESSION USER PARA IR BUSCAR O ID COND
 
-                          //mysqli_query($conn, $query);
-                          echo $query . "<br>";
+                          mysqli_query($conn, $query);
+                          //echo $query . "<br>";
                     }
                 }
 
                 //Fim do Registo de Parcelas
-                $email = $_SESSION["email"];
-                $nome = $_SESSION["nome"];
-                $password = $_SESSION["password"];
-                $parc = $_POST['adminparc'];
+                //Registo de Admin na sua parcela
 
                 $help = explode(' ', $parc);
-                echo '1' . $help[0] . '2' . $help[1];
-                //header("Location: /admin/fracao.php");
+                //echo '1Caixa - ' . $help[0] . ' 2Caixa - ' . $help[1];
+
+                $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1]'";
+                //echo $idParcelaString;
+
+                $runIdParcela = mysqli_query($conn, $idParcelaString);
+
+                while($row = mysqli_fetch_assoc($runIdParcela)){
+                    $idParcela = $row["idParcela"];
+                }
+
+                $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc' WHERE idParcela = '$idParcela'";
+                mysqli_query($conn, $AlterFields);
+
+                header("Location: " . $pageRedirect);
 
                 
 
-                }else{
-                  //a dropbox tem valor direçoes e as parelas sao mais do que 3
-                }
               }
 
              ?>
