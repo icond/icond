@@ -1,7 +1,7 @@
 <?php
     include '../include/headeradmin.php';
     include '../include/connection.php';
-    
+
     //Utilizador Logado
     if(isset($_SESSION["user"])) {
 
@@ -10,8 +10,8 @@
 
         //Obter a info do condominio
         $sqlInfoCond = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond";
-        $sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
-        $result = mysqli_query($conn, $sql);
+        //$sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
+        $result = mysqli_query($conn, $sqlInfoCond);
         $row = mysqli_fetch_array($result);
         $morada = $row['morada'];
         $lote = $row['lote'];
