@@ -1,7 +1,6 @@
 <?php 
   session_start();
   include 'include/header.php';
-  include 'include/connection.php';
   
   //Informações que vêm do Index
   if(isset($_POST['submit'])){
@@ -10,21 +9,27 @@
     $password = $_POST['password'];
   }
 
-  //Quando é feito o registo
-  if(isset($_POST['registar'])){
-
-    //SQL para ver se o NIF existe na BD
-    $checkIfNifExists = "SELECT nifCond FROM condominios WHERE nifCond = '$nif'";
-    $ifRows = mysqli_query($conn, $checkIfNifExists);
-
-    if(mysqli_num_rows($ifRows) != 0){
-      $nifAlreadyExists = 1;
-    }else{
-      header("Location: regfra.php");
-    }
-  }
+  
+  
 ?>
     </head>
+    <script>
+      function ver(nif) {
+          if(nif.length != 0 ){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("show").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "vernif.php?N=" + nif , true);
+            xmlhttp.send();
+            if(document.getElementById('show').innerHTML != "";){
+              document.getElementById('bt').disabled = true;
+            }
+        }
+      }
+    </script>
     <body>
 
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
@@ -50,16 +55,14 @@
       </nav>
       <div class="login-page"><h4 style="text-align:center; margin-top: 60px;"">Finalize o seu registo de administrador</h4>
        
-       <?php 
+       <div id="show">
+          
+          
 
-          if(isset($nifAlreadyExists)){
-            echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>NIF já em uso.</div>";
-          }
-
-        ?>
+        </div>
 
         <div class="form">
-          <form class="login-form" action="" method="POST">
+          <form class="login-form" action="regfra.php" method="POST">
             <label>E-Mail</label><br>
             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
             <label>Nome Completo</label><br>
@@ -81,12 +84,12 @@
             </div>
             
             <label>NIF Condominio</label><br>
-            <input id="sonumeros" type="text" name="nifCond" maxlength="9" placeholder="Número de Identificação Fiscal do Condominio" required/><br>
+            <input id="sonumeros" type="text" name="nifCond" maxlength="9" onkeyup="ver(nifCond.value)" placeholder="Número de Identificação Fiscal do Condominio" required/><br>
             <label>Localidade</label><br>
             <input type="text" name="localidade" placeholder="eg. Santos" required /><br>
             <label>Cidade</label><br>
             <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
-            <button type="submit" name="registar" class="btlogin">Registar</button>
+            <button type="submit" name="registar" id="bt" class="btlogin">Registar</button>
         </form>
 
         </div>
