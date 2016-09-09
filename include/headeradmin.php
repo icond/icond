@@ -9,7 +9,7 @@
     $last_name = "";
 
     // get user's name
-    $sql = "SELECT full_name FROM parcelas WHERE idCond = " . $_SESSION['user'];
+    $sql = "SELECT full_name FROM parcelas WHERE idParcela = " . $_SESSION['user'];
     //para poupar latin
     $row = mysqli_fetch_array(mysqli_query($conn, $sql));
 
