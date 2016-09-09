@@ -19,7 +19,7 @@
     // decide either to split the string or just use it right away
     if($name_count == 0)
     {
-      $first_name = "nullPHP";
+      $first_name = "nullPHP" ;
     }
     else if($name_count == 1)
     {
@@ -35,6 +35,10 @@
       $first_name = $words[0];
       $last_name = $words[$name_count - 1];
     }
+  }
+  else
+  {
+    header("Location: ../login.php");
   }
 ?>
 <!DOCTYPE html>
