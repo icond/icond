@@ -27,7 +27,7 @@
     }
     else if($name_count == 2)
     {
-      list($first_name, $last_name) = explode(" ", $full_name)
+      list($first_name, $last_name) = explode(" ", $full_name);
     }
     else
     {
