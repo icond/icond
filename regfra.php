@@ -1,9 +1,9 @@
 <?php 
+ob_start();
     include 'include/header.php';
     include 'include/connection.php';
     include 'code_generator.php';
     session_start();
-
 ?>
     <script>
     $(document).ready(function() {
@@ -61,7 +61,6 @@
     </script>
     </head>
     <body>
-
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
           <div class="container-fluid">
               <div class="navbar-header">
@@ -84,10 +83,7 @@
               </div>
           </div>
       </nav>
-
-      
       <div class="login-page">
-
         <h2 style="text-align:center;">Registo de Frações</h2>
         <div class="form">
           <form class="login-form" action="" method="POST">
@@ -102,145 +98,125 @@
                     </select><br>
             <div>
               <span id="show"></span>   
-            </div>   
-            
-                
+            </div>      
             <br><br>
             <button name="regfracoes" class="btlogin">Finalizar Registo</button>
-            <?php 
-
-              //$ok é uma variavel para ver se tudo está a correr bem, só avança para o bloco de if se estiver tudo ok, caso contrario vai para o fim da pagina em que no header vai ter uma variavel para o utilizador ser redirecionado
-
-              $ok = true;
-
+            <?php
+/*
+                $email = "";
+                $nome = "";
+                $nifParc = "";
+                $password = "";
+                $morada = "";
+                $lote = "";
+                $codigoPostal = "";
+                $nifCond = "";
+                $localidade = "";
+                $cidade = "";
+*/
               //Receção de variaveis que vêm do regadmin
-              $email = $_POST['email'];
-              $nome = $_POST['nome'];
-              $nifParc = $_POST['nifParc'];
-              $password = $_POST['password'];
-              $morada = $_POST['rua'];
-              $lote = $_POST['lote'];
-              $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
-              $nifCond = $_POST['nifCond'];
-              $localidade = $_POST['localidade'];
-              $cidade = $_POST['cidade'];
+              //if(isset($_POST['registar'])){
+                $email = $_POST['email'];
+                $nome = $_POST['nome'];
+                $nifParc = $_POST['nifParc'];
+                $password = $_POST['password'];
+                $morada = $_POST['rua'];
+                $lote = $_POST['lote'];
+                $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
+                $nifCond = $_POST['nifCond'];
+                $localidade = $_POST['localidade'];
+                $cidade = $_POST['cidade'];
+
+                echo $email . "<br>";
+                echo $nome . "<br>";
+                echo $nifParc . "<br>";
+                echo $password . "<br>";
+                echo $morada . "<br>";
+                echo $lote . "<br>";
+                echo $codigoPostal . "<br>";
+                echo $nifCond . "<br>";
+                echo $localidade . "<br>";
+                echo $cidade . "<br>";
+              //}
 
               $pais = 1;
               $idEmpresa = 0;
               $ibanCond = 0;
 
               if(isset($_POST['regfracoes'])){
-                
+
                 $andares = $_POST['andares'];
                 $parcelas = $_POST['parcelas'];
                 $orientacao = $_POST['orientacao'];
-
                 $idCond = "";
-
                 $parc = $_POST['adminparc'];
 
                 //Registo de Condominios
-                if($ok){
-                  $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa) 
-                    VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nifCond', '$andares', '$ibanCond', '$idEmpresa')";
-
-                  if(mysqli_query($conn, $sqlCondos)){
-                    $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
-                    $result = mysqli_query($conn, $idCondo);
-
-                    if(mysqli_num_rows($result) > 0){
-                      while($row = mysqli_fetch_assoc($result)){
-                          $idCond = $row["idCond"];
-                      }
-                    }else{
-                      $pageRedirect = "../index.php";
-                      $ok = false;
-                      //E talvez faça mais coisas
+                $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa) 
+                  VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nifCond', '$andares', '$ibanCond', '$idEmpresa')";
+                  echo $sqlCondos . "<br>";
+                if(mysqli_query($conn, $sqlCondos)){
+                  $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
+                  $result = mysqli_query($conn, $idCondo);
+                  if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                      $idCond = $row["idCond"];
                     }
+                  }else{
+                    //E talvez faça mais coisas
                   }
                 }
-                //Fim do Registo de Condominios
+                //Fim do Registo de Condominios 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
                 //Registo de Parcelas
-
                 for($x=1;$x<=$andares;$x++){
-                    for($y=1;$y<=$parcelas;$y++){
-
-                        if($orientacao==0){
-                            if($y==1)
-                                $z="Esquerdo";
-                            if($y==2)
-                                $z="Direito";
-                            if($y==3)
-                                $z="Frente";
-                        }else{
-                            if($y==1)
-                                $z="A";
-                            if($y==2)
-                                $z="B";
-                            if($y==3)
-                                $z="C";
-                            if($y==4)
-                                $z="D";
-                            if($y==5)
-                                $z="E";
-                            if($y==6)
-                                $z="F";
-                        }
-
-                        $codigo = generateRandomString(5);
-
-                        $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
-                          VALUES('$codigo', '$x', '$z', '$idCond')"; //TEM DE SE FAZER QUERY COM O SESSION USER PARA IR BUSCAR O ID COND
-
-                          mysqli_query($conn, $query);
-                          //echo $query . "<br>";
+                  for($y=1;$y<=$parcelas;$y++){
+                    if($orientacao==0){
+                      if($y==1)
+                        $z="Esquerdo";
+                      if($y==2)
+                        $z="Direito";
+                      if($y==3)
+                        $z="Frente";
+                    }else{
+                      if($y==1)
+                        $z="A";
+                      if($y==2)
+                        $z="B";
+                      if($y==3)
+                        $z="C";
+                      if($y==4)
+                        $z="D";
+                      if($y==5)
+                        $z="E";
+                      if($y==6)
+                        $z="F";
                     }
+                    $codigo = generateRandomString(5);
+                    $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
+                      VALUES('$codigo', '$x', '$z', '$idCond')";
+                    mysqli_query($conn, $query);
+                    echo $query . "<br>";
+                  }
                 }
-
                 //Fim do Registo de Parcelas
+
                 //Registo de Admin na sua parcela
-
-                $help = explode(' ', $parc);
-                //echo '1Caixa - ' . $help[0] . ' 2Caixa - ' . $help[1];
-
-                $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1]'";
-                //echo $idParcelaString;
-
-                $runIdParcela = mysqli_query($conn, $idParcelaString);
-
-                while($row = mysqli_fetch_assoc($runIdParcela)){
-                    $idParcela = $row["idParcela"];
+                  $help = explode(' ', $parc);
+                  $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1]'";
+                  $runIdParcela = mysqli_query($conn, $idParcelaString);
+                  while($row = mysqli_fetch_assoc($runIdParcela)){
+                      $idParcela = $row["idParcela"];
+                  }
+                  $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc' WHERE idParcela = '$idParcela'";
+                  echo $AlterFields;
+                  mysqli_query($conn, $AlterFields);
                 }
-
-                $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc' WHERE idParcela = '$idParcela'";
-                mysqli_query($conn, $AlterFields);
-
-                header("Location: " . $pageRedirect);
-
-                
-
-              }
-
+                //Fim do Registo de Admin na sua parcela
+              
+              ob_end_flush();
              ?>
-          </form>
-               
+          </form>  
         </div>
       </div>
     </body>
