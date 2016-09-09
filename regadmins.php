@@ -15,20 +15,40 @@
     </head>
     <script>
       function ver(nif) {
-          if(nif.length != 0 ){
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("show").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET", "vernif.php?N=" + nif , true);
-            xmlhttp.send();
-            if(document.getElementById('show').innerHTML != "";){
-              document.getElementById('bt').disabled = true;
+        if(nif.length != 0 ){
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("show").innerHTML = this.responseText;
             }
+          };
+          xmlhttp.open("GET", "vernif.php?N=" + nif , true);
+          xmlhttp.send(); 
         }
+        
+        
       }
+    </script> 
+    <script type="text/javascript">
+        function div(){
+          if(document.getElementById("show").innerText == "NIF já em uso."){
+            window.alert('help');
+          }
+        }
+        function wait(ms){
+         var start = new Date().getTime();
+         var end = start;
+         while(end < start + ms) {
+           end = new Date().getTime();
+         }
+      }
+    </script>
+    <script type="text/javascript">
+        function correr(nif){
+          ver(nif);
+          wait(50);
+          div();
+        }
     </script>
     <body>
 
@@ -55,11 +75,7 @@
       </nav>
       <div class="login-page"><h4 style="text-align:center; margin-top: 60px;"">Finalize o seu registo de administrador</h4>
        
-       <div id="show">
-          
-          
-
-        </div>
+       
 
         <div class="form">
           <form class="login-form" action="regfra.php" method="POST">
@@ -84,12 +100,13 @@
             </div>
             
             <label>NIF Condominio</label><br>
-            <input id="sonumeros" type="text" name="nifCond" maxlength="9" onkeyup="ver(nifCond.value)" placeholder="Número de Identificação Fiscal do Condominio" required/><br>
+            <input id="sonumeros" type="text" name="nifCond" maxlength="9"  onkeyup="correr(nifCond.value)" onpaste="correr(nifConf.value)" oninput="correr(nifConf.value)"  placeholder="Número de Identificação Fiscal do Condominio" required/><br>
+            <div id="show"></div><br>
             <label>Localidade</label><br>
             <input type="text" name="localidade" placeholder="eg. Santos" required /><br>
             <label>Cidade</label><br>
             <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
-            <button type="submit" name="registar" id="bt" class="btlogin">Registar</button>
+            <button type="submit" name="registar" id="bt"  class="btlogin">Registar</button>
         </form>
 
         </div>
