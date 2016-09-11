@@ -102,46 +102,21 @@ ob_start();
             <br><br>
             <button name="regfracoes" class="btlogin">Finalizar Registo</button>
             <?php
-/*
-                $email = "";
-                $nome = "";
-                $nifParc = "";
-                $password = "";
-                $morada = "";
-                $lote = "";
-                $codigoPostal = "";
-                $nifCond = "";
-                $localidade = "";
-                $cidade = "";
-*/
               //Receção de variaveis que vêm do regadmin
-              //if(isset($_POST['registar'])){
-                $email = $_POST['email'];
-                $nome = $_POST['nome'];
-                $nifParc = $_POST['nifParc'];
-                $password = $_POST['password'];
-                $morada = $_POST['rua'];
-                $lote = $_POST['lote'];
-                $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
-                $nifCond = $_POST['nifCond'];
-                $localidade = $_POST['localidade'];
-                $cidade = $_POST['cidade'];
+                $email = $_SESSION["email"];
+                $nome = $_SESSION["nome"];
+                $nifParc = $_SESSION["nifParc"];
+                $password = $_SESSION["password"];
+                $morada = $_SESSION["morada"];
+                $lote = $_SESSION["lote"];
+                $codigoPostal = $_SESSION["codigoPostal"];
+                $nifCond = $_SESSION["nifCond"];
+                $localidade = $_SESSION["localidade"];
+                $cidade = $_SESSION["cidade"];
+                $pais = $_SESSION["pais"] ;
+                $idEmpresa = $_SESSION["idEmpresa"];
+                $ibanCond = $_SESSION["ibanCond"];
 
-                echo $email . "<br>";
-                echo $nome . "<br>";
-                echo $nifParc . "<br>";
-                echo $password . "<br>";
-                echo $morada . "<br>";
-                echo $lote . "<br>";
-                echo $codigoPostal . "<br>";
-                echo $nifCond . "<br>";
-                echo $localidade . "<br>";
-                echo $cidade . "<br>";
-              //}
-
-              $pais = 1;
-              $idEmpresa = 0;
-              $ibanCond = 0;
 
               if(isset($_POST['regfracoes'])){
 
@@ -154,7 +129,7 @@ ob_start();
                 //Registo de Condominios
                 $sqlCondos = "INSERT INTO condominios(morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa) 
                   VALUES('$morada', '$lote', '$codigoPostal', '$localidade', '$cidade', '$pais', '$nifCond', '$andares', '$ibanCond', '$idEmpresa')";
-                  echo $sqlCondos . "<br>";
+
                 if(mysqli_query($conn, $sqlCondos)){
                   $idCondo = "SELECT idCond FROM condominios WHERE nifCond = '$nifCond'";
                   $result = mysqli_query($conn, $idCondo);
@@ -163,7 +138,7 @@ ob_start();
                       $idCond = $row["idCond"];
                     }
                   }else{
-                    //E talvez faça mais coisas
+                    //talvez faça mais coisas
                   }
                 }
                 //Fim do Registo de Condominios 
@@ -196,7 +171,6 @@ ob_start();
                     $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
                       VALUES('$codigo', '$x', '$z', '$idCond')";
                     mysqli_query($conn, $query);
-                    echo $query . "<br>";
                   }
                 }
                 //Fim do Registo de Parcelas
@@ -209,7 +183,6 @@ ob_start();
                       $idParcela = $row["idParcela"];
                   }
                   $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc' WHERE idParcela = '$idParcela'";
-                  echo $AlterFields;
                   mysqli_query($conn, $AlterFields);
                 }
                 //Fim do Registo de Admin na sua parcela

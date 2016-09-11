@@ -1,5 +1,4 @@
 <?php
-  session_start();
   
   //User só para debug
   $_SESSION["user"] = "debug";
@@ -17,7 +16,7 @@
             
             <?php 
 
-            $queryParcelas = "SELECT email, password, codigo, idCond, nifParcela, andar, comissaoMensal, organizacao
+            $queryParcelas = "SELECT full_name, email, codigo, idCond, nifParcela, andar, comissaoMensal, organizacao
                                 FROM parcelas
                                 WHERE idCond = $idCond";
             //echo $queryParcelas . "<br>";
@@ -25,11 +24,11 @@
             $resultParcelas = mysqli_query($conn, $queryParcelas);
 
             if(mysqli_num_rows($resultParcelas) > 0){
-                echo "<table border='1'><tr><td>Email</td><td>Password</td><td>Codigo*</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td><td>Apagar</td></tr>";
+                echo "<div class='table-responsive'><table class='table table-striped table-hover'><thead><tr><td>Nome</td><td>Email</td><td>Codigo*</td><td>Id Condominio</td><td>NIF</td><td>Andar</td><td>Comissão Mensal</td><td>Apagar</td></tr></thead><tbody>";
                 while($row = mysqli_fetch_assoc($resultParcelas)){
-                    echo "<tr><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td><td>X</td></tr>";
+                    echo "<tr><td>" . $row["full_name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td><td>X</td></tr>";
                 }
-                echo "</table><br>*Os codigos apresentados são dados pelo administrador ao utilizador para se registarem.";
+                echo "</tbody></table></div><br>*Os codigos apresentados são dados pelo administrador ao utilizador para se registarem.";
             }else{
                 echo "<b>Nao há parcelas registadas. Algo correu mal.</b><br><br>";
                 //O formulario só vai aparecer quando nao existe nada

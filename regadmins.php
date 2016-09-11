@@ -3,10 +3,29 @@
   include 'include/header.php';
   
   //Informações que vêm do Index
-  if(isset($_POST['submit'])){
-    $email = $_POST['email'];
-    $nifParc = $_POST['nifParc'];
-    $password = $_POST['password'];
+  if(isset($_POST['submit'])){    
+    $_SESSION["email"] = $_POST['email'];
+    $_SESSION["nifParc"] = $_POST['nifParc'];
+    $_SESSION["password"] = $_POST['password'];
+
+    $email = $_SESSION["email"];
+    $nifParc = $_SESSION["nifParc"];
+    $password = $_SESSION["password"];
+  }
+
+  if(isset($_POST['registar'])){    
+    $_SESSION["nome"] = $_POST['nome'];
+    $_SESSION["nifCond"] = $_POST['nifCond'];
+    $_SESSION["morada"] = $_POST['rua'];
+    $_SESSION["lote"] = $_POST['lote'];
+    $_SESSION["codigoPostal"] = $_POST['postal1'].'-'.$_POST['postal2'];
+    $_SESSION["localidade"] = $_POST['localidade'];
+    $_SESSION["cidade"] = $_POST['cidade'];
+    $_SESSION["pais"] = 1;
+    $_SESSION["idEmpresa"] = 0;
+    $_SESSION["ibanCond"] = 0;
+
+    header("Location: regfra.php");
   }
 
   
@@ -78,7 +97,7 @@
        
 
         <div class="form">
-          <form class="login-form" action="regfra.php" method="POST">
+          <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
             <label>Nome Completo</label><br>
