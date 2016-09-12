@@ -1,9 +1,9 @@
 <?php 
-ob_start();
     include 'include/header.php';
     include 'include/connection.php';
     include 'code_generator.php';
     session_start();
+    ob_start();
 ?>
     <script>
     $(document).ready(function() {
@@ -150,9 +150,11 @@ ob_start();
                       if($y==1)
                         $z="Esquerdo";
                       if($y==2)
-                        $z="Direito";
+                        $z="Frente Esquerdo";
                       if($y==3)
-                        $z="Frente";
+                        $z="Frente Direito";
+                      if($y==4)
+                        $z="Direito";
                     }else{
                       if($y==1)
                         $z="A";
@@ -177,17 +179,26 @@ ob_start();
 
                 //Registo de Admin na sua parcela
                   $help = explode(' ', $parc);
-                  $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1]'";
+                  $idParcelaString = "";
+                  if(isset($help[2])){
+                    $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1] $help[2]'";
+                  }else{
+                    $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1]'";
+                  }
                   $runIdParcela = mysqli_query($conn, $idParcelaString);
                   while($row = mysqli_fetch_assoc($runIdParcela)){
                       $idParcela = $row["idParcela"];
                   }
                   $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc', isAdmin='1' WHERE idParcela = '$idParcela'";
                   mysqli_query($conn, $AlterFields);
+                  session_destroy();
+                  header("Location: login.php?s=1");
+
+                  ob_end_flush();
                 }
                 //Fim do Registo de Admin na sua parcela
               
-              ob_end_flush();
+              
              ?>
           </form>  
         </div>

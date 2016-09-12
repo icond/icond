@@ -1,5 +1,12 @@
 <?php
-
+//MUST READ
+/*
+	a orientaçao de predios com menos de 5 parcelas por andar
+	o habitual, é ter-se 1º esquerdo, 1º esquerdo frente, 
+	1º direito frente e 1 direito. 
+	Esta informaçao vem de acordo com o que o meu pai(que 
+	trabalha em construçao civil) me explicou.
+*/
 $a = $_GET['A'];
 $p = $_GET['P'];
 $o = $_GET['O'];
@@ -13,9 +20,11 @@ if($p != 0){
 		        if($y==1)
 		            echo "<option value='" . $x . " Esquerdo'>" . $x . "º Esquerdo</option>";
 		        if($y==2)
-		            echo "<option value='" . $x . " Direito'>" . $x . "º Direito</option>";
+		            echo "<option value='" . $x . " Frente Esquerdo'>" . $x . "º Frente Esquerdo</option>";
 		        if($y==3)
-		            echo "<option value='" . $x . " Frente'>" . $x . "º Frente</option>";
+		            echo "<option value='" . $x . " Frente Direito'>" . $x . "º Frente Direito</option>";
+		        if($y==4)
+		            echo "<option value='" . $x . " Direito'>" . $x . "º Direito</option>";
 		    }else{
 		        if($y==1)
 		            echo "<option value='" . $x . " A'>" . $x . " A</option>";

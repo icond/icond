@@ -136,7 +136,7 @@
                                         <label>E-Mail</label><br>
                                         <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com"/><br>
                                         <label>NIF do Utilizador</label><br>
-                                        <input id="sonumeros" type="text" name="nifParc" maxlength="9" placeholder="Número de Identificação Fiscal do Utilizador"/><br>
+                                        <input id="sonumeros" type="text" name="nifParc" minlength="9" maxlength="9" placeholder="Número de Identificação Fiscal do Utilizador"/><br>
                                         <label>Palavra Passe</label><br>
                                         <input type="password" name="password" placeholder="Palavra Passe"/><br>
                                         <button type="submit" name="regAdmin" class="btlogin">Registar</button>
