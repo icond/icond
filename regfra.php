@@ -47,7 +47,7 @@ ob_start();
     </script>
     <script type="text/javascript">
       function verificar(andares, parcelas, orientacao){
-        if(parcelas > 3 && orientacao  == 0){
+        if(parcelas > 4 && orientacao  == 0){
           document.getElementById("ori").selectedIndex = "1";
         }
       }

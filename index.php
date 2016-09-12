@@ -107,10 +107,12 @@
                             <div class="col-md-12 hidden-lg">
                                 <div class="accordion-group">
                                     <div id="form1Mobile" class="collapse form-registo">
-                                        <div class="iconTitle form-reg-title">Condóminos</div>
-                                        <label>Código de Acesso</label><br>
-                                        <input type="text" placeholder="Código"/><br>
-                                        <button class="btlogin">Registar</button>
+                                        <form action="reguser.php" method="post">
+                                            <div class="iconTitle form-reg-title">Condóminos</div>
+                                            <label>Código de Acesso</label><br>
+                                            <input type="text" name="codigo" placeholder="Código"/><br>
+                                            <button  type="submit" name="regUser" class="btlogin">Registar</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +139,7 @@
                                         <input id="sonumeros" type="text" name="nifParc" maxlength="9" placeholder="Número de Identificação Fiscal do Utilizador"/><br>
                                         <label>Palavra Passe</label><br>
                                         <input type="password" name="password" placeholder="Palavra Passe"/><br>
-                                        <button type="submit" name="submit" class="btlogin">Registar</button>
+                                        <button type="submit" name="regAdmin" class="btlogin">Registar</button>
                                     </form>
                                 </div>
                             </div>
@@ -166,7 +168,7 @@
                                         <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
                                         <label>Palavra Passe</label><br>
                                         <input type="password" name="password" placeholder="Palavra Passe" ><br>
-                                        <button class="btlogin" name="submit">Registar</button>
+                                        <button  type="submit" name="regEmp" class="btlogin">Registar</button>
                                     </form>
                                 </div>
                             </div>
@@ -175,10 +177,12 @@
                 </div>
                 <div class="accordion-group visible-lg">
                     <div id="form1" class="collapse form-registo">
-                        <div class="iconTitle form-reg-title">Condóminos</div>
-                        <label>Código de Acesso</label><br>
-                        <input type="text" placeholder="Código"/><br>
-                        <button class="btlogin">Registar</button>
+                        <form action="reguser.php" method="post">
+                            <div class="iconTitle form-reg-title">Condóminos</div>
+                            <label>Código de Acesso</label><br>
+                            <input type="text" name="codigo" placeholder="Código"/><br>
+                            <button type="submit" name="regUser" class="btlogin">Registar</button>
+                        </form>
                     </div>
                     <div id="form2" class="collapse form-registo">
                         <form action="regadmins.php" method="POST">
@@ -189,7 +193,7 @@
                             <input id="sonumeros" type="text" name="nifParc" maxlength="9" placeholder="Número de Identificação Fiscal do Utilizador"/><br>
                             <label>Palavra Passe</label><br>
                             <input type="password" name="password" placeholder="Palavra Passe"/><br>
-                            <button type="submit" name="submit" class="btlogin">Registar</button>
+                            <button type="submit" name="regAdmin" class="btlogin">Registar</button>
                         </form>
                     </div>
                     <div id="form3" class="collapse form-registo">
@@ -203,8 +207,7 @@
                             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
                             <label>Palavra Passe</label><br>
                             <input type="password" name="password" placeholder="Palavra Passe" ><br>
-
-                            <button class="btlogin" name="submit">Registar</button>
+                            <button  type="submit" name="regEmp" class="btlogin">Registar</button>
                         </form>
                     </div>
                 </div>

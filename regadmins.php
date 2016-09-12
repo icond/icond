@@ -3,7 +3,7 @@
   include 'include/header.php';
   
   //Informações que vêm do Index
-  if(isset($_POST['submit'])){    
+  if(isset($_POST['regAdmin'])){    
     $_SESSION["email"] = $_POST['email'];
     $_SESSION["nifParc"] = $_POST['nifParc'];
     $_SESSION["password"] = $_POST['password'];
