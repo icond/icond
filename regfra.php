@@ -89,7 +89,7 @@ ob_start();
           <form class="login-form" action="" method="POST">
             Andares <br>
             <input id="sonumeros" style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeydown="sim(andares.value, parcelas.value, orientacao.value)" /><br>
-            Parcelas <br>
+            Parcelas por Andar<br>
             <input id="sonumeros" style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="correr(andares.value, parcelas.value, orientacao.value)" /> <br>
                     Orientação das parcelas <br>
                     <select name="orientacao" id="ori" onchange="correr(andares.value, parcelas.value, orientacao.value)">
@@ -182,7 +182,7 @@ ob_start();
                   while($row = mysqli_fetch_assoc($runIdParcela)){
                       $idParcela = $row["idParcela"];
                   }
-                  $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc' WHERE idParcela = '$idParcela'";
+                  $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc', isAdmin='1' WHERE idParcela = '$idParcela'";
                   mysqli_query($conn, $AlterFields);
                 }
                 //Fim do Registo de Admin na sua parcela

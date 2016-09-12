@@ -24,6 +24,9 @@
     $_SESSION["pais"] = 1;
     $_SESSION["idEmpresa"] = 0;
     $_SESSION["ibanCond"] = 0;
+    $_SESSION["email"] = $_POST['email'];
+    $_SESSION["nifParc"] = $_POST['nifParc'];
+    $_SESSION["password"] = $_POST['password'];
 
     header("Location: regfra.php");
   }
