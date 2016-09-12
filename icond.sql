@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 08-Set-2016 às 12:11
--- Versão do servidor: 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Host: 127.0.0.1
+-- Generation Time: Sep 12, 2016 at 04:14 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `apartamentos`
+-- Table structure for table `apartamentos`
 --
 
 CREATE TABLE `apartamentos` (
@@ -38,7 +38,7 @@ CREATE TABLE `apartamentos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `condominios`
+-- Table structure for table `condominios`
 --
 
 CREATE TABLE `condominios` (
@@ -55,10 +55,17 @@ CREATE TABLE `condominios` (
   `idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `condominios`
+--
+
+INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`) VALUES
+(1, 'Teste', '5', '5555-555', 'Teste', 'Teste', 1, '111111112', 7, 0, 0);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `despesas`
+-- Table structure for table `despesas`
 --
 
 CREATE TABLE `despesas` (
@@ -72,7 +79,7 @@ CREATE TABLE `despesas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pagamentos`
+-- Table structure for table `pagamentos`
 --
 
 CREATE TABLE `pagamentos` (
@@ -86,7 +93,7 @@ CREATE TABLE `pagamentos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pais`
+-- Table structure for table `pais`
 --
 
 CREATE TABLE `pais` (
@@ -97,7 +104,7 @@ CREATE TABLE `pais` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `parcelas`
+-- Table structure for table `parcelas`
 --
 
 CREATE TABLE `parcelas` (
@@ -105,6 +112,7 @@ CREATE TABLE `parcelas` (
   `full_name` text NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `telemovel` varchar(255) NOT NULL,
   `isAdmin` tinyint(4) NOT NULL,
   `codigo` varchar(255) NOT NULL,
   `idCond` int(11) NOT NULL,
@@ -113,6 +121,27 @@ CREATE TABLE `parcelas` (
   `comissaoMensal` int(11) NOT NULL,
   `organizacao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `parcelas`
+--
+
+INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemovel`, `isAdmin`, `codigo`, `idCond`, `nifParcela`, `andar`, `comissaoMensal`, `organizacao`) VALUES
+(1, '', '', '', '', 0, 'bvk2B', 1, 0, 1, 0, 'Esquerdo'),
+(2, '', '', '', '', 0, 'bv25k', 1, 0, 1, 0, 'Direito'),
+(3, '', '', '', '', 0, 'OpdEF', 1, 0, 2, 0, 'Esquerdo'),
+(4, '', '', '', '', 0, 'B8nTB', 1, 0, 2, 0, 'Direito'),
+(5, '', '', '', '', 0, 'paPT5', 1, 0, 3, 0, 'Esquerdo'),
+(6, '', '', '', '', 0, 'jjsOw', 1, 0, 3, 0, 'Direito'),
+(7, '', '', '', '', 0, 'GHFWO', 1, 0, 4, 0, 'Esquerdo'),
+(8, '', '', '', '', 0, 'Efp2K', 1, 0, 4, 0, 'Direito'),
+(9, 'Conta Teste', 'teste@teste.com', '123', '912345678', 1, 'F29Xv', 1, 111111111, 5, 0, 'Esquerdo'),
+(10, '', '', '', '', 0, 'AzMOf', 1, 0, 5, 0, 'Direito'),
+(11, '', '', '', '', 0, '59eO3', 1, 0, 6, 0, 'Esquerdo'),
+(12, '', '', '', '', 0, 'zQskX', 1, 0, 6, 0, 'Direito'),
+(13, '', '', '', '', 0, 'fRfPy', 1, 0, 7, 0, 'Esquerdo'),
+(14, '', '', '', '', 0, 'hF8jt', 1, 0, 7, 0, 'Direito'),
+(15, '', '', '', '', 0, '', 0, 0, 0, 0, '');
 
 --
 -- Indexes for dumped tables
@@ -187,7 +216,7 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `parcelas`
 --
 ALTER TABLE `parcelas`
-  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

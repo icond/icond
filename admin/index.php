@@ -10,6 +10,7 @@
 
         //Obter a info do condominio
         $sqlInfoCond = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond WHERE condominios.idCond = $idCond";
+        $sqlInfoAdmin = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond WHERE condominios.idCond = $idCond AND isAdmin = 1";
         //$sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
         $result = mysqli_query($conn, $sqlInfoCond);
         $row = mysqli_fetch_array($result);
@@ -23,6 +24,14 @@
         $nAndares = $row['nAndares'];
         $ibanCond = $row['ibanCond'];
         $idEmpresa = $row['idEmpresa'];
+
+        $result2 = mysqli_query($conn, $sqlInfoAdmin);
+        $row2 = mysqli_fetch_array($result2);
+        $nome = $row2['full_name'];
+        $telemovel = $row2['telemovel'];
+        $email = $row2['email'];
+        $loteAdmin = $row2['andar']."º ".$row2['organizacao'];
+
     ?>
 
         <body>
@@ -72,10 +81,10 @@
                                         <span class="title">Lote</span><br>
                                     </div>
                                     <div class="panel-menu-info-data">
-                                        <span class="data">Marco Sandro David Pedro</span><br><br>
-                                        <span class="data">917758465</span><br><br>
-                                        <span class="data">msdp@icond.pt</span><br><br>
-                                        <span class="data">2F</span><br>
+                                        <span class="data"><?php echo $nome; ?></span><br><br>
+                                        <span class="data"><?php echo $telemovel; ?></span><br><br>
+                                        <span class="data"><?php echo $email; ?></span><br><br>
+                                        <span class="data"><?php echo $loteAdmin; ?></span><br>
                                     </div>
                                 </div>
                             </div>
