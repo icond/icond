@@ -9,7 +9,7 @@
         $idParcela = $_SESSION["user"];
 
         //Obter a info do condominio
-        $sqlInfoCond = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond";
+        $sqlInfoCond = "SELECT * FROM condominios LEFT JOIN parcelas ON condominios.idCond=parcelas.idCond WHERE condominios.idCond = $idCond";
         //$sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
         $result = mysqli_query($conn, $sqlInfoCond);
         $row = mysqli_fetch_array($result);

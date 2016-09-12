@@ -3,8 +3,7 @@
   session_start();
   include "connection.php";
 
-  if(isset($_SESSION['user']))
-  {
+  if(isset($_SESSION['user'])){
     $first_name = "";
     $last_name = "";
     $idCond = 0;
