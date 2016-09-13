@@ -17,14 +17,23 @@ if($p != 0){
 	for($x = 1 ; $x <= $a ; $x++ ){
 		for($y= 1 ; $y <= $p ; $y++){
 		    if($o==0){
-		        if($y==1)
-		            echo "<option value='" . $x . " Esquerdo'>" . $x . "º Esquerdo</option>";
-		        if($y==2)
-		            echo "<option value='" . $x . " Frente Esquerdo'>" . $x . "º Frente Esquerdo</option>";
-		        if($y==3)
-		            echo "<option value='" . $x . " Frente Direito'>" . $x . "º Frente Direito</option>";
-		        if($y==4)
-		            echo "<option value='" . $x . " Direito'>" . $x . "º Direito</option>";
+		    	if($p < 4){
+			        if($y==1)
+			            echo "<option value='" . $x . " Esquerdo'>" . $x . "º Esquerdo</option>";
+			        if($y==2)
+			            echo "<option value='" . $x . " Direito'>" . $x . "º Direito</option>";
+			        if($y==3)
+			        	echo "<option value='" . $x . " Frente'>" . $x . "º Frente</option>";
+		        }else{
+		            if($y==1)
+			            echo "<option value='" . $x . " Esquerdo'>" . $x . "º Esquerdo</option>";
+			        if($y==2)
+			            echo "<option value='" . $x . " Frente Esquerdo'>" . $x . "º Frente Esquerdo</option>";
+			        if($y==3)
+			        	echo "<option value='" . $x . " Frente Direito'>" . $x . "º Frente Direito</option>";
+		        	if($y==4)
+		            	echo "<option value='" . $x . " Direito'>" . $x . "º Direito</option>";
+		        }
 		    }else{
 		        if($y==1)
 		            echo "<option value='" . $x . " A'>" . $x . " A</option>";

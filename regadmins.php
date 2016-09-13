@@ -165,6 +165,25 @@
             e.preventDefault();
           }
         });
+        $("#sonumeros6").keydown(function (e) {
+          // Allow: backspace, delete, tab, escape, enter and .
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+          // Allow: Ctrl+A
+          (e.keyCode == 65 && e.ctrlKey === true) ||
+          // Allow: Ctrl+C
+          (e.keyCode == 67 && e.ctrlKey === true) ||
+          // Allow: Ctrl+X
+          (e.keyCode == 88 && e.ctrlKey === true) ||
+          // Allow: home, end, left, right
+          (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+              return;
+          }
+          // Ensure that it is a number and stop the keypress
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+          }
+        });
       });
     </script>
     <script>
@@ -257,12 +276,12 @@
         <div class="form">
           <form class="login-form" action="" method="POST">
             <label>E-Mail</label><br>
-            <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" onkeyup="vermail(email.value)" onpaste="vermail(email.value)" oninput="vermail(email.value)" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
+            <input type="email" name="email" placeholder="eg. rui.pereira@gmail.com" onkeyup="vermail(email.value)" onpaste="vermail(email.value)" oninput="vermail(email.value)" <?php if(isset($email)){echo "value='".$email."'";} ?> required/><br>
             <div id="showmail"></div>
             <label>Nome Completo</label><br>
             <input type="text" name="nome" placeholder="Rui Perreira"  required/><br>
             <label>Telemóvel</label><br>
-            <input type="text" name="telemovel" placeholder="911659874"  required/><br>
+            <input id="sonumeros6"type="text" name="telemovel" placeholder="911659874" maxlength="9" minlength="9" required/><br>
             <label>NIF Parcela</label><br>
             <input id="sonumeros" type="text" name="nifParc" maxlength="9" minlength="9" onkeyup="vernifparc(nifParc.value)" onpaste="vernifparc(nifParc.value)" oninput="vernifparc(nifParc.value)" placeholder="Número de Identificação Fiscal do Utilizador" <?php if(isset($nifParc)){echo "value='".$nifParc."'";} ?> required/><br>
             <div id="shownifparc"></div>

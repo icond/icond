@@ -148,14 +148,23 @@
                 for($x=1;$x<=$andares;$x++){
                   for($y=1;$y<=$parcelas;$y++){
                     if($orientacao==0){
-                      if($y==1)
-                        $z="Esquerdo";
-                      if($y==2)
-                        $z="Frente Esquerdo";
-                      if($y==3)
-                        $z="Frente Direito";
-                      if($y==4)
-                        $z="Direito";
+                      if($parcelas < 4){
+                        if($y==1)
+                          $z = "Esquerdo";
+                        if($y==2)
+                          $z = "Direito";
+                        if($y==3)
+                          $z = "Frente";
+                      }else{
+                        if($y==1)
+                          $z = "Esquerdo";
+                        if($y==2)
+                          $z = "Frente Esquerdo";
+                        if($y==3)
+                          $z = "Frente Direito";
+                        if($y==4)
+                          $z = "Direito";
+                      }
                     }else{
                       if($y==1)
                         $z="A";
@@ -181,6 +190,7 @@
                 //Registo de Admin na sua parcela
                   $help = explode(' ', $parc);
                   $idParcelaString = "";
+
                   if(isset($help[2])){
                     $idParcelaString = "SELECT idParcela FROM parcelas WHERE idCond = '$idCond' AND andar = '$help[0]' AND organizacao = '$help[1] $help[2]'";
                   }else{
