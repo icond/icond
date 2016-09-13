@@ -1,4 +1,4 @@
-    $("#jquery").hide();
+     $("#jquery").hide();
     $( document ).ready(function() {
         $("#jquery").slideUp( 0 ).delay( 300 ).fadeIn( 400 );
         $( "#bt1" ).click(function() {

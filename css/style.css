@@ -413,6 +413,16 @@ a, a:hover, a:active, a:visited a:focus{
 
 /*END BANNER*/
 
+.BlueSmall{
+  color: #0071BC;
+  font-size: small;
+}
+
+.BlueSmall:hover{
+  color: #328DC9;
+  cursor: pointer;
+}
+
 .navbar-white{
   background-color: white;
   box-shadow: 10px 0px 10px grey;
