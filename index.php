@@ -175,7 +175,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-group visible-lg">
+                <div class="accordion-group visible-md visible-lg">
                     <div id="form1" class="collapse form-registo">
                         <form action="reguser.php" method="post">
                             <div class="iconTitle form-reg-title">Condóminos</div>
