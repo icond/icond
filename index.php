@@ -162,10 +162,10 @@
                                         <div class="iconTitle form-reg-title">Empresas de Gestão</div>
                                         <label>Nome da Empresa</label><br>
                                         <input type="text" name="nome" placeholder="eg. Atec" /><br>
-                                        <label>Telemovél</label><br>
-                                        <input type="text" name="tele" maxlength="9" placeholder="eg. 912345678" /><br>
+                                        <label>Telefone</label><br>
+                                        <input type="text" name="tele" maxlength="9" placeholder="eg. 212563214" /><br>
                                         <label>E-Mail</label><br>
-                                        <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
+                                        <input type="text" name="email" placeholder="eg. contacto@empresa.com" /><br>
                                         <label>Palavra Passe</label><br>
                                         <input type="password" name="password" placeholder="Palavra Passe" ><br>
                                         <button  type="submit" name="regEmp" class="btlogin">Registar</button>
@@ -201,8 +201,8 @@
                             <div class="iconTitle form-reg-title">Empresas de Gestão</div>
                             <label>Nome da Empresa</label><br>
                             <input type="text" name="nome" placeholder="eg. Atec" /><br>
-                            <label>Telemovél</label><br>
-                            <input type="text" name="tele" maxlength="9" placeholder="eg. 912345678" /><br>
+                            <label>Telefone</label><br>
+                            <input type="text" name="tele" maxlength="9" placeholder="eg. 212563214" /><br>
                             <label>E-Mail</label><br>
                             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
                             <label>Palavra Passe</label><br>
