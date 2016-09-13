@@ -17,10 +17,12 @@
     }
   ?>
       <script>
-        
-      $("#andarErrado").hide();
-      $("#andarErradoLink").click(function() {
-        $("#andarErrado").slideToggle(400);
+
+      $(document).ready(function() {
+        $("#andarErrado").hide();
+        $(".BlueSmall").click(function() {
+          $("#andarErrado").slideToggle(400);
+        });
       });
 
       </script>
@@ -67,22 +69,39 @@
               <label>Código: <?php if(isset($codigo)){echo $codigo;} ?></label><br><br>
               <label>Morada</label><br>
               <label><?php if(isset($stringMorada)){echo $stringMorada;} ?></label><br>
-              <span class="andarErradoLink" id="andarErradoLink">Não é o seu andar?</span><br>
-              <span style="color: #0071BC; font-size: small;" id="andarErrado">Por favor, confira se o andar disposto em cima é o ser andar. Caso o andar a cima indicado não seja o seu, peça ao seu administrador o código correspondente à sua parcela.<br><br></span>
+
+              <span class="BlueSmall">Não é o seu andar?</span><br>
+
+              <div id="andarErrado" style="text-align:justify;">
+              <span>Por favor, confira se o andar disposto em cima é o ser andar. Caso o andar a cima indicado não seja o seu, peça ao seu administrador o código correspondente à sua parcela.</span>
+              </div> 
+            <br>
             <label>Nome Completo</label><br>
             <input type="text" name="nome" placeholder="Rui Perreira"  required/><br>
             <label>Telemóvel</label><br>
             <input type="text" name="telemovel" placeholder="911659874"  required/><br>
+            <label>NIF</label><br>
+            <input type="text" name="nifParc" placeholder="256598451"  required/><br>
             <label>Email</label><br>
-            <input type="text" name="nome" placeholder="Rui Perreira"  required/><br>
+            <input type="email" name="email" placeholder="Rui Perreira"  required/><br>
             <label>Password</label><br>
-            <input type="text" name="telemovel" placeholder="911659874"  required/><br>
+            <input type="text" name="password" placeholder="Password"  required/><br>
 
               <button type="submit" name="registarUser" id="bt"  class="btlogin">Registar</button>
               <?php
 
                 if(isset($_POST['registarUser'])){
-                  echo "Agora vai fazer umas coisas bonitas e provavelmente registar uns dados";
+                  $nome = $_POST['nome'];
+                  $password = $_POST['password'];
+                  $email = $_POST['email'];
+                  $telemovel = $_POST['telemovel'];
+                  $nifParc = $_POST['nifParc'];
+
+                  $stringRegUsers = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', telemovel = '$telemovel', nifParcela = '$nifParc' WHERE codigo = '$codigo'";
+                  
+                  mysqli_query($conn, $stringRegUsers);
+
+                  header("Location: login.php?s=1");
                 }
 
             }else{

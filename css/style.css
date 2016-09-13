@@ -413,12 +413,12 @@ a, a:hover, a:active, a:visited a:focus{
 
 /*END BANNER*/
 
-.andarErradoLink{
+.BlueSmall{
   color: #0071BC;
   font-size: small;
 }
 
-.andarErradoLink:hover{
+.BlueSmall:hover{
   color: #328DC9;
   cursor: pointer;
 }
