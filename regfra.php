@@ -106,6 +106,7 @@
                 $email = $_SESSION["email"];
                 $nome = $_SESSION["nome"];
                 $nifParc = $_SESSION["nifParc"];
+                $telemovel = $_SESSION["telemovel"];
                 $password = $_SESSION["password"];
                 $morada = $_SESSION["morada"];
                 $lote = $_SESSION["lote"];
@@ -189,7 +190,7 @@
                   while($row = mysqli_fetch_assoc($runIdParcela)){
                       $idParcela = $row["idParcela"];
                   }
-                  $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', nifParcela = '$nifParc', isAdmin='1' WHERE idParcela = '$idParcela'";
+                  $AlterFields = "UPDATE parcelas SET full_name = '$nome', email = '$email', password = '$password', telemovel = '$telemovel', nifParcela = '$nifParc', isAdmin='1' WHERE idParcela = '$idParcela'";
                   mysqli_query($conn, $AlterFields);
                   session_destroy();
                   header("Location: login.php?s=1");

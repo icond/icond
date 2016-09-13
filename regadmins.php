@@ -46,6 +46,7 @@
 
       $_SESSION["nome"] = $_POST['nome'];
       $_SESSION["nifCond"] = $_POST['nifCond'];
+      $_SESSION["telemovel"] = $_POST['telemovel'];
       $_SESSION["morada"] = $_POST['rua'];
       $_SESSION["lote"] = $_POST['lote'];
       $_SESSION["codigoPostal"] = $_POST['postal1'].'-'.$_POST['postal2'];
@@ -260,6 +261,8 @@
             <div id="showmail"></div>
             <label>Nome Completo</label><br>
             <input type="text" name="nome" placeholder="Rui Perreira"  required/><br>
+            <label>Telemóvel</label><br>
+            <input type="text" name="telemovel" placeholder="911659874"  required/><br>
             <label>NIF Parcela</label><br>
             <input id="sonumeros" type="text" name="nifParc" maxlength="9" minlength="9" onkeyup="vernifparc(nifParc.value)" onpaste="vernifparc(nifParc.value)" oninput="vernifparc(nifParc.value)" placeholder="Número de Identificação Fiscal do Utilizador" <?php if(isset($nifParc)){echo "value='".$nifParc."'";} ?> required/><br>
             <div id="shownifparc"></div>

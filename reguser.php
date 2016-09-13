@@ -1,8 +1,9 @@
 <?php 
   session_start();
   include 'include/header.php';
-  
+  include 'include/connection.php';
   //Informações que vêm do Index
+  $codigo = "";
   if(isset($_POST['regUser'])){    
     $_SESSION["codigo"] = $_POST['codigo'];
 
@@ -11,7 +12,7 @@
   $selectCondInfo = "SELECT condominios.idCond, morada, lote, codigoPostal, localidade, cidade FROM condominios LEFT JOIN parcelas ON parcelas.idCond = condominios.idCond WHERE parcelas.codigo = '" . $codigo . "'";
   $resultCondInfo = mysqli_query($conn, $selectCondInfo);
   while($row = mysqli_fetch_assoc($resultCondInfo)){
-    //REGISTA A MORADA NUMA VARIAVEL E ESSA VARIAVEL É APRESENTADA LA EM BAIXO
+    $stringMorada = $row['morada'] . " Lote Nº" . $row['lote'] . ", " . $row['codigoPostal'] . " " . $row['localidade'] . ", " . $row['cidade'];
   }
 ?>
     </head>
@@ -39,16 +40,40 @@
           </div>
       </nav>
       <div class="login-page"><h4 style="text-align:center; margin-top: 60px;"">Finalize o seu registo de utilizador</h4>
-       
-
         <div class="form">
           <form class="login-form" action="" method="POST">
+            <?php 
+
+              if(mysqli_num_rows($resultCondInfo) == 1){
+
+             ?>
+
+
             <label>Condomino encontrado!</label><br>
-            <label>Codigo: <?php if(isset($codigo)){echo $codigo;} ?></label><br><br>
+            <label>Código: <?php if(isset($codigo)){echo $codigo;} ?></label><br><br>
             <label>Morada</label><br>
-            <label>bla bla lba</label>
+            <label><?php if(isset($stringMorada)){echo $stringMorada;} ?></label>
 
             <button type="submit" name="registar" id="bt"  class="btlogin">Registar</button>
+
+
+            <?php
+
+          }else{
+            ?>
+
+
+            <label>Condomino não encontrado!</label><br>
+            <label>Por favor, tente outro código.</label><br><br>
+
+            <button type="submit" name="voltar" id="bt"  class="btlogin">Voltar</button>
+            <?php
+              if(isset($_POST['voltar'])){
+                header("Location: index.php");
+              }
+          }
+
+            ?>
         </form>
 
         </div>
