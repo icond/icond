@@ -2,39 +2,26 @@
 	include 'include/header.php';
   include 'include/connection.php';
   session_start();
-  //dados do index
-	  if(isset($_POST['submit'])){
+    //dados vindos do index
+	  if(isset($_POST['regEmp'])){
     $email = $_POST['email'];
     $nome = $_POST['nome'];
     $password = $_POST['password'];
     $tele = $_POST['tele'];
-  }
-	//Quando é feito o registo
-  if(isset($_POST['registar'])){
-    $nome = $_POST['nome'];
-    $tele = $_POST['tele'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $rua = $_POST['rua'];
-    $lote = $_POST['lote'];
-    $codigoPostal = $_POST['postal1'].'-'.$_POST['postal2'];
-    $cidade = $_POST['cidade'];
-    $pais = 1;
 
-    $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa, ruaEmpresa, loteEmpresa, codigopostalEmpresa, cidadeEmpresa, paisEmpresa) VALUES('$email', '$tele', '$email', '$password', '$rua', '$lote', '$codigoPostal', '$cidade', '$pais')";
+    $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa) VALUES('$nome', '$tele', '$email', '$password')";
 
     $verificar = "SELECT * from empresas where emailEmpresa like '$email'";
     $query_ver = mysqli_query($conn, $verificar);
 
-    if (mysqli_num_rows($query_ver) !=0 )
-    {
-       $_SESSION['status'] = 2;
-    }
-    else{
-      if (mysqli_query($conn, $sql)) {
-        $_SESSION['status'] = 1;
-        header("Location: login.php");
-      } else {
+    if (mysqli_num_rows($query_ver) != 0){
+      //Já existe este email
+      header("Location: loginempresa.php?s=1");
+    }else{
+      if(mysqli_query($conn, $sql)){
+        //Registo feito com sucesso s=1
+        header("Location: loginempresa.php?s=1");
+      }else{
           echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
     }
@@ -43,7 +30,6 @@
 ?>
 </head>
     <body>
-    
       <nav class="navbar navbar-default navbar-fixed-top navbar-white">
           <div class="container-fluid">
               <div class="navbar-header">
@@ -81,26 +67,14 @@
           <form class="login-form" action="" method="POST">
             <div class="iconTitle form-reg-title regempresa">Empresas</div>
                 <label>Nome de empresa</label><br>
-                <input type="text" name="nome" <?php if(isset($nome)){echo "value='".$nome."'";} ?> placeholder="eg. Construções inc" /><br>
+                <input type="text" name="nome" <?php if(isset($nome)){echo "value='".$nome."'";} ?> placeholder="eg. Atec inc" /><br>
                 <label>Telemovél</label><br>
                 <input type="text" name="tele" placeholder="eg. 912345678" <?php if(isset($tele)){echo "value='".$tele."'";} ?> /><br>
                 <label>E-Mail</label><br>
                 <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" <?php if(isset($email)){echo "value='".$email."'";} ?> /><br>
                 <label>Palavra Passe</label><br>
                 <input type="password" name="password" <?php if(isset($password)){echo "value='".$password."'";} ?> placeholder="Palavra Passe" ><br>
-                <label>Morada</label><br>
-              <label>Rua</label><br>
-              <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>
-              <div style="width:50%; float:left;">
-                <label>Lote</label><br>
-                <input style="width:40%;" type="text" name="lote" placeholder="5" required/>
-               </div>
-               <div style="width:50%; float:right;"> 
-                <label>Código Postal</label><br>
-                <input style="width:45%;" type="text" name="postal1" placeholder="2500" maxlength="4" required /> - <input style="width:45%;" type="text" name="postal2" placeholder="300" maxlength="3" required/><br>
-              </div>
-              <label>Cidade</label><br>
-              <input type="text" name="cidade" placeholder="eg. Lisboa" required /><br>
+                <br>
                 <button type="submit" name="registar" class="btlogin">Registar</button>
             </div>
         </form>

@@ -207,7 +207,7 @@
                             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
                             <label>Palavra Passe</label><br>
                             <input type="password" name="password" placeholder="Palavra Passe" ><br>
-                            <button  type="submit" name="regEmp" class="btlogin">Registar</button>
+                            <button type="submit" name="regEmp" class="btlogin">Registar</button>
                         </form>
                     </div>
                 </div>
