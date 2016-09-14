@@ -16,7 +16,8 @@
 
     if (mysqli_num_rows($query_ver) != 0){
       //Já existe este email
-      header("Location: loginempresa.php?s=1");
+      //TODO CRIAR A PAGINA LOGINEMPRESA E OS CODIGOS GET S
+      header("Location: loginempresa.php?s=2");
     }else{
       if(mysqli_query($conn, $sql)){
         //Registo feito com sucesso s=1
