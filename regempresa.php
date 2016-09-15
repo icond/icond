@@ -3,7 +3,7 @@
   include 'include/connection.php';
   session_start();
     //dados vindos do index
-	  if(isset($_POST['regEmp'])){
+	if(isset($_POST['regEmp'])){
     $email = $_POST['email'];
     $nome = $_POST['nome'];
     $password = $_POST['password'];
@@ -17,7 +17,7 @@
     if (mysqli_num_rows($query_ver) != 0){
       //Já existe este email
       //TODO CRIAR A PAGINA LOGINEMPRESA E OS CODIGOS GET S
-      header("Location: loginempresa.php?s=2");
+      header("Location: regempresa.php?s=1");
     }else{
       if(mysqli_query($conn, $sql)){
         //Registo feito com sucesso s=1
@@ -55,12 +55,9 @@
       
       <div class="login-page"><h4 style="text-align:center;">Finalize o seu registo de empresas de gestão</h4>
       <?php
-       if(isset($_SESSION['status']))
-          {
-            if($_SESSION['status'] === 2)
-            {
-              echo "<div class='alert alert-danger' role='alert' >Email ja esta em uso, por favor introduza um email bacano</div>";
-              session_unset();
+        if(isset($_GET['s'])){
+            if($_GET['s'] == 1){
+              echo "<div style='text-align:center;' class='alert alert-danger' role='alert'>Email já existente!</div>";
             }
           }
       ?>
