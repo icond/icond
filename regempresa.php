@@ -1,7 +1,9 @@
 <?php 
-	include 'include/header.php';
+	ob_start();
+  include 'include/header.php';
   include 'include/connection.php';
   session_start();
+
     //dados vindos do index
 	if(isset($_POST['regEmp'])){
     $email = $_POST['email'];
@@ -11,7 +13,7 @@
 
     $sql = "INSERT INTO empresas(nomeEmpresa, teleEmpresa, emailEmpresa, passwordEmpresa) VALUES('$nome', '$tele', '$email', '$password')";
 
-    $verificar = "SELECT * from empresas where emailEmpresa like '$email'";
+    $verificar = "SELECT * from empresas where emailEmpresa = '$email'";
     $query_ver = mysqli_query($conn, $verificar);
 
     if (mysqli_num_rows($query_ver) != 0){
@@ -22,12 +24,10 @@
       if(mysqli_query($conn, $sql)){
         //Registo feito com sucesso s=1
         header("Location: loginempresa.php?s=1");
-      }else{
-          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
     }
-
   }
+  ob_end_flush();
 ?>
 </head>
     <body>
@@ -62,7 +62,7 @@
           }
       ?>
         <div class="form">
-          <form class="login-form" action="" method="POST">
+          <form class="login-form" action="regempresa.php" method="POST">
             <div class="iconTitle form-reg-title regempresa">Empresas</div>
                 <label>Nome de empresa</label><br>
                 <input type="text" name="nome" <?php if(isset($nome)){echo "value='".$nome."'";} ?> placeholder="eg. Atec inc" /><br>
