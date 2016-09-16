@@ -57,7 +57,7 @@
           <form class="login-form" action="process/login.process.php" method="POST">
             <input name="email" type="email" placeholder="Email" required />
             <input name="password" type="password" placeholder="Password" required/>
-            <button name="login" class="btlogin">Login</button>
+            <button name="loginEmpresa" class="btlogin">Login</button>
             <p class="message">Não registado? <a href="index.php">Crie uma conta</a></p>
           </form>
         </div>

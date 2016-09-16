@@ -1,5 +1,4 @@
 <?php 
-	ob_start();
   include 'include/header.php';
   include 'include/connection.php';
   session_start();
@@ -19,15 +18,15 @@
     if (mysqli_num_rows($query_ver) != 0){
       //Já existe este email
       //TODO CRIAR A PAGINA LOGINEMPRESA E OS CODIGOS GET S
-      header("Location: regempresa.php?s=1");
+      echo "<script type='text/javascript'>document.location = 'regempresa.php?s=1';</script>";
     }else{
       if(mysqli_query($conn, $sql)){
         //Registo feito com sucesso s=1
         header("Location: loginempresa.php?s=1");
+        echo "<script type='text/javascript'>document.location = 'loginempresa.php?s=1';</script>";
       }
     }
   }
-  ob_end_flush();
 ?>
 </head>
     <body>
@@ -73,7 +72,7 @@
                 <label>Palavra Passe</label><br>
                 <input type="password" name="password" <?php if(isset($password)){echo "value='".$password."'";} ?> placeholder="Palavra Passe" ><br>
                 <br>
-                <button type="submit" name="registar" class="btlogin">Registar</button>
+                <button type="submit" name="regEmp" class="btlogin">Registar</button>
             </div>
         </form>
       </div>
