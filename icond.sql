@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2016 at 04:14 PM
+-- Generation Time: Sep 19, 2016 at 03:05 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -55,13 +55,6 @@ CREATE TABLE `condominios` (
   `idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `condominios`
---
-
-INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`) VALUES
-(1, 'Teste', '5', '5555-555', 'Teste', 'Teste', 1, '111111112', 7, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -74,6 +67,20 @@ CREATE TABLE `despesas` (
   `descricao` text NOT NULL,
   `valor` int(11) NOT NULL,
   `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `empresas`
+--
+
+CREATE TABLE `empresas` (
+  `idEmpresa` int(11) NOT NULL,
+  `nomeEmpresa` varchar(255) NOT NULL,
+  `teleEmpresa` varchar(255) NOT NULL,
+  `emailEmpresa` varchar(255) NOT NULL,
+  `passwordEmpresa` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -123,27 +130,6 @@ CREATE TABLE `parcelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `parcelas`
---
-
-INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemovel`, `isAdmin`, `codigo`, `idCond`, `nifParcela`, `andar`, `comissaoMensal`, `organizacao`) VALUES
-(1, '', '', '', '', 0, 'bvk2B', 1, 0, 1, 0, 'Esquerdo'),
-(2, '', '', '', '', 0, 'bv25k', 1, 0, 1, 0, 'Direito'),
-(3, '', '', '', '', 0, 'OpdEF', 1, 0, 2, 0, 'Esquerdo'),
-(4, '', '', '', '', 0, 'B8nTB', 1, 0, 2, 0, 'Direito'),
-(5, '', '', '', '', 0, 'paPT5', 1, 0, 3, 0, 'Esquerdo'),
-(6, '', '', '', '', 0, 'jjsOw', 1, 0, 3, 0, 'Direito'),
-(7, '', '', '', '', 0, 'GHFWO', 1, 0, 4, 0, 'Esquerdo'),
-(8, '', '', '', '', 0, 'Efp2K', 1, 0, 4, 0, 'Direito'),
-(9, 'Conta Teste', 'teste@teste.com', '123', '912345678', 1, 'F29Xv', 1, 111111111, 5, 0, 'Esquerdo'),
-(10, '', '', '', '', 0, 'AzMOf', 1, 0, 5, 0, 'Direito'),
-(11, '', '', '', '', 0, '59eO3', 1, 0, 6, 0, 'Esquerdo'),
-(12, '', '', '', '', 0, 'zQskX', 1, 0, 6, 0, 'Direito'),
-(13, '', '', '', '', 0, 'fRfPy', 1, 0, 7, 0, 'Esquerdo'),
-(14, '', '', '', '', 0, 'hF8jt', 1, 0, 7, 0, 'Direito'),
-(15, '', '', '', '', 0, '', 0, 0, 0, 0, '');
-
---
 -- Indexes for dumped tables
 --
 
@@ -164,6 +150,12 @@ ALTER TABLE `condominios`
 --
 ALTER TABLE `despesas`
   ADD PRIMARY KEY (`idDespesa`);
+
+--
+-- Indexes for table `empresas`
+--
+ALTER TABLE `empresas`
+  ADD PRIMARY KEY (`idEmpresa`);
 
 --
 -- Indexes for table `pagamentos`
@@ -203,6 +195,11 @@ ALTER TABLE `condominios`
 ALTER TABLE `despesas`
   MODIFY `idDespesa` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `empresas`
+--
+ALTER TABLE `empresas`
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `pagamentos`
 --
 ALTER TABLE `pagamentos`
@@ -216,7 +213,7 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `parcelas`
 --
 ALTER TABLE `parcelas`
-  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

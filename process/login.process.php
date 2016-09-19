@@ -21,6 +21,7 @@
     	if($count == 1){
       		//Login com sucesso
       		$_SESSION['user'] = $idLogged;
+          $_SESSION['tipoConta'] = 1;
       		header("Location: ../admin/index.php");
     	}else{
       		//Login falhado, mensagem de erro
@@ -44,6 +45,7 @@
       if($count == 1){
           //Login com sucesso
           $_SESSION['user'] = $idLogged;
+          $_SESSION['tipoConta'] = 2;
           header("Location: ../admin/index.php");
       }else{
           //Login falhado, mensagem de erro
