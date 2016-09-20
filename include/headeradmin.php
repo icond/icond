@@ -151,7 +151,7 @@
                       <ul class="dropdown-menu" id="menu1">
                         <li>
                           <!--<li class="divider"></li>-->
-                          <li><a href="#">Ocorrências</a></li>
+                          <li><a href="ocorrencia.php">Ocorrências</a></li>
                           <li><a href="#">Vistorias</a></li>
                        </li>
                       </ul>
@@ -202,7 +202,7 @@
                       <ul class="dropdown-menu" id="menu1">
                         <li>
                         <!--<li class="divider"></li>-->
-                        <li><a href="#">Ocorrências</a></li>
+                        <li><a href="ocorrencia.php">Ocorrências</a></li>
                         <li><a href="#">Vistorias</a></li>
                       </li>
                       </ul>
