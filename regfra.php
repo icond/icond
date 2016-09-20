@@ -3,6 +3,9 @@
     include 'include/connection.php';
     include 'code_generator.php';
     session_start();
+    if(isset($_SESSION["user"])) {
+        header("Location: admin/index.php");
+    }
     ob_start();
 ?>
     <script>

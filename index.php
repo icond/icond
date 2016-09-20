@@ -1,5 +1,9 @@
 <?php 
     include 'include/header.php';
+    session_start();
+    if(isset($_SESSION["user"])) {
+        header("Location: admin/index.php");
+    }
 ?>
     </head>
     <body>
@@ -168,7 +172,7 @@
                                         <input type="text" name="email" placeholder="eg. contacto@empresa.com" /><br>
                                         <label>Palavra Passe</label><br>
                                         <input type="password" name="password" placeholder="Palavra Passe" ><br>
-                                        <button  type="submit" name="regEmp" class="btlogin">Registar</button>
+                                        <button  type="submit" name="regAux" class="btlogin">Registar</button>
                                     </form>
                                 </div>
                             </div>
@@ -207,7 +211,7 @@
                             <input type="text" name="email" placeholder="eg. rui.pereira@gmail.com" /><br>
                             <label>Palavra Passe</label><br>
                             <input type="password" name="password" placeholder="Palavra Passe" ><br>
-                            <button type="submit" name="regEmp" class="btlogin">Registar</button>
+                            <button type="submit" name="regAux" class="btlogin">Registar</button>
                         </form>
                     </div>
                 </div>

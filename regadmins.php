@@ -1,7 +1,12 @@
 <?php 
-  session_start();
   include 'include/header.php';
   include 'include/connection.php';
+  
+    session_start();
+    if(isset($_SESSION["user"])) {
+        header("Location: admin/index.php");
+    }
+
   //Informações que vêm do Index
   if(isset($_POST['regAdmin'])){    
     $_SESSION["email"] = $_POST['email'];

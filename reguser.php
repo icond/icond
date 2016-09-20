@@ -1,7 +1,11 @@
   <?php 
-    session_start();
     include 'include/header.php';
     include 'include/connection.php';
+    session_start();
+    if(isset($_SESSION["user"])) {
+        header("Location: admin/index.php");
+    }
+    
     //Informações que vêm do Index
     $codigo = "";
     $codigo = $_SESSION["codigo"];
@@ -66,7 +70,7 @@
 
 
               <label>Condomino encontrado!</label><br>
-              <label>Código: <?php if(isset($codigo)){echo $codigo;} ?></label><br><br>
+              <label>Código de Condómino: <span style="color: #0071BC"><?php if(isset($codigo)){echo $codigo;} ?></span></label><br><br>
               <label>Morada</label><br>
               <label><?php if(isset($stringMorada)){echo $stringMorada;} ?></label><br>
 
@@ -77,15 +81,15 @@
               </div> 
             <br>
             <label>Nome Completo</label><br>
-            <input type="text" name="nome" placeholder="Rui Perreira"  required/><br>
+            <input type="text" name="nome" placeholder="Rui Pereira"  required/><br>
             <label>Telemóvel</label><br>
             <input type="text" name="telemovel" placeholder="911659874"  required/><br>
             <label>NIF</label><br>
             <input type="text" name="nifParc" placeholder="256598451"  required/><br>
             <label>Email</label><br>
-            <input type="email" name="email" placeholder="Rui Perreira"  required/><br>
+            <input type="email" name="email" placeholder="rui.rereira@hotmail.com"  required/><br>
             <label>Password</label><br>
-            <input type="text" name="password" placeholder="Password"  required/><br>
+            <input type="password" name="password" placeholder="Password"  required/><br>
 
               <button type="submit" name="registarUser" id="bt"  class="btlogin">Registar</button>
               <?php
@@ -109,7 +113,7 @@
 
 
               <label>Condomino encontrado, no entanto esse codigo já foi utilizado. Por favor, tente um novo código.</label><br>
-              <label>Código: <?php if(isset($codigo)){echo $codigo;} ?></label><br><br>
+              <label>Código de Condómino: <?php if(isset($codigo)){echo $codigo;} ?></label><br><br>
 
               <button type="submit" name="voltar" id="bt"  class="btlogin">Voltar</button>
               <?php

@@ -1,7 +1,11 @@
 <?php 
   include 'include/header.php';
   include 'include/connection.php';
-  session_start();
+  
+    session_start();
+    if(isset($_SESSION["user"])) {
+        header("Location: admin/index.php");
+    }
 
     //dados vindos do index
 	if(isset($_POST['regEmp'])){

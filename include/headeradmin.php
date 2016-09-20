@@ -125,9 +125,8 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                         <ul class="dropdown-menu" id="menu1">
                           <!--<li class="divider"></li>-->
-                          <li><a href="#">Dados do Condomínio</a></li>
+                          <li><a href="index.php">Dados do Condomínio</a></li>
                           <li><a href="#">Alterar Senha</a></li>
-                          <li><a href="#">Utilizadores</a></li>
                           <li><a href="../logout.php">Terminar Sessão</a></li>
                         </ul>
                       </li>
@@ -135,6 +134,8 @@
                   </li>
                   <!--em caso de o ecrã ser extra small -- MOSTRAR MENU LÁ EM CIMA KAPPA PRIDE-->
                   <hr class="hr-dropdown">
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                    <a href="index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a></li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
@@ -181,6 +182,9 @@
           <div class="navmenu hidden-xs">
               <ul class="nav nav-pills">
                   <!--<li class="active"><a href="#">Regular link</a></li>-->
+                  <li class="dropdown">
+                    <a href="index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a>
+                  </li>
                   <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
