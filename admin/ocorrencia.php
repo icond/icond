@@ -7,10 +7,13 @@
         header("Location: ../index.php");
     }
 
+    date_default_timezone_set('Europe/Lisbon');
+    $date = date('Y/m/d H:i:s');
+    echo $date;
+
  ?>
  </head>
  <body>
      <div class="container">
-         asdad
      </div>
  </body>

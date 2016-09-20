@@ -157,9 +157,6 @@
                       </ul>
                   </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
-                    <a href="#">Condomínios</a>
-                  </li>
-                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="fracao.php">Frações</a>
                   </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
@@ -206,9 +203,6 @@
                         <li><a href="#">Vistorias</a></li>
                       </li>
                       </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#">Condomínios</a>
                   </li>
                   <li class="dropdown">
                     <a href="fracao.php">Frações</a>
