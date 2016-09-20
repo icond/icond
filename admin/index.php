@@ -14,6 +14,7 @@
         //$sql = "SELECT morada, lote, codigoPostal, localidade, cidade, idPais, nifCond, nAndares, ibanCond, idEmpresa FROM condominios WHERE idCond = $idPacela";
         $result = mysqli_query($conn, $sqlInfoCond);
         $row = mysqli_fetch_array($result);
+        $_SESSION["idCond"] = $row['idCond'];
         $morada = $row['morada'];
         $lote = $row['lote'];
         $codigoPostal = $row['codigoPostal'];

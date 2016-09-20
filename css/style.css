@@ -14,9 +14,50 @@
 [class*="brandico-"]:before {
   font-family: 'brandico', sans-serif;
 }
+.regOcorrencia{
+  width: 50%;
+  margin: auto;
+}
+.botao{
+  width: 100%;
+  text-align: right;
+}
+.regOcorrencia button{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #0071BC;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.2 ease;
+  transition: border-color .2s ease;
+  transition: .2s all ease;
+  cursor: pointer;
+  width: 40%;
+  margin-bottom: 2%;
+  border: 1px solid #0071BC;
+
+}
+
+.regOcorrencia button:hover{
+  background-color: #fff;
+  color: #0071BC;
+  cursor: pointer;
+  transition: border-color .2s ease;
+  transition: .2s all ease;
+}
 .joseSans {
     font-family: 'Josefin Sans', sans-serif;
   }
+.ocorrencia textarea{
+  resize: none;
+  width: 100%;
+}
+.ocorrencia label{
+  font-size: medium;
+}
 
 html{
   font-family: 'Montserrat', sans-serif;
