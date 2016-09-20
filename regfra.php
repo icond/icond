@@ -2,6 +2,7 @@
     include 'include/header.php';
     include 'include/connection.php';
     include 'code_generator.php';
+    include 'include/mainnave.php';
     session_start();
     if(isset($_SESSION["user"])) {
         header("Location: admin/index.php");
@@ -50,6 +51,11 @@
     </script>
     <script type="text/javascript">
       function verificar(andares, parcelas, orientacao){
+        if(parcelas == 0 ){
+          document.getElementById("bt").disabled = true;
+        }else{
+          document.getElementById("bt").disabled = false;
+        }
         if(parcelas > 4 && orientacao  == 0){
           document.getElementById("ori").selectedIndex = "1";
         }
@@ -64,36 +70,15 @@
     </script>
     </head>
     <body>
-      <nav class="navbar navbar-default navbar-fixed-top navbar-white">
-          <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                  <a href="index.php">
-                      <img src="img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
-                  </a>
-              </div>
-              <!--codigo para fazer login etc -->
-              <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right navbar-effect">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-              </div>
-          </div>
-      </nav>
+      
       <div class="login-page">
         <h2 style="text-align:center;">Registo de Frações</h2>
         <div class="form">
           <form class="login-form" action="" method="POST">
             Andares <br>
-            <input id="sonumeros" style="text-align: center;" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeydown="sim(andares.value, parcelas.value, orientacao.value)" /><br>
+            <input id="sonumeros" style="text-align: center;" maxlength="2" name="andares" type="text" placeholder="Numero de andares do edificio" required onkeydown="sim(andares.value, parcelas.value, orientacao.value)" /><br>
             Parcelas por Andar<br>
-            <input id="sonumeros" style="text-align: center;" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="correr(andares.value, parcelas.value, orientacao.value)" /> <br>
+            <input id="sonumeros" style="text-align: center;" maxlength="1" name="parcelas" type="text" placeholder="Numero maximo de parcelas por andar" required onkeyup="correr(andares.value, parcelas.value, orientacao.value)" /> <br>
                     Orientação das parcelas <br>
                     <select name="orientacao" id="ori" onchange="correr(andares.value, parcelas.value, orientacao.value)">
                         <option value="0">Direções</option>
@@ -103,7 +88,7 @@
               <span id="show"></span>   
             </div>      
             <br><br>
-            <button name="regfracoes" class="btlogin">Finalizar Registo</button>
+            <button name="regfracoes" id="bt" class="btlogin">Finalizar Registo</button>
             <?php
               //Receção de variaveis que vêm do regadmin
                 $email = $_SESSION["email"];
@@ -181,8 +166,22 @@
                         $z="E";
                       if($y==6)
                         $z="F";
+                      if($y==7)
+                        $z="G";
+                      if($y==8)
+                        $z="H";
+                      if($y==9)
+                        $z="I";
                     }
-                    $codigo = generateRandomString(5);
+                    $sair = true;
+                    while($sair){
+                      $codigo = generateRandomString(5);
+                      $verificarExiste = "SELECT codigo FROM parcelas WHERE codigo = '$codigo'";
+                      $correr = mysqli_query($conn, $verificarExiste);
+                      if(mysqli_num_rows($correr) == 0 ){
+                        $sair = false;
+                      }
+                    }
                     $query = "INSERT INTO parcelas(codigo, andar, organizacao, idCond) 
                       VALUES('$codigo', '$x', '$z', '$idCond')";
                     mysqli_query($conn, $query);

@@ -46,7 +46,13 @@ if($p != 0){
 		        if($y==5)
 		            echo "<option value='" . $x . " E'>" . $x . " E</option>";
 		        if($y==6)
-		            echo "<option value='" . $x . " F'>" . $x . " F</option>";
+		            echo "<option value='" . $x . " G'>" . $x . " G</option>";
+		        if($y==7)
+		            echo "<option value='" . $x . " H'>" . $x . " H</option>";
+		        if($y==8)
+		            echo "<option value='" . $x . " I'>" . $x . " I</option>";
+		        if($y==9)
+		            echo "<option value='" . $x . " J'>" . $x . " J</option>";
 		    }
 		}
 	}

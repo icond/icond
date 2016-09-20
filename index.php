@@ -44,7 +44,6 @@
                     <!--codigo para fazer login etc -->
                     <div class="collapse navbar-collapse" id="myNavbar">
                       <ul class="nav navbar-nav navbar-right navbar-effect">
-                        <li><a href="#"><span class="glyphicon glyphicon-user "></span> <span class="opensans">Sign Up</span></a></li>
                         <li><a href="#" id="popup"><span class="glyphicon glyphicon-log-in"></span><span class="opensans"> Login</span></a></li>
                       </ul>
                     </div>
