@@ -41,6 +41,8 @@
   {
     header("Location: ../login.php"); 
   }
+  $_SESSION['FLname'] = $first_name . " " . $last_name;
+  $_SESSION['idCond'] = $idCond;
 ?>
 <!DOCTYPE html>
 <html>

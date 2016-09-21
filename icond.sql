@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2016 at 03:05 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.6
+-- Generation Time: 21-Set-2016 às 15:35
+-- Versão do servidor: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `apartamentos`
+-- Estrutura da tabela `apartamentos`
 --
 
 CREATE TABLE `apartamentos` (
@@ -38,7 +38,7 @@ CREATE TABLE `apartamentos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `condominios`
+-- Estrutura da tabela `condominios`
 --
 
 CREATE TABLE `condominios` (
@@ -55,10 +55,17 @@ CREATE TABLE `condominios` (
   `idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `condominios`
+--
+
+INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`) VALUES
+(2, 'Rua Atec', '5', '5555-555', 'Santos', 'Lisboa', 1, '999999999', 3, 0, 0);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `despesas`
+-- Estrutura da tabela `despesas`
 --
 
 CREATE TABLE `despesas` (
@@ -72,7 +79,7 @@ CREATE TABLE `despesas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresas`
+-- Estrutura da tabela `empresas`
 --
 
 CREATE TABLE `empresas` (
@@ -86,7 +93,29 @@ CREATE TABLE `empresas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pagamentos`
+-- Estrutura da tabela `ocorrencias`
+--
+
+CREATE TABLE `ocorrencias` (
+  `idOcorrencia` int(11) NOT NULL,
+  `ocorrencia` varchar(1000) NOT NULL,
+  `idParcela` int(11) NOT NULL,
+  `idCond` int(11) NOT NULL,
+  `dataRegOcorrencia` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ocorrencias`
+--
+
+INSERT INTO `ocorrencias` (`idOcorrencia`, `ocorrencia`, `idParcela`, `idCond`, `dataRegOcorrencia`) VALUES
+(14, '3weriwegfiuwehguierbguiwruigiuwrbguiwriugwuirgbiuwrbgiuewirugbuierbguibeg', 22, 2, '2016/09/21 14:2'),
+(15, 'Falta agua.', 22, 2, '2016/09/21 14:2');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pagamentos`
 --
 
 CREATE TABLE `pagamentos` (
@@ -100,7 +129,7 @@ CREATE TABLE `pagamentos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pais`
+-- Estrutura da tabela `pais`
 --
 
 CREATE TABLE `pais` (
@@ -111,7 +140,7 @@ CREATE TABLE `pais` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `parcelas`
+-- Estrutura da tabela `parcelas`
 --
 
 CREATE TABLE `parcelas` (
@@ -128,6 +157,23 @@ CREATE TABLE `parcelas` (
   `comissaoMensal` int(11) NOT NULL,
   `organizacao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `parcelas`
+--
+
+INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemovel`, `isAdmin`, `codigo`, `idCond`, `nifParcela`, `andar`, `comissaoMensal`, `organizacao`) VALUES
+(17, 'Rui Pereira Miguel', 'rui@atec.com', 'asd', '932564878', 0, 'nOL7x', 2, 987654321, 1, 0, 'Esquerdo'),
+(18, 'Pedro Martins Pine', 'pedro@atec.com', 'asd', '915487845', 0, 'vp9JE', 2, 954865954, 1, 0, 'Direito'),
+(19, 'Diogo Miguel Lopes', 'diogo@atec.com', 'asd', '925648754', 0, 'sFDFq', 2, 256984125, 1, 0, 'Frente'),
+(20, 'Edson Silva', 'edson@atec.com', 'asd', '912563521', 0, 'KwmdY', 2, 251478541, 2, 0, 'Esquerdo'),
+(21, 'Luis Miguel', 'luis@atec.com', 'asd', '935648512', 0, '33quu', 2, 256489654, 2, 0, 'Direito'),
+(22, 'Marco Rafael Martins', 'marco@atec.com', 'asd', '911254878', 1, 'CSPwp', 2, 123456789, 2, 0, 'Frente'),
+(23, 'Bruno Pereira', 'bruno@atec.com', 'asd', '965845213', 0, '97nc9', 2, 253632321, 3, 0, 'Esquerdo'),
+(24, 'Fernando Martins', 'fernando@atec.com', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
+(25, 'Jorge Mendes', 'jorge@atec.com', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente'),
+(26, 'Fernando Martins2', 'fernando@atec.com2', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
+(27, 'Jorge Mendes2', 'jorge@atec.com2', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente');
 
 --
 -- Indexes for dumped tables
@@ -156,6 +202,12 @@ ALTER TABLE `despesas`
 --
 ALTER TABLE `empresas`
   ADD PRIMARY KEY (`idEmpresa`);
+
+--
+-- Indexes for table `ocorrencias`
+--
+ALTER TABLE `ocorrencias`
+  ADD PRIMARY KEY (`idOcorrencia`);
 
 --
 -- Indexes for table `pagamentos`
@@ -188,7 +240,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `condominios`
 --
 ALTER TABLE `condominios`
-  MODIFY `idCond` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idCond` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `despesas`
 --
@@ -198,7 +250,12 @@ ALTER TABLE `despesas`
 -- AUTO_INCREMENT for table `empresas`
 --
 ALTER TABLE `empresas`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ocorrencias`
+--
+ALTER TABLE `ocorrencias`
+  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `pagamentos`
 --
@@ -213,7 +270,7 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `parcelas`
 --
 ALTER TABLE `parcelas`
-  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

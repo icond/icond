@@ -18,6 +18,13 @@
   width: 50%;
   margin: auto;
 }
+.regOcorrencia .info{
+  width: 100%;
+  text-align: center;
+}
+.block{
+  display: none;
+}
 .botao{
   width: 100%;
   text-align: right;
@@ -832,6 +839,9 @@ hr.style14 {
     width: 80%;
     margin-bottom: 35px;
     padding-bottom: -20px;
+  }
+  .regOcorrencia{
+    width: 95%;
   }
 }
 
