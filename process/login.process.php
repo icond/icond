@@ -20,6 +20,11 @@
       $_SESSION['idCond'] = $row['idCond'];
     	if($count == 1){
       		//Login com sucesso
+          if($row['isAdmin'] == 1){
+            $_SESSION['isAdmin'] = 1;
+          }else{
+            $_SESSION['isAdmin'] = 0;
+          }
       		$_SESSION['user'] = $idLogged;
           $_SESSION['tipoConta'] = 1;
       		header("Location: ../admin/index.php");

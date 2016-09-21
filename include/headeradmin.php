@@ -154,7 +154,11 @@
                         <li>
                           <!--<li class="divider"></li>-->
                           <li><a href="ocorrencia.php">Ocorrências</a></li>
-                          <li><a href="#">Vistorias</a></li>
+                          <?php
+                          if($_SESSION['isAdmin'] == 1){
+                            echo "<li><a href='#'>Vistorias</a></li>";
+                          }
+                          ?>
                        </li>
                       </ul>
                   </li>
@@ -202,7 +206,11 @@
                         <li>
                         <!--<li class="divider"></li>-->
                         <li><a href="ocorrencia.php">Ocorrências</a></li>
-                        <li><a href="#">Vistorias</a></li>
+                        <?php
+                          if($_SESSION['isAdmin'] == 1){
+                            echo "<li><a href='#'>Vistorias</a></li>";
+                          }
+                          ?>
                       </li>
                       </ul>
                   </li>
