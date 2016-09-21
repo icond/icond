@@ -86,7 +86,7 @@
                   
                   mysqli_query($conn, $stringRegUsers);
 
-                  header("Location: login.php?s=1");
+                  echo "<script> window.location = 'login.php?s=1'</script>";
                 }
 
             }else{
@@ -99,7 +99,7 @@
               <button type="submit" name="voltar" id="bt"  class="btlogin">Voltar</button>
               <?php
                 if(isset($_POST['voltar'])){
-                  header("Location: index.php");
+                  echo "<script> window.location = 'index.php'</script>";
                 }
 
             }
@@ -114,7 +114,7 @@
               <button type="submit" name="voltar" id="bt"  class="btlogin">Voltar</button>
               <?php
                 if(isset($_POST['voltar'])){
-                  header("Location: index.php");
+                  echo "<script> window.location = 'index.php'</script>";
                 }
             }
 
