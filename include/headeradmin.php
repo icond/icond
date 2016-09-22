@@ -176,7 +176,7 @@
                       <ul class="dropdown-menu" id="menu1">
                         <li>
                         <!--<li class="divider"></li>-->
-                          <li><a href="pdfUtilizadores.php" target="_blank">Utilizadores>/a></li>
+                          <li><a href="pdfUtilizadores.php" target="_blank">Utilizadores</a></li>
                         </li>
                       </ul>
                     </li>
