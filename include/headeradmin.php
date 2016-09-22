@@ -156,7 +156,7 @@
                           <li><a href="ocorrencia.php">Ocorrências</a></li>
                           <?php
                           if($_SESSION['isAdmin'] == 1){
-                            echo "<li><a href='#'>Vistorias</a></li>";
+                            echo "<li><a href='vistoria.php'>Vistorias</a></li>";
                           }
                           ?>
                        </li>
@@ -208,7 +208,7 @@
                         <li><a href="ocorrencia.php">Ocorrências</a></li>
                         <?php
                           if($_SESSION['isAdmin'] == 1){
-                            echo "<li><a href='#'>Vistorias</a></li>";
+                            echo "<li><a href='vistoria.php'>Vistorias</a></li>";
                           }
                           ?>
                       </li>

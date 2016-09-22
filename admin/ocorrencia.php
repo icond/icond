@@ -15,7 +15,7 @@
 
     if(isset($_POST['regOco'])){
         $textOcorrencia = $_POST['ocorrencia'];
-        $sqlOcorrencia = "INSERT INTO ocorrencias (ocorrencia, idParcela, idCond, dataRegOcorrencia) VALUES ('$textOcorrencia', '$idParcela', '$idCond', '$date');";
+        $sqlOcorrencia = "INSERT INTO ocorrencias (ocorrencia, idParcela, idCond, dataRegOcorrencia, idVistoria) VALUES ('$textOcorrencia', '$idParcela', '$idCond', '$date', '0');";
         //echo $sqlOcorrencia;
         mysqli_query($conn, $sqlOcorrencia);
 

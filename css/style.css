@@ -14,11 +14,11 @@
 [class*="brandico-"]:before {
   font-family: 'brandico', sans-serif;
 }
-.regOcorrencia{
+.regOcorrencia, .regVistoria{
   width: 50%;
   margin: auto;
 }
-.regOcorrencia .info{
+.regOcorrencia .info, .regVistoria .info{
   width: 100%;
   text-align: center;
 }
@@ -29,7 +29,7 @@
   width: 100%;
   text-align: right;
 }
-.regOcorrencia button{
+.regOcorrencia button, .regVistoria button{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -48,7 +48,7 @@
 
 }
 
-.regOcorrencia button:hover{
+.regOcorrencia button:hover, .regVistoria button:hover{
   background-color: #fff;
   color: #0071BC;
   cursor: pointer;
@@ -58,11 +58,11 @@
 .joseSans {
     font-family: 'Josefin Sans', sans-serif;
   }
-.ocorrencia textarea{
+.ocorrencia textarea, .vistoria textarea{
   resize: none;
   width: 100%;
 }
-.ocorrencia label{
+.ocorrencia label, .vistoria label{
   font-size: medium;
 }
 
