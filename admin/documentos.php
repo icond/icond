@@ -47,8 +47,8 @@
                 $("#op2-data").hide();
                 $("#op3-data").show();
 
-                if(!$("#op2").hasClass("admin-menu-item-active")){
-                    $("#op2").addClass("admin-menu-item-active");
+                if(!$("#op3").hasClass("admin-menu-item-active")){
+                    $("#op3").addClass("admin-menu-item-active");
                 }
                 
                 $("#op1").removeClass("admin-menu-item-active");
@@ -58,12 +58,27 @@
 
           });
         </script>
+        <script>
+            function drop(de, por){                    
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                          document.getElementById("show").innerHTML = this.responseText;
+                        }
+                    };
+                    xmlhttp.open("GET", "btManutencao.php?D=" + de + "&P=" + por, true);
+                    xmlhttp.send();
+            }
+        </script>
+        <script>
+            drop(0,0);
+        </script>
 <body>
             <main>
                 <div class="container">
                     <div class="info-panel">
                         <div class="panelheading"><h3>Informações do Condominio</h3></div>
-                        <div class="panel-body">
+                        <div class="panel-body" >
                             <div class="panel-menu">
 
                                 <div class="admin-menu-item admin-menu-item-active" id="op1">
@@ -77,53 +92,39 @@
                                 </div>
                             </div>
 
-                            <div class="panel-menu-info">
+                            <div class="panel-menu-info" style="min-height: 180px">
                                 <div id="op1-data">
-                                    <div class="panel-menu-info-titles">
-                                        <span class="title">Morada</span><br><br>
-                                        <span class="title">Lote</span><br><br>
-                                        <span class="title">Codigo Postal</span><br><br>
-                                        <span class="title">Localidade</span><br><br>
-                                        <span class="title">Cidade</span><br><br>
-                                        <span class="title">Pais</span><br><br>
-                                        <span class="title">Nif</span><br>
-                                    </div>
-                                    <div class="panel-menu-info-data">
-                                        <span class="data"><?php echo $morada; ?></span><br><br>
-                                        <span class="data"><?php echo $lote; ?></span><br><br>
-                                        <span class="data"><?php echo $codigoPostal; ?></span><br><br>
-                                        <span class="data"><?php echo $localidade; ?></span><br><br>
-                                        <span class="data"><?php echo $cidade; ?></span><br><br>
-                                        <!-- TODO Ir buscar o país de acordo com o ID à tabela dos países -->
-                                        <span class="data"><?php echo "ID País: ".$idPais." (Portugal)"; ?></span><br><br>
-                                        <span class="data"><?php echo $nifCond; ?></span><br>
-                                    </div>
+                                    <a href="pdfUtilizadores.php" target="_black" class="btNice">Ola</a>
                                 </div>
 
                                 <div id="op2-data">
-                                    <div class="panel-menu-info-titles">
-                                        <span class="title">Nome</span><br><br>
-                                        <span class="title">Telemsdasdsadovel</span><br><br>
-                                        <span class="title">Email</span><br><br>
-                                        <span class="title">Lote</span><br>
-                                    </div>
-                                    <div class="panel-menu-info-data">
-                                        <span class="data"><?php echo $nome; ?></span><br><br>
-                                        <span class="data"><?php echo $telemovel; ?></span><br><br>
-                                        <span class="data"><?php echo $email; ?></span><br><br>
-                                        <span class="data"><?php echo $loteAdmin; ?></span><br>
-                                    </div>
+                                    <form action="pdfUtilizadores.php" method="post" target="_blank">
+                                        Tabela de:  
+                                        <select name="de" onchange="drop(de.value, por.value)">
+                                            <option value="0" >Ocorrências</option>
+                                            <option value="1" >Vistorias</option>
+                                        </select><br><br>
+                                        Escolher por:
+                                        <select name="por" onchange="drop(de.value, por.value)">
+                                            <option value="0" >Mes</option>
+                                            <option value="1" >Estado</option>
+                                        </select><br><br>
+                                        <div id="show">
+                                            
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <button class="btNice">Ola</button>
+                                    </form>
                                 </div>
 
                                 <div id="op3-data">
-                                    <div class="panel-menu-info-titles">
-                                        <span class="title">Nome</span><br><br>
-                                        <span class="title">Teleasdasdmovel</span><br><br>
-                                    </div>
-                                    <div class="panel-menu-info-data">
-                                        <span class="data"><?php echo $nome; ?></span><br><br>
-                                        <span class="data"><?php echo $telemovel; ?></span><br><br>
-                                    </div>
+                                    <form action="pdfUtilizadores.php" method="post" target="_blank">
+                                        Aqui pode visualizar e imprimir um ficheiro pdf com as informaçoes de todas as parcelas, tal como, email, codigo, telemovel, nome.
+                                        <br>
+                                        <br>
+                                        <button class="btNice">Ola</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
