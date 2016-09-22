@@ -25,7 +25,7 @@
           }else{
             $_SESSION['isAdmin'] = 0;
           }
-      		$_SESSION['user'] = $idLozgged;
+      		$_SESSION['user'] = $idLogged;
           $_SESSION['tipoConta'] = 1;
       		header("Location: ../admin/index.php");
     	}else{

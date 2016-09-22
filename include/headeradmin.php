@@ -157,6 +157,8 @@
                           <?php
                           if($_SESSION['isAdmin'] == 1){
                             echo "<li><a href='vistoria.php'>Vistorias</a></li>";
+                            echo "<li><a href='revOcorrencias.php'>Revisão de Ocorrências</a></li>";
+                            echo "<li><a href='revVistorias.php'>Revisão de Vistorias</a></li>";
                           }
                           ?>
                        </li>
@@ -209,6 +211,8 @@
                         <?php
                           if($_SESSION['isAdmin'] == 1){
                             echo "<li><a href='vistoria.php'>Vistorias</a></li>";
+                            echo "<li><a href='revOcorrencias.php'>Revisão de Ocorrências</a></li>";
+                            echo "<li><a href='revVistorias.php'>Revisão de Vistorias</a></li>";
                           }
                           ?>
                       </li>
