@@ -53,6 +53,8 @@
         <!--css-->
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/loginform.css">
+
         <!-- font awesome -->
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <!--jquery-->

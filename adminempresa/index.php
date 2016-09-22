@@ -37,8 +37,6 @@
         $sqlObterCondsDaEmp = "SELECT * FROM condominios LEFT JOIN empresas ON condominios.idEmpresa=empresas.idEmpresa WHERE condominios.idEmpresa = $idEmpresa";
         $result = mysqli_query($conn, $sqlObterCondsDaEmp);
         $row = mysqli_fetch_array($result);
-
-
     ?>
 
         <body>
@@ -49,10 +47,23 @@
                             <h3>Listagem de prédios</h3>
                         </div>
                         <div class="panel-body">
-                            <div class='table-responsive'><table class='table table-striped table-hover'><thead><tr style='background-color: #0071BC; color: #fff'><td>Nº</td><td style="width:85%;">Morada</td><td>Editar</td><td>Apagar</td>
+                            <div class='table-responsive'>
+                                <table class='table table-striped table-hover'><thead><tr style='background-color: #0071BC; color: #fff'><td>Nº</td><td style="width:80%;">Morada</td><td>Editar</td><td>Apagar</td>
+                                </tr></thead>
+                                <tbody>
+                                <tr>
+                                <td>1</td>
+                                <td>Praceta do kappa mix mon mux mix n5 420 blaze it</td>
+                                <td> X </td>
+                                <td> X </td>
+                                </table>
                     </div>
                 </div>
-                <button class="btNice" style="width: 17%;">novo prédio</button>
+                <div style="width:20%;float:right">
+                    <form action="novopredio.php">
+                        <button class="btNice" style="width: 90%;">Novo Prédio</button>
+                    </form>
+                </div>
             </main>
         </body>
     </html>
