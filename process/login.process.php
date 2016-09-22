@@ -25,7 +25,7 @@
           }else{
             $_SESSION['isAdmin'] = 0;
           }
-      		$_SESSION['user'] = $idLogged;
+      		$_SESSION['user'] = $idLozgged;
           $_SESSION['tipoConta'] = 1;
       		header("Location: ../admin/index.php");
     	}else{
@@ -34,7 +34,7 @@
     	}
     }
 
-    //Codigo para login de um admin
+    //Codigo para login de uma empresa de gestão
     if(isset($_POST['loginEmpresa'])){
       $email = $_POST['email'];
       $password = $_POST['password'];
@@ -50,8 +50,9 @@
       if($count == 1){
           //Login com sucesso
           $_SESSION['user'] = $idLogged;
+          $_SESSION['isAdmin'] = 1;
           $_SESSION['tipoConta'] = 2;
-          header("Location: ../admin/index.php");
+          header("Location: ../adminempresa/index.php");
       }else{
           //Login falhado, mensagem de erro
           header("Location: ../loginempresa.php?s=2");

@@ -351,7 +351,10 @@ a, a:hover, a:active, a:visited a:focus{
     border-bottom: 1px solid;
     border-color: #0071BC;
 }
-
+.info-panel-empresa{
+    background-color: #fff;
+    border-color: #0071BC;
+}
 .panel-menu{
     width: 30%;
     color: #000;
