@@ -30,12 +30,6 @@
 			<td><?php echo " " . $row['dataRegOcorrencia'];?></td>
 		</tr>
 		<tr>
-			<td style="width: 50%; text-align: center;"><label>Estado</label><br>
-						<select name="estado">
-                        	<option value="0">Por Resolver</option>
-                        	<option value="1">Resolvido</option>
-                    	</select></td>
-			<td style="width: 50%; text-align: center;"><button class="btNice" name="updateOcorrencia">Guardar</button></td>
 		</tr>
 	</tbody>
 </table>
