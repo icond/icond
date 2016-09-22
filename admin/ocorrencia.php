@@ -15,7 +15,8 @@
 
     if(isset($_POST['regOco'])){
         $textOcorrencia = $_POST['ocorrencia'];
-        $sqlOcorrencia = "INSERT INTO ocorrencias (ocorrencia, idParcela, idCond, dataRegOcorrencia, estado) VALUES ('$textOcorrencia', '$idParcela', '$idCond', '$date', '0');";
+        $titulo = $_POST['titulo'];
+        $sqlOcorrencia = "INSERT INTO ocorrencias (tituloOcorrencia, ocorrencia, idParcela, idCond, dataRegOcorrencia, estado) VALUES ('$titulo', '$textOcorrencia', '$idParcela', '$idCond', '$date', '0');";
         //echo $sqlOcorrencia;
         mysqli_query($conn, $sqlOcorrencia);
 
@@ -35,6 +36,7 @@
             <div class="info alert alert-success block" id="infoOco">Registo de ocorrencia inserido com sucesso.</div>
                 <div class="ocorrencia">
                     <label>Registo da Ocorrencia</label><br>
+                    <input type="text" name="titulo" maxlength="50" required style="width: 100%; margin-bottom: 1%;" placeholder="Titulo da Ocorrencia. Maximo 50 caracteres."><br>
                     <textarea name ="ocorrencia" rows="10" maxlength="500" required placeholder="Descreva a ocorrencia com um maximo de 500 caracteres."></textarea><br><br>
 
                     <label>Nome do Utilizador para registo:</label> <?php echo $_SESSION['FLname']; ?><br><br>

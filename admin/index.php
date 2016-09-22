@@ -32,7 +32,6 @@
         $telemovel = $row2['telemovel'];
         $email = $row2['email'];
         $loteAdmin = $row2['andar']."º ".$row2['organizacao'];
-
     ?>
 
         <body>
