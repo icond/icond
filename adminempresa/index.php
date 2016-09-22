@@ -52,6 +52,7 @@
                             <div class='table-responsive'><table class='table table-striped table-hover'><thead><tr style='background-color: #0071BC; color: #fff'><td>Nº</td><td style="width:85%;">Morada</td><td>Editar</td><td>Apagar</td>
                     </div>
                 </div>
+                <button class="btNice" style="width: 17%;">novo prédio</button>
             </main>
         </body>
     </html>
@@ -60,7 +61,7 @@
 
   }else{
     // aqui podia-se enviar um parametro para pedir para fazer outra vez login
-    header("Location: ../login.php");
+    header("Location: ../loginempresa.php");
   }
 
  ?>

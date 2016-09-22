@@ -170,7 +170,7 @@
                       <li>
                       <!--<li class="divider"></li>-->
                         <li><a href="#">Consulta de Documentos</a></li>
-                        <li><a href="#">Novo Documento</a></li>
+                        <li><a href="../admin/pdf.php">Novo Documento</a></li>
                       </li>
                     </ul>
                   </li>
@@ -217,7 +217,7 @@
                       <li>
                       <!--<li class="divider"></li>-->
                         <li><a href="#">Consulta de Documentos</a></li>
-                        <li><a href="#">Novo Documento</a></li>
+                        <li><a href="../admin/pdf.php">Novo Documento</a></li>
                       </li>
                     </ul>
                   </li>

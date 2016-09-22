@@ -29,7 +29,7 @@
   width: 100%;
   text-align: right;
 }
-.regOcorrencia button, .regVistoria button{
+.regOcorrencia button, .regVistoria button, .btNice{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -48,7 +48,7 @@
 
 }
 
-.regOcorrencia button:hover, .regVistoria button:hover{
+.regOcorrencia button:hover, .regVistoria button:hover, .btNice:hover{
   background-color: #fff;
   color: #0071BC;
   cursor: pointer;
