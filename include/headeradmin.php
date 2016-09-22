@@ -172,13 +172,7 @@
                   <?php if($_SESSION['isAdmin'] == 1){ ?>           
                   
                     <li class="hidden-sm hidden-md hidden-lg hidden-xl">
-                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
-                      <ul class="dropdown-menu" id="menu1">
-                        <li>
-                        <!--<li class="divider"></li>-->
-                          <li><a href="pdfUtilizadores.php" target="_blank">Utilizadores</a></li>
-                        </li>
-                      </ul>
+                      <a href="documentos.php">Documentos</a>                
                     </li>
 
                   <?php } ?>
@@ -229,13 +223,8 @@
                   <?php if($_SESSION['isAdmin'] == 1){ ?>           
                   
                     <li class="dropdown">
-                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
-                      <ul class="dropdown-menu" id="menu1">
-                        <li>
-                        <!--<li class="divider"></li>-->
-                          <li><a href="pdfUtilizadores.php" target="_blank">Utilizadores</a></li>
-                        </li>
-                      </ul>
+                      
+                      <a href="documentos.php">Documentos</a>  
                     </li>
                   
                   <?php } ?>
