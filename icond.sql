@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Set-2016 às 11:55
+-- Generation Time: 22-Set-2016 às 16:34
 -- Versão do servidor: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -99,12 +99,25 @@ CREATE TABLE `empresas` (
 
 CREATE TABLE `ocorrencias` (
   `idOcorrencia` int(11) NOT NULL,
+  `tituloOcorrencia` text NOT NULL,
   `ocorrencia` varchar(1000) NOT NULL,
   `idParcela` int(11) NOT NULL,
   `idCond` int(11) NOT NULL,
   `dataRegOcorrencia` varchar(50) NOT NULL,
   `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ocorrencias`
+--
+
+INSERT INTO `ocorrencias` (`idOcorrencia`, `tituloOcorrencia`, `ocorrencia`, `idParcela`, `idCond`, `dataRegOcorrencia`, `estado`) VALUES
+(19, 'tit1', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
+(20, 'tit2', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
+(21, 'tit3', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
+(22, 'OOO OOOOO O OOOOOOOOO OOO OOOOOO OOO OOOO OOO OOOO', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
+(23, 'Titulo de teste enviado por POST', 'OcorrÃªncia de teste.', 22, 2, '2016/09/22 11:54:02', 0),
+(24, 'David', 'Ã© gay', 22, 2, '2016/09/22 15:32:06', 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +285,7 @@ ALTER TABLE `empresas`
 -- AUTO_INCREMENT for table `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
-  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `pagamentos`
 --
