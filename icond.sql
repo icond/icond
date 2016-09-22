@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Set-2016 às 15:35
+-- Generation Time: 22-Set-2016 às 10:50
 -- Versão do servidor: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -60,7 +60,8 @@ CREATE TABLE `condominios` (
 --
 
 INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`) VALUES
-(2, 'Rua Atec', '5', '5555-555', 'Santos', 'Lisboa', 1, '999999999', 3, 0, 0);
+(2, 'Rua Atec', '5', '5555-555', 'Santos', 'Lisboa', 1, '999999999', 3, 0, 0),
+(3, 'QWE', '1', '1-1', 'QWE', 'QWE', 1, '111212112', 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -101,16 +102,17 @@ CREATE TABLE `ocorrencias` (
   `ocorrencia` varchar(1000) NOT NULL,
   `idParcela` int(11) NOT NULL,
   `idCond` int(11) NOT NULL,
-  `dataRegOcorrencia` varchar(15) NOT NULL
+  `dataRegOcorrencia` varchar(50) NOT NULL,
+  `idVistoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `ocorrencias`
 --
 
-INSERT INTO `ocorrencias` (`idOcorrencia`, `ocorrencia`, `idParcela`, `idCond`, `dataRegOcorrencia`) VALUES
-(14, '3weriwegfiuwehguierbguiwruigiuwrbguiwriugwuirgbiuwrbgiuewirugbuierbguibeg', 22, 2, '2016/09/21 14:2'),
-(15, 'Falta agua.', 22, 2, '2016/09/21 14:2');
+INSERT INTO `ocorrencias` (`idOcorrencia`, `ocorrencia`, `idParcela`, `idCond`, `dataRegOcorrencia`, `idVistoria`) VALUES
+(14, '3weriwegfiuwehguierbguiwruigiuwrbguiwriugwuirgbiuwrbgiuewirugbuierbguibeg', 22, 2, '2016/09/21 14:2', 0),
+(15, 'Falta agua.', 22, 2, '2016/09/21 14:2', 0);
 
 -- --------------------------------------------------------
 
@@ -173,7 +175,23 @@ INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemove
 (24, 'Fernando Martins', 'fernando@atec.com', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
 (25, 'Jorge Mendes', 'jorge@atec.com', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente'),
 (26, 'Fernando Martins2', 'fernando@atec.com2', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
-(27, 'Jorge Mendes2', 'jorge@atec.com2', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente');
+(27, 'Jorge Mendes2', 'jorge@atec.com2', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente'),
+(38, 'Fernando Martins22', 'fernando@atec.com22', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
+(39, 'Jorge Mendes22', 'jorge@atec.com222', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vistorias`
+--
+
+CREATE TABLE `vistorias` (
+  `idVistoria` int(11) NOT NULL,
+  `ocorrencias` text NOT NULL,
+  `dataVistoria` varchar(50) NOT NULL,
+  `idParcelaRegisto` int(11) NOT NULL,
+  `idCond` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -228,6 +246,12 @@ ALTER TABLE `parcelas`
   ADD PRIMARY KEY (`idParcela`);
 
 --
+-- Indexes for table `vistorias`
+--
+ALTER TABLE `vistorias`
+  ADD PRIMARY KEY (`idVistoria`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -240,7 +264,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `condominios`
 --
 ALTER TABLE `condominios`
-  MODIFY `idCond` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCond` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `despesas`
 --
@@ -270,7 +294,12 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `parcelas`
 --
 ALTER TABLE `parcelas`
-  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+--
+-- AUTO_INCREMENT for table `vistorias`
+--
+ALTER TABLE `vistorias`
+  MODIFY `idVistoria` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
