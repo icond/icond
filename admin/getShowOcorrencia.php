@@ -12,11 +12,26 @@
 <div class='table-responsive'>
 <table class='table'>
 	<tbody>
-		<tr><td style="width: 30%;"><label>Titulo da Ocorrencia: </label></td><td><?php echo " " . $row['tituloOcorrencia'];?></td></tr>
-		<tr><td style="width: 30%;"><label>Ocorrencia: </label></td><td><?php echo " " . $row['ocorrencia'];?></td></tr>
-		<tr><td style="width: 30%;"><label>Utilizador que Registou: </label></td><td><?php echo " " . $row['full_name'];?></td></tr>
-		<tr><td style="width: 30%;"><label>Data: </label></td><td><?php echo " " . $row['dataRegOcorrencia'];?></td></tr>
-		<tr><td style="width: 50%; text-align: center;"><label>Data: </label></td><td style="width: 50%; text-align: center;"><?php echo " " . $row['dataRegOcorrencia'];?></td></tr>
+		<tr>
+			<td style="width: 30%;"><label>Titulo da Ocorrencia: </label></td>
+			<td><?php echo " " . $row['tituloOcorrencia'];?></td>
+		</tr>
+		<tr>
+			<td style="width: 30%;"><label>Ocorrencia: </label></td>
+			<td><?php echo " " . $row['ocorrencia'];?></td>
+		</tr>
+		<tr>
+			<td style="width: 30%;"><label>Utilizador que Registou: </label></td>
+			<td><?php echo " " . $row['full_name'];?></td>
+		</tr>
+		<tr>
+			<td style="width: 30%;"><label>Data: </label></td>
+			<td><?php echo " " . $row['dataRegOcorrencia'];?></td>
+		</tr>
+		<tr>
+			<td style="width: 50%; text-align: center;"><label>Data: </label></td>
+			<td style="width: 50%; text-align: center;"><?php echo " " . $row['dataRegOcorrencia'];?></td>
+		</tr>
 	</tbody>
 </table>
 </div>
