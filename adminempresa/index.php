@@ -1,5 +1,5 @@
 <?php
-    include '../include/headeradmin.php';
+    include '../include/headerempresa.php';
     include '../include/connection.php';
 
     //Utilizador Logado

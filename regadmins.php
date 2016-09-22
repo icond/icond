@@ -35,15 +35,12 @@
     if(mysqli_num_rows(mysqli_query($conn, $checkIfNifCExists)) == 1){
 
       $url .= "C=1&";
-      echo $url;
     }
     if(mysqli_num_rows(mysqli_query($conn, $checkIfMailExists)) == 1){
       $url .= "M=1&";
-      echo $url;
     }
     if(mysqli_num_rows(mysqli_query($conn, $checkIfNifPExists)) == 1){
       $url .= "P=1";
-      echo $url;
     }
 
 
