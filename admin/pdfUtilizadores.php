@@ -34,11 +34,17 @@ $pdf = new FPDF('P','mm','A4');
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',12);
 $run = mysqli_query($conn, $SQL);
+  $pdf->Cell(190, 10, "Utilizadores",0,1,"C");
+
+  $pdf->Cell(47.5, 10, "Nome",1,0,"C");
+  $pdf->Cell(47.5, 10, "Email",1,0,"C");
+  $pdf->Cell(47.5, 10, "Telemovel",1,0,"C");
+  $pdf->Cell(47.5, 10, "Andar",1,1,"C");
 while($row = mysqli_fetch_array($run)){
 	$pdf->Cell(47.5, 10, $row['full_name'],1,0,"C");
 	$pdf->Cell(47.5, 10, $row['email'],1,0,"C");
 	$pdf->Cell(47.5, 10, $row['telemovel'],1,0,"C");
-	$pdf->Cell(47.5, 10, $row['nifParcela'],1,1,"C");
+	$pdf->Cell(47.5, 10, $row["andar"] . " " . $row["organizacao"],1,1,"C");
 }
 $pdf->Output();
 ?>

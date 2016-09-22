@@ -168,17 +168,20 @@
                   </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="fracao.php">Frações</a>
-                  </li>
-                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
-                    <ul class="dropdown-menu" id="menu1">
-                      <li>
-                      <!--<li class="divider"></li>-->
-                        <li><a href="#">Consulta de Documentos</a></li>
-                        <li><a href="pdf.php" target="_blank">Novo Documento</a></li>
-                      </li>
-                    </ul>
-                  </li>
+                  </li>               
+                  <?php if($_SESSION['isAdmin'] == 1){ ?>           
+                  
+                    <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
+                      <ul class="dropdown-menu" id="menu1">
+                        <li>
+                        <!--<li class="divider"></li>-->
+                          <li><a href="pdfUtilizadores.php" target="_blank">Utilizadores>/a></li>
+                        </li>
+                      </ul>
+                    </li>
+
+                  <?php } ?>
                   <!--end MENU para ecrãs pequenos-->
 
 
@@ -222,17 +225,20 @@
                   </li>
                   <li class="dropdown">
                     <a href="fracao.php">Frações</a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
-                    <ul class="dropdown-menu" id="menu1">
-                      <li>
-                      <!--<li class="divider"></li>-->
-                        <li><a href="#">Consulta de Documentos</a></li>
-                        <li><a href="pdf.php" target="_blank">Novo Documento</a></li>
-                      </li>
-                    </ul>
-                  </li>
+                  </li>               
+                  <?php if($_SESSION['isAdmin'] == 1){ ?>           
+                  
+                    <li class="dropdown">
+                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
+                      <ul class="dropdown-menu" id="menu1">
+                        <li>
+                        <!--<li class="divider"></li>-->
+                          <li><a href="pdfUtilizadores.php" target="_blank">Utilizadores</a></li>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                  <?php } ?>
                 </ul>
             </ul>
         </div>
