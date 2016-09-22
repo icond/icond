@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Set-2016 às 10:50
+-- Generation Time: 22-Set-2016 às 11:55
 -- Versão do servidor: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -103,16 +103,8 @@ CREATE TABLE `ocorrencias` (
   `idParcela` int(11) NOT NULL,
   `idCond` int(11) NOT NULL,
   `dataRegOcorrencia` varchar(50) NOT NULL,
-  `idVistoria` int(11) NOT NULL
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `ocorrencias`
---
-
-INSERT INTO `ocorrencias` (`idOcorrencia`, `ocorrencia`, `idParcela`, `idCond`, `dataRegOcorrencia`, `idVistoria`) VALUES
-(14, '3weriwegfiuwehguierbguiwruigiuwrbguiwriugwuirgbiuwrbgiuewirugbuierbguibeg', 22, 2, '2016/09/21 14:2', 0),
-(15, 'Falta agua.', 22, 2, '2016/09/21 14:2', 0);
 
 -- --------------------------------------------------------
 
@@ -190,7 +182,8 @@ CREATE TABLE `vistorias` (
   `ocorrencias` text NOT NULL,
   `dataVistoria` varchar(50) NOT NULL,
   `idParcelaRegisto` int(11) NOT NULL,
-  `idCond` int(11) NOT NULL
+  `idCond` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -279,7 +272,7 @@ ALTER TABLE `empresas`
 -- AUTO_INCREMENT for table `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
-  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `pagamentos`
 --
@@ -299,7 +292,7 @@ ALTER TABLE `parcelas`
 -- AUTO_INCREMENT for table `vistorias`
 --
 ALTER TABLE `vistorias`
-  MODIFY `idVistoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idVistoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

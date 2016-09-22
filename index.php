@@ -227,7 +227,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 productimages text-center">
                                 <img src="img/iphone.png" class="iphoneShowoff">
-                                <img src="img/mbp.png" class="computershowoff">
+                                <img src="img/macIndex.png" class="computershowoff">
                             </div>
                         </div>
                     </div>

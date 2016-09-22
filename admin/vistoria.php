@@ -13,11 +13,11 @@
     $idParcela = $_SESSION["user"];
     $idCond = $_SESSION["idCond"];
 
-    if(isset($_POST['regOco'])){
+    if(isset($_POST['regVistoria'])){
         $textVistoria = $_POST['vistoria'];
-        $sqlVistoria = "INSERT INTO vistorias (ocorrencias, dataVistoria, idParcelaRegisto, idCond) VALUES ('$textVistoria', '$DATA DA VISTORIA', '$idParcela', '$idCond');";
-        echo $sqlVistoria;
-        //mysqli_query($conn, $sqlVistoria);
+        $data = $_POST['data'];
+        $sqlVistoria = "INSERT INTO vistorias (ocorrencias, dataVistoria, idParcelaRegisto, idCond, estado) VALUES ('$textVistoria', '$data', '$idParcela', '$idCond', '0');";
+        mysqli_query($conn, $sqlVistoria);
 
 
         echo "<script>
@@ -39,18 +39,10 @@
                     <textarea name ="vistoria" rows="10" maxlength="5000" required placeholder="Descreva a vistoria com um maximo de 5000 caracteres."></textarea><br><br>
 
                     <label>Nome do Administrador para registo:</label> <?php echo $_SESSION['FLname']; ?><br><br>
-                    <label>Data da Vistoria:</label> <input type="date" id="data"><br><br>
+                    <label>Data da Vistoria:</label> <input type="date" required name="data"><br><br>
                     <div class="botao">
                     <button type="submit" onclick="myFunction()" name="regVistoria" class="btlogin">Registar</button>
                     </div>
-                    <script>
-
-                        function myFunction() {
-                            var date = document.getElementById("data").value;
-                        window.alert(date);
-
-                        }
-                    </script>
                 </div>
             </div>
         </form>
