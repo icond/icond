@@ -11,7 +11,28 @@
   }else{
     header("Location: ../login.php");
   }
-?>
+?>  
+    <!--cenas feitas by David -->
+    <script>
+        function trashMojiClick(id)
+        {
+            $('#' + id).css('display', 'none');
+            //duss, esta solução não é nada elegante
+            var duss = id.replace('bt', '');
+
+            $('#showconfirm' + duss).css('display', 'block');
+        }
+        function NOmojoClick(id)
+        {
+            //E mais uma vez..
+            var duss = id.replace('btDel', '');
+            $('#showconfirm' + duss).css('display', 'none');
+            $('#bt' + duss).css('display', 'block');
+        }
+    </script>
+
+
+
 
     <script type="text/javascript">
         function apagar(val, cond){
@@ -25,6 +46,7 @@
               xmlhttp.send(); 
         }
     </script>
+    <!-- tratar de hide/show 
     <script type='text/javascript'>
          $( document ).ready(function() {
                                 $('#bt0').click( function(){
@@ -33,7 +55,7 @@
                                 });
         });
 
-    </script>
+    </script>-->
     <?php
         $n = 1;
         $queryParcelas = "SELECT idParcela, full_name, email, telemovel, codigo, idCond, nifParcela, andar, comissaoMensal, organizacao
@@ -81,7 +103,7 @@
                 echo "</tr></thead><tbody>";
                 while($row = mysqli_fetch_assoc($resultParcelas)){
                     if($isAdmin == '1'){
-                        echo "<tr><td>" . $row["full_name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["telemovel"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td><td><div id='bt".$n."'><button  value='". $row["idParcela"] ."' ><span class='glyphicon glyphicon-trash'></span></button></div><div id='showconfirm".$n."' style='display: none;'><button style='color: #FC0707; height:26px; width:30px;' id='btDel".$n."' class='glyphicon glyphicon-remove'></button><button style='color: #00D400; height:26px; width:30px;' value='". $row["idParcela"] ."' onclick='apagar(this.value, ". $idCond .")' class='glyphicon glyphicon-ok'></button></td></tr>";
+                        echo "<tr><td>" . $row["full_name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["telemovel"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td><td><button onclick='trashMojiClick(this.id)' id='bt". $n ."' ><span class='glyphicon glyphicon-trash'></span></button><div id='showconfirm".$n."' style='display: none;'><button style='color: #FC0707; height:26px; width:30px;' onclick='NOmojoClick(this.id)' id='btDel".$n."' class='glyphicon glyphicon-remove'></button><button style='color: #00D400; height:26px; width:30px;' value='". $row["idParcela"] ."' onclick='apagar(this.value, ". $idCond .")' class='glyphicon glyphicon-ok'></button></td></tr>";
                     }else{
                         echo "<tr><td>" . $row["full_name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["telemovel"] . "</td><td>" . $row["codigo"] . "</td><td>" . $row["idCond"] . "</td><td>" . $row["nifParcela"] . "</td><td>" . $row["andar"] . " " . $row["organizacao"] . "</td><td>" . $row["comissaoMensal"] . "</td></tr>";
                     }
