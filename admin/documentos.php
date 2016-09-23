@@ -98,8 +98,9 @@
                                 </div>
 
                                 <div id="op2-data">
-                                    <form action="pdfUtilizadores.php" method="post" target="_blank">
-                                        Tabela de:  
+                                    <form action="pdfManutenção.php" method="post" target="_blank">
+                                        Aqui pode visualizar e imprimir um ficheiro pdf com as informaçoes de todas as ocorencias do seu predio
+                                        <!--Tabela de:  
                                         <select name="de" onchange="drop(de.value, por.value)">
                                             <option value="0" >Ocorrências</option>
                                             <option value="1" >Vistorias</option>
@@ -111,7 +112,11 @@
                                         </select><br><br>
                                         <div id="show">
                                             
-                                        </div>
+                                        </div>-->
+                                        <br>
+                                        <br>
+                                        <button name="" class="btNice">Ola</button><br>
+                                        Aqui pode visualizar e imprimir um ficheiro pdf com as informaçoes de todas as visturias realizadas no seu predio
                                         <br>
                                         <br>
                                         <button class="btNice">Ola</button>

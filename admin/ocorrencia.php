@@ -20,7 +20,7 @@
         //echo $sqlOcorrencia;
         mysqli_query($conn, $sqlOcorrencia);
 
-        echo "<script>
+       echo "<script>
     $(document).ready(function() {
         $('#infoOco').removeClass( 'block');
         $('#infoOco').hide();
