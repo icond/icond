@@ -143,7 +143,7 @@
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
-                      <li><a href="#">Gestão de Quotas</a></li>
+                      <li><a href="gestQuotas.php">Gestão de Quotas</a></li>
                       <li><a href="#">Orçamentos Condomínio</a></li>
                       <li><a href="#">Conta Bancária</a></li>
                       <li><a href="#">Fundo Maneio</a></li>
@@ -194,7 +194,7 @@
                     <ul class="dropdown-menu" id="menu1">
 
                       <!--<li class="divider"></li>-->
-                      <li><a href="#">Gestão de Quotas</a></li>
+                      <li><a href="gestQuotas.php">Gestão de Quotas</a></li>
                       <li><a href="#">Orçamentos Condomínio</a></li>
                       <li><a href="#">Conta Bancária</a></li>
                       <li><a href="#">Fundo Maneio</a></li>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2016 at 12:17 PM
+-- Generation Time: Sep 27, 2016 at 04:32 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -151,6 +151,20 @@ CREATE TABLE `pais` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `parceiros`
+--
+
+CREATE TABLE `parceiros` (
+  `idParceiro` int(11) NOT NULL,
+  `nomeParceiro` text NOT NULL,
+  `emailParceiro` text NOT NULL,
+  `passwordParceiro` text NOT NULL,
+  `descricaoParceiro` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `parcelas`
 --
 
@@ -165,7 +179,7 @@ CREATE TABLE `parcelas` (
   `idCond` int(11) NOT NULL,
   `nifParcela` int(11) NOT NULL,
   `andar` int(11) NOT NULL,
-  `comissaoMensal` int(11) NOT NULL,
+  `comissaoMensal` float DEFAULT NULL,
   `organizacao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -174,15 +188,15 @@ CREATE TABLE `parcelas` (
 --
 
 INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemovel`, `isAdmin`, `codigo`, `idCond`, `nifParcela`, `andar`, `comissaoMensal`, `organizacao`) VALUES
-(17, 'Rui Pereira Miguel', 'rui@atec.com', 'asd', '932564878', 0, 'nOL7x', 2, 987654321, 1, 0, 'Esquerdo'),
-(18, 'Pedro Martins Pine', 'pedro@atec.com', 'asd', '915487845', 0, 'vp9JE', 2, 954865954, 1, 0, 'Direito'),
-(19, 'Diogo Miguel Lopes', 'diogo@atec.com', 'asd', '925648754', 0, 'sFDFq', 2, 256984125, 1, 0, 'Frente'),
-(20, 'Edson Silva', 'edson@atec.com', 'asd', '912563521', 0, 'KwmdY', 2, 251478541, 2, 0, 'Esquerdo'),
-(21, 'Luis Miguel', 'luis@atec.com', 'asd', '935648512', 0, '33quu', 2, 256489654, 2, 0, 'Direito'),
-(22, 'Marco Rafael Martins', 'marco@atec.com', 'asd', '911254878', 1, 'CSPwp', 2, 123456789, 2, 0, 'Frente'),
-(23, 'Bruno Pereira', 'bruno@atec.com', 'asd', '965845213', 0, '97nc9', 2, 253632321, 3, 0, 'Esquerdo'),
-(24, 'Fernando Martins', 'fernando@atec.com', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
-(25, 'Jorge Mendes', 'jorge@atec.com', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente');
+(17, 'Rui Pereira Miguel', 'rui@atec.com', 'asd', '932564878', 0, 'nOL7x', 2, 987654321, 1, 5, 'Esquerdo'),
+(18, 'Pedro Martins Pine', 'pedro@atec.com', 'asd', '915487845', 0, 'vp9JE', 2, 954865954, 1, 5, 'Direito'),
+(19, 'Diogo Miguel Lopes', 'diogo@atec.com', 'asd', '925648754', 0, 'sFDFq', 2, 256984125, 1, 5, 'Frente'),
+(20, 'Edson Silva', 'edson@atec.com', 'asd', '912563521', 0, 'KwmdY', 2, 251478541, 2, 5, 'Esquerdo'),
+(21, 'Luis Miguel', 'luis@atec.com', 'asd', '935648512', 0, '33quu', 2, 256489654, 2, 5, 'Direito'),
+(22, 'Marco Rafael Martins', 'marco@atec.com', 'asd', '911254878', 1, 'CSPwp', 2, 123456789, 2, 5, 'Frente'),
+(23, 'Bruno Pereira', 'bruno@atec.com', 'asd', '965845213', 0, '97nc9', 2, 253632321, 3, 5, 'Esquerdo'),
+(24, 'Fernando Martins', 'fernando@atec.com', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 5, 'Direito'),
+(25, 'Jorge Mendes', 'jorge@atec.com', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 5, 'Frente');
 
 -- --------------------------------------------------------
 
@@ -196,8 +210,23 @@ CREATE TABLE `quotas` (
   `mesQuota` int(11) NOT NULL,
   `anoQuota` int(11) NOT NULL,
   `valorQuota` float NOT NULL,
-  `pago` binary(1) NOT NULL
+  `pago` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `quotas`
+--
+
+INSERT INTO `quotas` (`idQuota`, `idParcela`, `mesQuota`, `anoQuota`, `valorQuota`, `pago`) VALUES
+(1, 17, 9, 2016, 0, 0),
+(2, 18, 9, 2016, 0, 0),
+(3, 19, 9, 2016, 0, 0),
+(4, 20, 9, 2016, 0, 0),
+(5, 21, 9, 2016, 0, 0),
+(6, 22, 9, 2016, 0, 0),
+(7, 23, 9, 2016, 0, 0),
+(8, 24, 9, 2016, 0, 0),
+(9, 25, 9, 2016, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -261,6 +290,12 @@ ALTER TABLE `pais`
   ADD PRIMARY KEY (`idPais`);
 
 --
+-- Indexes for table `parceiros`
+--
+ALTER TABLE `parceiros`
+  ADD PRIMARY KEY (`idParceiro`);
+
+--
 -- Indexes for table `parcelas`
 --
 ALTER TABLE `parcelas`
@@ -318,6 +353,11 @@ ALTER TABLE `pagamentos`
 ALTER TABLE `pais`
   MODIFY `idPais` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `parceiros`
+--
+ALTER TABLE `parceiros`
+  MODIFY `idParceiro` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `parcelas`
 --
 ALTER TABLE `parcelas`
@@ -326,7 +366,7 @@ ALTER TABLE `parcelas`
 -- AUTO_INCREMENT for table `quotas`
 --
 ALTER TABLE `quotas`
-  MODIFY `idQuota` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idQuota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `vistorias`
 --

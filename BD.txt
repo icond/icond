@@ -68,3 +68,14 @@
 -> nPredio INT
 -> idCond INT
 -> idParcela INT
+
+---------------------------------------------------
+-- quotas - contem a informaçoes de cada quota
+---------------------------------------------------
+
+-> idQuota INT
+-> idParcela INT
+-> mesQuota INT
+-> anoQuota INT
+-> valorQuota FLOAT
+-> pago INT

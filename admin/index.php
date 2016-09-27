@@ -25,6 +25,7 @@
         $nAndares = $row['nAndares'];
         $ibanCond = $row['ibanCond'];
         $idEmpresa = $row['idEmpresa'];
+        $comissaoMensal = $row['comissaoMensal'];
 
         $result2 = mysqli_query($conn, $sqlInfoAdmin);
         $row2 = mysqli_fetch_array($result2);
@@ -60,7 +61,8 @@
                                         <span class="title">Localidade</span><br><br>
                                         <span class="title">Cidade</span><br><br>
                                         <span class="title">Pais</span><br><br>
-                                        <span class="title">Nif</span><br>
+                                        <span class="title">Nif</span><br><br>
+                                        <span class="title">Comissão Mensal</span><br>
                                     </div>
                                     <div class="panel-menu-info-data">
                                         <span class="data"><?php echo $morada; ?></span><br><br>
@@ -70,7 +72,8 @@
                                         <span class="data"><?php echo $cidade; ?></span><br><br>
                                         <!-- TODO Ir buscar o país de acordo com o ID à tabela dos países -->
                                         <span class="data"><?php echo "ID País: ".$idPais." (Portugal)"; ?></span><br><br>
-                                        <span class="data"><?php echo $nifCond; ?></span><br>
+                                        <span class="data"><?php echo $nifCond; ?></span><br><br>
+                                        <span class="data" style="font-weight: bold;"><?php echo $comissaoMensal; ?>€</span><br>
                                     </div>
                                 </div>
 
