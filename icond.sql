@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Set-2016 às 16:34
--- Versão do servidor: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: Sep 27, 2016 at 11:15 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `apartamentos`
+-- Table structure for table `apartamentos`
 --
 
 CREATE TABLE `apartamentos` (
@@ -38,7 +38,7 @@ CREATE TABLE `apartamentos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `condominios`
+-- Table structure for table `condominios`
 --
 
 CREATE TABLE `condominios` (
@@ -52,21 +52,22 @@ CREATE TABLE `condominios` (
   `nifCond` varchar(255) NOT NULL,
   `nAndares` int(11) NOT NULL,
   `ibanCond` int(11) NOT NULL,
-  `idEmpresa` int(11) NOT NULL
+  `idEmpresa` int(11) NOT NULL,
+  `saldo` decimal(10,0) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `condominios`
+-- Dumping data for table `condominios`
 --
 
-INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`) VALUES
-(2, 'Rua Atec', '5', '5555-555', 'Santos', 'Lisboa', 1, '999999999', 3, 0, 0),
-(3, 'QWE', '1', '1-1', 'QWE', 'QWE', 1, '111212112', 3, 0, 0);
+INSERT INTO `condominios` (`idCond`, `morada`, `lote`, `codigoPostal`, `localidade`, `cidade`, `idPais`, `nifCond`, `nAndares`, `ibanCond`, `idEmpresa`, `saldo`) VALUES
+(2, 'Rua Atec', '5', '5555-555', 'Santos', 'Lisboa', 1, '999999999', 3, 0, 0, '0'),
+(3, 'QWE', '1', '1-1', 'QWE', 'QWE', 1, '111212112', 3, 0, 0, '0');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `despesas`
+-- Table structure for table `despesas`
 --
 
 CREATE TABLE `despesas` (
@@ -80,7 +81,7 @@ CREATE TABLE `despesas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresas`
+-- Table structure for table `empresas`
 --
 
 CREATE TABLE `empresas` (
@@ -94,7 +95,7 @@ CREATE TABLE `empresas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ocorrencias`
+-- Table structure for table `ocorrencias`
 --
 
 CREATE TABLE `ocorrencias` (
@@ -108,21 +109,24 @@ CREATE TABLE `ocorrencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `ocorrencias`
+-- Dumping data for table `ocorrencias`
 --
 
 INSERT INTO `ocorrencias` (`idOcorrencia`, `tituloOcorrencia`, `ocorrencia`, `idParcela`, `idCond`, `dataRegOcorrencia`, `estado`) VALUES
 (19, 'tit1', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
 (20, 'tit2', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
 (21, 'tit3', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
-(22, 'OOO OOOOO O OOOOOOOOO OOO OOOOOO OOO OOOO OOO OOOO', 'Teste', 22, 2, '2016/09/22 11:36:18', 1),
-(23, 'Titulo de teste enviado por POST', 'OcorrÃªncia de teste.', 22, 2, '2016/09/22 11:54:02', 0),
-(24, 'David', 'Ã© gay', 22, 2, '2016/09/22 15:32:06', 1);
+(22, 'OOO', 'fasfsafsfasfasfasfasfasfasfsfasfasfsaf', 22, 2, '2016/09/22 11:36:18', 1),
+(23, 'Titulo de ', 'OcorrÃªncia de teste.asdasfasasfasf', 22, 2, '2016/09/22 11:54:02', 0),
+(24, 'David', 'Ã© gay', 22, 2, '2016/09/22 15:32:06', 1),
+(25, 'fsdsdagertyt', 'gdrgareg43tgrgrg', 8, 4, '2016/09/23 11:01:40', 0),
+(26, '3423r', 'grgergargargg', 8, 4, '2016/09/23 11:01:43', 0),
+(27, 'afafasf', 'asafasfaf', 22, 2, '2016/09/23 11:03:17', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pagamentos`
+-- Table structure for table `pagamentos`
 --
 
 CREATE TABLE `pagamentos` (
@@ -136,7 +140,7 @@ CREATE TABLE `pagamentos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pais`
+-- Table structure for table `pais`
 --
 
 CREATE TABLE `pais` (
@@ -147,7 +151,7 @@ CREATE TABLE `pais` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `parcelas`
+-- Table structure for table `parcelas`
 --
 
 CREATE TABLE `parcelas` (
@@ -166,7 +170,7 @@ CREATE TABLE `parcelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `parcelas`
+-- Dumping data for table `parcelas`
 --
 
 INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemovel`, `isAdmin`, `codigo`, `idCond`, `nifParcela`, `andar`, `comissaoMensal`, `organizacao`) VALUES
@@ -178,16 +182,12 @@ INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemove
 (22, 'Marco Rafael Martins', 'marco@atec.com', 'asd', '911254878', 1, 'CSPwp', 2, 123456789, 2, 0, 'Frente'),
 (23, 'Bruno Pereira', 'bruno@atec.com', 'asd', '965845213', 0, '97nc9', 2, 253632321, 3, 0, 'Esquerdo'),
 (24, 'Fernando Martins', 'fernando@atec.com', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
-(25, 'Jorge Mendes', 'jorge@atec.com', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente'),
-(26, 'Fernando Martins2', 'fernando@atec.com2', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
-(27, 'Jorge Mendes2', 'jorge@atec.com2', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente'),
-(38, 'Fernando Martins22', 'fernando@atec.com22', 'asd', '965325145', 0, 'VMspq', 2, 142536985, 3, 0, 'Direito'),
-(39, 'Jorge Mendes22', 'jorge@atec.com222', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente');
+(25, 'Jorge Mendes', 'jorge@atec.com', 'asd', '923654125', 0, 'VTN5A', 2, 362514456, 3, 0, 'Frente');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `vistorias`
+-- Table structure for table `vistorias`
 --
 
 CREATE TABLE `vistorias` (
@@ -285,7 +285,7 @@ ALTER TABLE `empresas`
 -- AUTO_INCREMENT for table `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
-  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idOcorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `pagamentos`
 --
@@ -300,12 +300,12 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `parcelas`
 --
 ALTER TABLE `parcelas`
-  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `vistorias`
 --
 ALTER TABLE `vistorias`
-  MODIFY `idVistoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idVistoria` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
