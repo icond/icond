@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2016 at 11:15 AM
+-- Generation Time: Sep 27, 2016 at 12:17 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -187,6 +187,21 @@ INSERT INTO `parcelas` (`idParcela`, `full_name`, `email`, `password`, `telemove
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `quotas`
+--
+
+CREATE TABLE `quotas` (
+  `idQuota` int(11) NOT NULL,
+  `idParcela` int(11) NOT NULL,
+  `mesQuota` int(11) NOT NULL,
+  `anoQuota` int(11) NOT NULL,
+  `valorQuota` float NOT NULL,
+  `pago` binary(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vistorias`
 --
 
@@ -252,6 +267,12 @@ ALTER TABLE `parcelas`
   ADD PRIMARY KEY (`idParcela`);
 
 --
+-- Indexes for table `quotas`
+--
+ALTER TABLE `quotas`
+  ADD PRIMARY KEY (`idQuota`);
+
+--
 -- Indexes for table `vistorias`
 --
 ALTER TABLE `vistorias`
@@ -301,6 +322,11 @@ ALTER TABLE `pais`
 --
 ALTER TABLE `parcelas`
   MODIFY `idParcela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+--
+-- AUTO_INCREMENT for table `quotas`
+--
+ALTER TABLE `quotas`
+  MODIFY `idQuota` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `vistorias`
 --
