@@ -1,20 +1,18 @@
 <?php
   //ainda não foi testado
   session_start();
-  include "connection.php";
+  include "../../include/connection.php";
 
   if(isset($_SESSION['user'])){
-    $first_name = "";
-    $last_name = "";
-    $idEmpresa = 0;
+  
 
     // get user's name
-    $sql = "SELECT nomeEmpresa, idEmpresa FROM empresas WHERE idEmpresa = " . $_SESSION['user'];
+    $sql = "SELECT full_name, idCond FROM parcelas WHERE idCond = " . $_SESSION['user'];
     //para poupar latin
     $row = mysqli_fetch_array(mysqli_query($conn, $sql));
 
-    $full_name = $row['nomeEmpresa'];
-    $idEmpresa = $row['idEmpresa'];
+    $full_name = $row['full_name'];
+    $idCond = $row['idCond'];
     $name_count = str_word_count($full_name);
 
     // decide either to split the string or just use it right away
@@ -39,21 +37,23 @@
   }
   else
   {
-    header("Location: ../loginempresa.php"); 
+    header("Location: ../login.php"); 
   }
+  $last_name ="ola";
   $_SESSION['FLname'] = $first_name . " " . $last_name;
-  $_SESSION['idEmpresa'] = $idEmpresa;
+  $_SESSION['idCond'] = $idCond;
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>icond</title>
         <meta charset="UTF-8">        
-        <link rel="icon" href="../img/icond_v1.png">
+        <link rel="icon" href="../../img/icond_v1.png">
         <!--css-->
-        <link rel="stylesheet" type="text/css" href="../css/loginform.css">
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/loginform.css">
+
         <!-- font awesome -->
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <!--jquery-->
@@ -106,7 +106,7 @@
                   </button>
                   <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
                   <a href="index.php">
-                      <img src="../img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
+                      <img src="../../img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
                   </a>
               </div>
                 <!--codigo para fazer login etc
@@ -119,7 +119,8 @@
                 codigo para utilizador com sessão-->
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Empresa:</span> <span style="color: #fff;"><?php echo $first_name . ' ' . $last_name;?></span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador:</span> <span style="color: #fff;"><?php echo $first_name . ' ' . $last_name;?></span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"><?php echo $idCond;?></span></p></b></li>
                   <li>
                     <p class="navbar-text-data">
                       <!--<a href="#" class="myExitButton">Sair</a>-->
@@ -127,7 +128,7 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                         <ul class="dropdown-menu" id="menu1">
                           <!--<li class="divider"></li>-->
-                          <li><a href="index.php">Dados de Empresa</a></li>
+                          <li><a href="index.php">Dados do Condomínio</a></li>
                           <li><a href="#">Alterar Senha</a></li>
                           <li><a href="../logout.php">Terminar Sessão</a></li>
                         </ul>
@@ -138,16 +139,16 @@
                   <hr class="hr-dropdown">
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a></li>
-                  <!--<li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
-                      <li><a href="#">Gestão de Quotas</a></li>
+                      <li><a href="gestQuotas.php">Gestão de Quotas</a></li>
                       <li><a href="#">Orçamentos Condomínio</a></li>
                       <li><a href="#">Conta Bancária</a></li>
                       <li><a href="#">Fundo Maneio</a></li>
                       <li><a href="#">Despesas</a></li>
                     </ul>
-                  </li>-->
+                  </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                       <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
                       <ul class="dropdown-menu" id="menu1">
@@ -157,6 +158,8 @@
                           <?php
                           if($_SESSION['isAdmin'] == 1){
                             echo "<li><a href='vistoria.php'>Vistorias</a></li>";
+                            echo "<li><a href='revOcorrencias.php'>Revisão de Ocorrências</a></li>";
+                            echo "<li><a href='revVistorias.php'>Revisão de Vistorias</a></li>";
                           }
                           ?>
                        </li>
@@ -164,17 +167,14 @@
                   </li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="fracao.php">Frações</a>
-                  </li>
-                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
-                    <ul class="dropdown-menu" id="menu1">
-                      <li>
-                      <!--<li class="divider"></li>-->
-                        <li><a href="#">Consulta de Documentos</a></li>
-                        <li><a href="../admin/pdf.php">Novo Documento</a></li>
-                      </li>
-                    </ul>
-                  </li>
+                  </li>               
+                  <?php if($_SESSION['isAdmin'] == 1){ ?>           
+                  
+                    <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                      <a href="documentos.php">Documentos</a>                
+                    </li>
+
+                  <?php } ?>
                   <!--end MENU para ecrãs pequenos-->
 
 
@@ -188,40 +188,49 @@
                   <li class="dropdown">
                     <a href="index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a>
                   </li>
-                 <!-- <li class="dropdown">
+                  <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
 
                       <!--<li class="divider"></li>-->
-                     <!-- <li><a href="#">Gestão de Quotas</a></li>
+                      <li><a href="gestQuotas.php">Gestão de Quotas</a></li>
                       <li><a href="#">Orçamentos Condomínio</a></li>
                       <li><a href="#">Conta Bancária</a></li>
                       <li><a href="#">Fundo Maneio</a></li>
                       <li><a href="#">Despesas</a></li>
                     </ul>
-                  </li>-->
-                  <!--<li class="dropdown">
+                  </li>
+                  <li class="dropdown">
                       <a href="#" data-toggle="dropdown" class="dropdown-toggle">Manutenção <b class="caret"></b></a>
                       <ul class="dropdown-menu" id="menu1">
                         <li>
+                        <!--<li class="divider"></li>-->
                         <li><a href="ocorrencia.php">Ocorrências</a></li>
-                       
+                        <?php
+                          if($_SESSION['isAdmin'] == 1){
+                            echo "<li><a href='vistoria.php'>Vistorias</a></li>";
+                            echo "<li><a href='revOcorrencias.php'>Revisão de Ocorrências</a></li>";
+                            echo "<li><a href='revVistorias.php'>Revisão de Vistorias</a></li>";
+                          }
+                          ?>
                       </li>
                       </ul>
-                  </li>-->
+                  </li>
                   <li class="dropdown">
                     <a href="fracao.php">Frações</a>
-                  </li>
+                  </li>               
+                  <?php if($_SESSION['isAdmin'] == 1){ ?>           
                   <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
-                    <ul class="dropdown-menu" id="menu1">
-                      <li>
-                      <!--<li class="divider"></li>-->
-                        <li><a href="#">Consulta de Documentos</a></li>
-                        <li><a href="../admin/pdf.php">Novo Documento</a></li>
+                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Documentos <b class="caret"></b></a>
+                      <ul class="dropdown-menu" id="menu1">
+                        <li>
+                        <!--<li class="divider"></li>-->
+                        <li><a href="pdfUtilizadores.php" target="_blank">Frações</a></li>
+
                       </li>
-                    </ul>
+                      </ul>
                   </li>
+                  <?php } ?>
                 </ul>
             </ul>
         </div>

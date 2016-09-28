@@ -133,7 +133,7 @@
                 //Fim do Registo de Condominios 
 
                 //Registo de Parcelas
-                for($x=1;$x<=$andares;$x++){
+                for($x=0;$x<=$andares;$x++){
                   for($y=1;$y<=$parcelas;$y++){
                     if($orientacao==0){
                       if($parcelas < 4){

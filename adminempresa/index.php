@@ -1,7 +1,6 @@
 <?php
     include '../include/headerempresa.php';
     include '../include/connection.php';
-
     //Utilizador Logado
     if(isset($_SESSION["user"])) {
 
@@ -36,7 +35,6 @@
         //Obter todos os condomínios sob gestão desta empresa
         $sqlObterCondsDaEmp = "SELECT * FROM condominios LEFT JOIN empresas ON condominios.idEmpresa=empresas.idEmpresa WHERE condominios.idEmpresa = $idEmpresa";
         $result = mysqli_query($conn, $sqlObterCondsDaEmp);
-        $row = mysqli_fetch_array($result);
     ?>
 
         <body>
@@ -48,14 +46,17 @@
                         </div>
                         <div class="panel-body">
                             <div class='table-responsive'>
-                                <table class='table table-striped table-hover'><thead><tr style='background-color: #0071BC; color: #fff'><td>Nº</td><td style="width:80%;">Morada</td><td>Editar</td><td>Apagar</td>
-                                </tr></thead>
-                                <tbody>
-                                <tr>
-                                <td>1</td>
-                                <td>Praceta do kappa mix mon mux mix n5 420 blaze it</td>
-                                <td> X </td>
-                                <td> X </td>
+                                <table class='table table-striped table-hover'><thead><tr style='background-color: #0071BC; color: #fff'><td>Nº</td><td style="width:80%;">Morada</td><td>Visualizar</td><td>Editar</td><td>Apagar</td>
+                                </tr></thead><tbody>
+
+                                <?php 
+                                    $num = 0;
+                                    while($row = mysqli_fetch_array($result)){
+                                        $num++;
+                                        echo "<tr><td>".$num."</td><td>".$row['morada']." ".$row['lote']." ".$row['codigoPostal']."</td><td><a style='color: black;'' href='condominio/index.php?D=".$row['idCond']."'>X</a></td><td>X</td><td>X</td></tr>";
+                                    }
+                                ?>
+                                </tbody>
                                 </table>
                     </div>
                 </div>
