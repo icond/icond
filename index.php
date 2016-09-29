@@ -16,10 +16,12 @@
                 <button id="close" class="close">&times;</button>
                 <h2 style="text-align:center;">Login</h2>
                 <form class="login-form" action="process/login.process.php" method="POST">
-                  <input name="email" type="email" placeholder="Username"/>
-                  <input name="password" type="password" placeholder="Password"/>
-                  <button name="login" class="btlogin">Login</button>
-                  <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
+                <input name="email" type="email" placeholder="Username"/>
+                <input name="password" type="password" placeholder="Password"/>
+                <button name="login" class="btlogin">Login</button>
+                <p class="message">Não registado? <a href="#">Crie uma conta</a></p>
+                <br><br>
+                <p class="message">Quer entrar como empresa? <br>  <a href="loginempresa.php">Login de Empresa</a></p>
                 </form>
 
             </div>

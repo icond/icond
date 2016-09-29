@@ -36,6 +36,8 @@
             <input name="password" type="password" placeholder="Password" required/>
             <button name="login" class="btlogin">Login</button>
             <p class="message">Não registado? <a href="index.php">Crie uma conta</a></p>
+            <br><br>
+            <p class="message">Quer entrar como empresa?<br> <a href="loginempresa.php">Login como Empresa</a></p>
           </form>
         </div>
       </div>
