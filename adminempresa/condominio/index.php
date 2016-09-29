@@ -1,9 +1,7 @@
 <?php
-    include '/insiderheader.php';
+    include 'insiderheader.php';
     include '../../include/connection.php';
-
-    if($_GET['D'] =! NULL && $_GET['D'] != "" && ctype_digit($_GET['D'])){
-        $idCond = $_GET['D'];
+        $idCond = $_SESSION['idCond'];
         //Utilizador Logado
 
             //Saber qual o user que está logado
@@ -97,11 +95,5 @@
 
 <?php
 
-  }else{
-    // aqui podia-se enviar um parametro para pedir para fazer outra vez login
-    echo "<script>
-        window.location =  '../index.php';
-    </script>";
-  }
-
+ 
  ?>

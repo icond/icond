@@ -12,11 +12,11 @@ session_start();
     $sql = "SELECT full_name, idCond FROM parcelas WHERE idParcela = " . $_SESSION['user'];
     //para poupar latin
     $row = mysqli_fetch_array(mysqli_query($conn, $sql));
-
+    
     $full_name = $row['full_name'];
     $idCond = $row['idCond'];
     $name_count = str_word_count($full_name);
-
+    
     // decide either to split the string or just use it right away
   }
   else

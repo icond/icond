@@ -2,7 +2,7 @@
 	$_SESSION["user"] = "debug";
 
   	if($_SESSION["user"] != "") {
-    	include '../include/headeradmin.php';
+    	include 'insiderheader.php';
     	include '../include/connection.php';
     	$idCond = $_SESSION['idCond'];
     	$idParcela = $_SESSION["user"];

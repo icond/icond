@@ -3,17 +3,24 @@
   session_start();
   include "../../include/connection.php";
 
-  if(isset($_SESSION['user'])){
-  
 
+  if(isset($_SESSION['user']) && (isset($_GET['D']) || isset($_SESSION['idCond']))){
+    $idEmpresa = $_SESSION['user'];
+    if(isset($_GET['D'])){
+    $idCond = $_GET['D'];
+    }else{
+    $idCond = $_SESSION['idCond'];
+  }
+    //echo $idCond . " " . $idEmpresa;
     // get user's name
-    $sql = "SELECT full_name, idCond FROM parcelas WHERE idCond = " . $_SESSION['user'];
+    $sql = "SELECT empresas.nomeEmpresa, condominios.morada FROM empresas LEFT JOIN condominios on empresas.idEmpresa=condominios.idEmpresa WHERE idCond = $idCond";
+    //echo $sql;
     //para poupar latin
     $row = mysqli_fetch_array(mysqli_query($conn, $sql));
 
-    $full_name = $row['full_name'];
-    $idCond = $row['idCond'];
-    $name_count = str_word_count($full_name);
+    $empresa = $row['nomeEmpresa'];
+    $moradaCond = $row['morada'];
+    $name_count = str_word_count($empresa);
 
     // decide either to split the string or just use it right away
     if($name_count == 0)
@@ -22,24 +29,23 @@
     }
     else if($name_count == 1)
     {
-      $first_name = $full_name;
+      $first_name = $empresa;
     }
     else if($name_count == 2)
     {
-      list($first_name, $last_name) = explode(" ", $full_name);
+      list($first_name, $last_name) = explode(" ", $empresa);
     }
     else
     {
-      $words = explode(" ", $full_name);
+      $words = explode(" ", $empresa);
       $first_name = $words[0];
       $last_name = $words[$name_count - 1];
     }
   }
   else
   {
-    header("Location: ../login.php"); 
+    header("Location: ../index.php"); 
   }
-  $last_name ="ola";
   $_SESSION['FLname'] = $first_name . " " . $last_name;
   $_SESSION['idCond'] = $idCond;
 ?>
@@ -105,7 +111,7 @@
                       <span class="icon-bar"></span>
                   </button>
                   <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-                  <a href="index.php">
+                  <a href="../index.php">
                       <img src="../../img/icond.ico" class="navbar-left logo-img img-away-left"><p class="navbar-text navbar-text-aux hidden-xs"><b>Gestão Condominios Online</b></p>
                   </a>
               </div>
@@ -120,7 +126,7 @@
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                   <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Utilizador:</span> <span style="color: #fff;"><?php echo $first_name . ' ' . $last_name;?></span></p></b></li>
-                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Condominio:</span> <span style="color: #fff;"><?php echo $idCond;?></span></p></b></li>
+                  <li><p class="navbar-text-data"><span style="color: #0071BC;"><b>Morada Condominio:</span> <span style="color: #fff;"><?php echo $moradaCond;?></span></p></b></li>
                   <li>
                     <p class="navbar-text-data">
                       <!--<a href="#" class="myExitButton">Sair</a>-->
@@ -138,7 +144,9 @@
                   <!--em caso de o ecrã ser extra small -- MOSTRAR MENU LÁ EM CIMA KAPPA PRIDE-->
                   <hr class="hr-dropdown">
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
-                    <a href="index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a></li>
+                    <a href="../index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a></li>
+                  <li class="hidden-sm hidden-md hidden-lg hidden-xl">
+                    <a href="index.php"><span class="glyphicon glyphicon-home"></span>Informações do Condominio</a></li>
                   <li class="hidden-sm hidden-md hidden-lg hidden-xl">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>
                     <ul class="dropdown-menu" id="menu1">
@@ -186,7 +194,9 @@
               <ul class="nav nav-pills">
                   <!--<li class="active"><a href="#">Regular link</a></li>-->
                   <li class="dropdown">
-                    <a href="index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a>
+                    <a href="../index.php"><span class="glyphicon glyphicon-home"></span> Pagina Inicial</a>
+                  <li class="dropdown">
+                    <a href="index.php"><span class="glyphicon glyphicon-home"></span> Informações de Condominio</a>
                   </li>
                   <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">Contabilidade <b class="caret"></b></a>

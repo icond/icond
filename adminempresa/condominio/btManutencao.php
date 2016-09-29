@@ -1,5 +1,5 @@
 <?php
-	include '../include/connection.php';
+	include '../../include/connection.php';
 	session_start();
 	$de = $_GET['D'];
 	$por = $_GET['P'];

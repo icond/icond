@@ -174,35 +174,8 @@
 						</select>
 					</div>
 				</div>	
-
-				<?php 
-					$query = 	"SELECT parcelas.full_name, parcelas.andar, parcelas.organizacao, quotas.valorQuota, quotas.pago FROM quotas LEFT JOIN parcelas ON parcelas.idParcela=quotas.idParcela WHERE parcelas.idCond = '$idCond' AND quotas.mesQuota = '$mes' AND quotas.anoQuota = '$ano'";
-					echo "
-							<table class='table table-striped table-hover'>
-								<thead style='background-color: #0071BC; color: #fff'>
-									<tr><td>Nome</td><td>Parcela</td><td>Valor Pago</td><td>Estado</td></tr>
-								</thead>
-								<tbody>";
-					$exequery = mysqli_query($conn, $query);
-					while($row = mysqli_fetch_array($exequery)){
-						$estado = "";
-						if($row['pago'] == "1"){
-							$estado = "Pago";
-						}else{
-							$estado = "Por Pagar";
-						}
-						echo 		"<tr><td>".$row['full_name']."</td><td>".$row['andar']." ".$row['organizacao']."</td><td>".$row['valorQuota']."</td><td>".$estado."</td></tr>";
-					}
-
-
-									
-					echo		"</tbody>
-							</table>";
-
-
-				?>
-			</div>
-			<div>
+				<br><br><br>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
 				<form method="post">
 				A parcela 
 				<select name="parcelas">
@@ -231,7 +204,36 @@
 			  		echo "<script> window.location = 'gestQuotas.php'</script>";
 
 				} ?>
+				<br><br>
 			</div>
+				<?php 
+					$query = 	"SELECT parcelas.full_name, parcelas.andar, parcelas.organizacao, quotas.valorQuota, quotas.pago FROM quotas LEFT JOIN parcelas ON parcelas.idParcela=quotas.idParcela WHERE parcelas.idCond = '$idCond' AND quotas.mesQuota = '$mes' AND quotas.anoQuota = '$ano'";
+					echo "
+							<table class='table table-striped table-hover'>
+								<thead style='background-color: #0071BC; color: #fff'>
+									<tr><td>Nome</td><td>Parcela</td><td>Valor Pago</td><td>Estado</td></tr>
+								</thead>
+								<tbody>";
+					$exequery = mysqli_query($conn, $query);
+					while($row = mysqli_fetch_array($exequery)){
+						$estado = "";
+						if($row['pago'] == "1"){
+							$estado = "Pago";
+						}else{
+							$estado = "Por Pagar";
+						}
+						echo 		"<tr><td>".$row['full_name']."</td><td>".$row['andar']." ".$row['organizacao']."</td><td>".$row['valorQuota']."</td><td>".$estado."</td></tr>";
+					}
+
+
+									
+					echo		"</tbody>
+							</table>";
+
+
+				?>
+			</div>
+			
 		</div>
 	</main>
 </body>

@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include '../include/connection.php';
+    include '../../include/connection.php';
     $id = $_GET['I'] ;
     $idCond = $_GET['C'];
     $n = 0;

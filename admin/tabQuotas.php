@@ -90,13 +90,44 @@
 				</div>
 			</div>	
 		</div>";
-
+		
 
 		$query = "SELECT parcelas.full_name, parcelas.andar, parcelas.organizacao, quotas.valorQuota, quotas.pago FROM quotas LEFT JOIN parcelas ON parcelas.idParcela=quotas.idParcela WHERE parcelas.idCond = '$idCond' AND quotas.mesQuota = '$mes' AND quotas.anoQuota = '$ano'";
 
 		$exequery = mysqli_query($conn, $query);
 		if(mysqli_num_rows($exequery) != 0 ){
-		echo "
+		echo "	
+				<br><br><br>
+				<div class='col-xs-12 col-sm-12 col-md-12 col-xl-12'>
+				<form method='post'>
+				A parcela 
+				<select name='parcelas'>";
+
+					$parc = "SELECT idParcela, andar, organizacao FROM parcelas WHERE idCond=$idCond";
+					$query2 = mysqli_query($conn, $parc);
+
+			  		while($row3 = mysqli_fetch_array($query2)){
+			  			echo "<option value='" . $row3["idParcela"] . "'>" . $row3["andar"] . " " . $row3["organizacao"] . "</option>";
+			  		} ?>
+				</select> <?php echo "no mes " . $mes . " e no ano " . $ano ?>
+				<button name="pagou">Pagou</button>
+				</form>
+
+				<?php if (isset($_POST['pagou'])) {
+					$parcela= $_POST['parcelas'];
+					$comissao = "SELECT comissaoMensal from parcelas where idParcela=$parcela";
+					$query = mysqli_query($conn, $comissao);
+
+			  		while($row2 = mysqli_fetch_array($query)){
+			  			$comissaoMensal = $row2['comissaoMensal'];
+			  		}
+
+			  		mysqli_query($conn, "UPDATE quotas SET valorQuota = $comissaoMensal, pago='1' WHERE idParcela=$parcela");
+
+			  		echo "<script> window.location = 'gestQuotas.php'</script>";
+
+				} 
+				echo "<br><br>
 				<table class='table table-striped table-hover'>
 					<thead style='background-color: #0071BC; color: #fff'>
 						<tr><td>Nome</td><td>Parcela</td><td>Valor Pago</td><td>Estado</td></tr>

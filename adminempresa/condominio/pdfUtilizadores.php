@@ -1,6 +1,6 @@
 <?php
 session_start();
-    include '../include/connection.php';
+    include '../../include/connection.php';
 
 
   if(isset($_SESSION['user'])){
@@ -27,7 +27,7 @@ session_start();
 
     $idCond = $_SESSION['idCond'];
     $idParcela = $_SESSION["user"];
-require('../FPDF/fpdf.php');
+require('../../FPDF/fpdf.php');
 $x = 0;
 $SQL = "SELECT * FROM parcelas WHERE idCond = '$idCond'";
 $pdf = new FPDF('P','mm','A4');

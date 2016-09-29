@@ -1,15 +1,10 @@
 <?php 
 	//User só para debug
-	$_SESSION["user"] = "debug";
 
-  	if($_SESSION["user"] != "") {
-    	include '../include/headeradmin.php';
-    	include '../include/connection.php';
+    	include 'insiderheader.php';
+    	include '../../include/connection.php';
     	$idCond = $_SESSION['idCond'];
     	$idParcela = $_SESSION["user"];
-  	}else{
-    	header("Location: ../login.php");
-  	}
 
   	$mes = date('m');
   	$ano = date('Y');

@@ -2,6 +2,7 @@
   //ainda não foi testado
   session_start();
   include "connection.php";
+  unset($_SESSION['idCond']);
 
   if(isset($_SESSION['user'])){
     $first_name = "";

@@ -1,6 +1,6 @@
 <?php
-    include '../include/headeradmin.php';
-    include '../include/connection.php';
+        include 'insiderheader.php';
+    include '../../include/connection.php';
 
     //Utilizador Logado
     if(isset($_SESSION["user"])=="") {

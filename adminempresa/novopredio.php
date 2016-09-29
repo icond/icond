@@ -263,7 +263,7 @@
        
 
         <div class="form">
-          <form class="login-form" action="" method="POST">
+          <form class="login-form" action="index.php" method="POST">
             <label>Morada</label><br>
             <label>Rua</label><br>
             <input type="text" name="rua" placeholder="Rua do condomínio" required /><br>

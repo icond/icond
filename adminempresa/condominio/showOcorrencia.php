@@ -1,5 +1,5 @@
 <?php	
-    include '../include/connection.php';
+    include '../../include/connection.php';
 	$g = $_GET['G'];
 
 	$sqlGetOcorrencia = "SELECT *, parcelas.full_name FROM ocorrencias LEFT JOIN parcelas ON parcelas.idParcela = ocorrencias.idParcela WHERE idOcorrencia = $g";

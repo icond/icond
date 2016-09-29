@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-    include '../include/connection.php';
+    include '../../include/connection.php';
     $idCond = $_SESSION['idCond'];
     $mes = $_GET['M'];
   	$ano = $_GET['A'];

@@ -38,7 +38,7 @@ $run = mysqli_query($conn, $SQL);
 
   $pdf->Cell(47.5, 10, "Nome",1,0,"C");
   $pdf->Cell(47.5, 10, "Email",1,0,"C");
-  $pdf->Cell(47.5, 10, "Código",1,0,"C");
+  $pdf->Cell(47.5, 10, utf8_decode("Código"),1,0,"C");
   $pdf->Cell(47.5, 10, "Andar",1,1,"C");
   
   $pdf->SetFont('Arial','',12);

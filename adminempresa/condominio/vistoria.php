@@ -1,6 +1,6 @@
 <?php
-    include '../include/headeradmin.php';
-    include '../include/connection.php';
+        include 'insiderheader.php';
+    include '../../include/connection.php';
     //include '../include/datepicker/css/datepicker.css';
     //include '../include/datepicker/js/bootstrap-datepicker.js';
     //include '../include/datepicker/less/datepicker.less';

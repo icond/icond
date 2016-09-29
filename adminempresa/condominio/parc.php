@@ -2,11 +2,11 @@
   session_start();
   
   //User só para debug
-  $_SESSION["user"] = "debug";
+  //$_SESSION["user"] = "debug";
 
   if($_SESSION["user"] != "") {
-    include '../include/headeradmin.php';
-    include '../include/connection.php';
+        include 'insiderheader.php';
+    include '../../include/connection.php';
     ?>
 
         <body>
