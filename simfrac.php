@@ -14,8 +14,8 @@ $o = $_GET['O'];
 if($p != 0){
 	echo "<br>Escolha a sua parcela";
 	echo "<br><select name='adminparc'>";
-	for($x = 1 ; $x <= $a ; $x++ ){
-		for($y= 1 ; $y <= $p ; $y++){
+	for($x = 0 ; $x <= $a ; $x++ ){
+		for($y= 0 ; $y <= $p ; $y++){
 		    if($o==0){
 		    	if($p < 4){
 			        if($y==1)
