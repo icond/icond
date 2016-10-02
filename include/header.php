@@ -6,6 +6,9 @@
     <head>
         <title>icond</title>
         <meta charset="UTF-8">
+        <meta name="author" content="David Lopes, Sandro Milhano, Marco Maltes, Pedro Rolo">
+        <meta name="description" content="Uma cena de condominios kappa">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel="icon" href="img/icond_v1.png">
         <!--css-->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -19,7 +22,6 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/frontPageEffects.js"></script>
         <!--adicionar aqui jquery-->
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
